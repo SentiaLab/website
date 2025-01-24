@@ -1,12 +1,22 @@
 import Image from "next/image";
 
 export default function Home() {
+  const isDevelopment = process.env.NODE_ENV === "development";
+
+  const getImagePath = (imageName: string) => isDevelopment ? `/${imageName}.svg` : `/website/${imageName}.svg`;
+
+  const nextImagePath = getImagePath("next");
+  const vercelImagePath = getImagePath("vercel");
+  const fileImagePath = getImagePath("file");
+  const windowImagePath = getImagePath("window");
+  const globeImagePath = getImagePath("globe");
+
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Image
           className="dark:invert"
-          src="/website/next.svg"
+          src={nextImagePath}
           alt="Next.js logo"
           width={180}
           height={38}
@@ -32,7 +42,7 @@ export default function Home() {
           >
             <Image
               className="dark:invert"
-              src="/website/vercel.svg"
+              src={vercelImagePath}
               alt="Vercel logomark"
               width={20}
               height={20}
@@ -58,7 +68,7 @@ export default function Home() {
         >
           <Image
             aria-hidden
-            src="/website/file.svg"
+            src={fileImagePath}
             alt="File icon"
             width={16}
             height={16}
@@ -73,7 +83,7 @@ export default function Home() {
         >
           <Image
             aria-hidden
-            src="/website/window.svg"
+            src={windowImagePath}
             alt="Window icon"
             width={16}
             height={16}
@@ -88,7 +98,7 @@ export default function Home() {
         >
           <Image
             aria-hidden
-            src="/website/globe.svg"
+            src={globeImagePath}
             alt="Globe icon"
             width={16}
             height={16}
