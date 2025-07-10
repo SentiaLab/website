@@ -15,41 +15,105 @@ export default function Home() {
       </div>
 
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-sentia-black/95 backdrop-blur-md z-50 border-b border-sentia-dark/50">
+      <nav className="fixed top-0 w-full bg-sentia-black/80 backdrop-blur-2xl z-50 border-b border-sentia-cyan/10 shadow-2xl shadow-sentia-black/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-2">
-              <Image
-                src="/sentialab.png"
-                alt="SentiaLab Logo"
-                width={40}
-                height={40}
-                className="h-10 w-auto"
-              />
-              <span className="text-2xl font-bold text-white">SentiaLab</span>
+          <div className="flex justify-between items-center h-20">
+            {/* Logo Section with Enhanced Design */}
+            <div className="flex items-center space-x-3 group">
+              <div className="relative">
+                <div className="absolute inset-0 bg-sentia-cyan/20 rounded-xl blur-md group-hover:bg-sentia-cyan/30 transition-all duration-300"></div>
+                <div className="relative bg-gradient-to-br from-sentia-dark/60 to-sentia-black/60 p-2 rounded-xl border border-sentia-cyan/20 group-hover:border-sentia-cyan/40 transition-all duration-300">
+                  <Image
+                    src="/sentialab.png"
+                    alt="SentiaLab Logo"
+                    width={40}
+                    height={40}
+                    className="h-10 w-auto filter brightness-110"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold text-white group-hover:text-sentia-cyan transition-colors duration-300">SentiaLab</span>
+                <span className="text-xs text-sentia-cyan/60 font-medium tracking-wider uppercase">Tech Innovation</span>
+              </div>
             </div>
-            <div className="hidden md:flex space-x-8">
-              <a href="#about" className="text-white hover:text-sentia-cyan transition-colors relative group">
-                About
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-sentia-cyan transition-all duration-300 group-hover:w-full"></span>
-              </a>
-              <a href="#services" className="text-white hover:text-sentia-cyan transition-colors relative group">
-                Services
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-sentia-cyan transition-all duration-300 group-hover:w-full"></span>
-              </a>
-              <a href="#contact" className="text-white hover:text-sentia-cyan transition-colors relative group">
-                Contact
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-sentia-cyan transition-all duration-300 group-hover:w-full"></span>
-              </a>
+
+            {/* Desktop Navigation with Modern Pills */}
+            <div className="hidden md:flex items-center space-x-2">
+              <div className="flex items-center bg-sentia-dark/40 rounded-full p-1 border border-sentia-dark/50 backdrop-blur-sm">
+                <a href="#about" className="relative px-6 py-3 text-white hover:text-sentia-black font-medium rounded-full transition-all duration-300 group nav-link">
+                  <span className="relative z-10">About</span>
+                  <div className="absolute inset-0 bg-sentia-cyan scale-0 group-hover:scale-100 rounded-full transition-transform duration-300 origin-center"></div>
+                </a>
+                <a href="#services" className="relative px-6 py-3 text-white hover:text-sentia-black font-medium rounded-full transition-all duration-300 group nav-link">
+                  <span className="relative z-10">Services</span>
+                  <div className="absolute inset-0 bg-sentia-cyan scale-0 group-hover:scale-100 rounded-full transition-transform duration-300 origin-center"></div>
+                </a>
+                <a href="#contact" className="relative px-6 py-3 text-white hover:text-sentia-black font-medium rounded-full transition-all duration-300 group nav-link">
+                  <span className="relative z-10">Contact</span>
+                  <div className="absolute inset-0 bg-sentia-cyan scale-0 group-hover:scale-100 rounded-full transition-transform duration-300 origin-center"></div>
+                </a>
+              </div>
+              
+              {/* CTA Button */}
+              <div className="ml-4">
+                <a href="#contact" className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-sentia-cyan to-sentia-yellow hover:from-sentia-cyan/80 hover:to-sentia-yellow/80 text-sentia-black font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-sentia-cyan/25">
+                  <span>Get Started</span>
+                  <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </a>
+              </div>
             </div>
             
-            {/* Mobile menu button */}
+            {/* Enhanced Mobile Menu Button */}
             <div className="md:hidden">
-              <button className="text-white hover:text-sentia-cyan p-2">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
+              <button className="relative group p-3 rounded-xl bg-sentia-dark/40 border border-sentia-dark/50 hover:border-sentia-cyan/40 transition-all duration-300 mobile-menu-btn">
+                <div className="flex flex-col space-y-1.5">
+                  <span className="w-6 h-0.5 bg-white group-hover:bg-sentia-cyan transition-colors duration-300 rounded-full transform group-hover:rotate-45 group-hover:translate-y-2 transition-transform"></span>
+                  <span className="w-6 h-0.5 bg-white group-hover:bg-sentia-cyan transition-colors duration-300 rounded-full group-hover:opacity-0"></span>
+                  <span className="w-6 h-0.5 bg-white group-hover:bg-sentia-cyan transition-colors duration-300 rounded-full transform group-hover:-rotate-45 group-hover:-translate-y-2 transition-transform"></span>
+                </div>
+                
+                {/* Mobile Menu Tooltip */}
+                <div className="absolute right-0 top-full mt-2 bg-sentia-black/90 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                  Menu
+                  <div className="absolute bottom-full left-1/2 -translate-x-1/2 border-4 border-transparent border-b-sentia-black/90"></div>
+                </div>
               </button>
+            </div>
+          </div>
+        </div>
+        
+        {/* Mobile Navigation Dropdown */}
+        <div className="md:hidden mobile-menu hidden">
+          <div className="bg-sentia-black/95 backdrop-blur-2xl border-t border-sentia-cyan/10 shadow-2xl">
+            <div className="max-w-7xl mx-auto px-4 py-6 space-y-4">
+              <a href="#about" className="block py-3 px-4 text-white hover:text-sentia-cyan hover:bg-sentia-cyan/10 rounded-xl transition-all duration-300 font-medium">
+                <div className="flex items-center space-x-3">
+                  <span className="w-2 h-2 bg-sentia-cyan rounded-full"></span>
+                  <span>About Us</span>
+                </div>
+              </a>
+              <a href="#services" className="block py-3 px-4 text-white hover:text-sentia-cyan hover:bg-sentia-cyan/10 rounded-xl transition-all duration-300 font-medium">
+                <div className="flex items-center space-x-3">
+                  <span className="w-2 h-2 bg-sentia-yellow rounded-full"></span>
+                  <span>Our Services</span>
+                </div>
+              </a>
+              <a href="#contact" className="block py-3 px-4 text-white hover:text-sentia-cyan hover:bg-sentia-cyan/10 rounded-xl transition-all duration-300 font-medium">
+                <div className="flex items-center space-x-3">
+                  <span className="w-2 h-2 bg-sentia-purple rounded-full"></span>
+                  <span>Contact</span>
+                </div>
+              </a>
+              
+              {/* Mobile CTA */}
+              <div className="pt-4 border-t border-sentia-dark/50">
+                <a href="#contact" className="block w-full text-center py-4 bg-gradient-to-r from-sentia-cyan to-sentia-yellow text-sentia-black font-semibold rounded-xl transition-all duration-300 transform hover:scale-105">
+                  Get Started Today
+                </a>
+              </div>
             </div>
           </div>
         </div>
