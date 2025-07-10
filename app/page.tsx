@@ -1,8 +1,19 @@
 import Image from "next/image";
+import ScrollEffects from "./components/ScrollEffects";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-sentia-black via-sentia-dark to-sentia-dark">
+      <ScrollEffects />
+      
+      {/* Scroll Progress Indicator */}
+      <div className="fixed top-0 left-0 w-full h-1 bg-sentia-dark/20 z-50">
+        <div 
+          className="h-full bg-gradient-to-r from-sentia-cyan to-sentia-yellow transition-all duration-300 ease-out scroll-progress"
+          style={{width: '0%'}}
+        ></div>
+      </div>
+
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-sentia-black/95 backdrop-blur-md z-50 border-b border-sentia-dark/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,86 +38,95 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-24 pb-20 px-4">
-        <div className="max-w-7xl mx-auto">
+      <section className="pt-24 pb-20 px-4 relative overflow-hidden">
+        {/* Animated Background Particles */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-sentia-cyan/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-sentia-purple/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-sentia-yellow/5 rounded-full blur-2xl animate-pulse" style={{animationDelay: '2s'}}></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="space-y-8">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-sentia-cyan/10 border border-sentia-cyan/20 text-sentia-cyan text-sm font-medium">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-sentia-cyan/10 border border-sentia-cyan/20 text-sentia-cyan text-sm font-medium animate-bounce">
                 🚀 Pioneering Tech Innovation
               </div>
               
               <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
                 Building the
-                <span className="block text-transparent bg-gradient-to-r from-sentia-cyan to-sentia-yellow bg-clip-text">
+                <span className="block text-transparent bg-gradient-to-r from-sentia-cyan via-sentia-yellow to-sentia-cyan bg-clip-text animate-pulse bg-size-200 bg-pos-0 hover:bg-pos-100 transition-all duration-3000">
                   Future of Tech
                 </span>
               </h1>
               
-              <p className="text-xl text-gray-300 leading-relaxed max-w-lg">
+              <p className="text-xl text-gray-300 leading-relaxed max-w-lg opacity-0 animate-fade-in-up" style={{animationDelay: '0.5s', animationFillMode: 'forwards'}}>
                 SentiaLab specializes in cutting-edge robotics, artificial intelligence, and embedded systems that transform industries and enhance human capabilities.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="inline-flex items-center justify-center px-8 py-4 bg-sentia-cyan hover:bg-sentia-cyan/80 text-sentia-black font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+              <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in-up" style={{animationDelay: '1s', animationFillMode: 'forwards'}}>
+                <button className="group inline-flex items-center justify-center px-8 py-4 bg-sentia-cyan hover:bg-sentia-cyan/80 text-sentia-black font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-sentia-cyan/25">
                   <span>Explore Solutions</span>
-                  <svg className="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>
                 </button>
-                <button className="inline-flex items-center justify-center px-8 py-4 border-2 border-sentia-dark text-white hover:border-sentia-cyan hover:text-sentia-cyan font-semibold rounded-lg transition-all duration-300">
-                  Watch Demo
+                <button className="group inline-flex items-center justify-center px-8 py-4 border-2 border-sentia-dark text-white hover:border-sentia-cyan hover:text-sentia-cyan font-semibold rounded-lg transition-all duration-300 relative overflow-hidden">
+                  <span className="relative z-10">Watch Demo</span>
+                  <div className="absolute inset-0 bg-sentia-cyan/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                 </button>
               </div>
               
-              {/* Stats */}
-              <div className="grid grid-cols-3 gap-8 pt-8 border-t border-sentia-dark/50">
-                <div>
-                  <div className="text-2xl font-bold text-sentia-cyan">50+</div>
+              {/* Animated Stats */}
+              <div className="grid grid-cols-3 gap-8 pt-8 border-t border-sentia-dark/50 opacity-0 animate-fade-in-up" style={{animationDelay: '1.5s', animationFillMode: 'forwards'}}>
+                <div className="group cursor-pointer">
+                  <div className="text-2xl font-bold text-sentia-cyan group-hover:scale-110 transition-transform duration-300">50+</div>
                   <div className="text-sm text-gray-400">Projects Delivered</div>
                 </div>
-                <div>
-                  <div className="text-2xl font-bold text-sentia-cyan">15+</div>
+                <div className="group cursor-pointer">
+                  <div className="text-2xl font-bold text-sentia-cyan group-hover:scale-110 transition-transform duration-300">15+</div>
                   <div className="text-sm text-gray-400">Industry Partners</div>
                 </div>
-                <div>
-                  <div className="text-2xl font-bold text-sentia-cyan">5+</div>
+                <div className="group cursor-pointer">
+                  <div className="text-2xl font-bold text-sentia-cyan group-hover:scale-110 transition-transform duration-300">5+</div>
                   <div className="text-sm text-gray-400">Years Experience</div>
                 </div>
               </div>
             </div>
             
-            {/* Right Visual */}
-            <div className="relative">
-              <div className="relative z-10 bg-gradient-to-br from-sentia-dark/40 to-sentia-black/40 backdrop-blur-sm rounded-2xl p-8 border border-sentia-cyan/20">
+            {/* Right Visual with Floating Animation */}
+            <div className="relative opacity-0 animate-fade-in-right" style={{animationDelay: '0.8s', animationFillMode: 'forwards'}}>
+              <div className="relative z-10 bg-gradient-to-br from-sentia-dark/40 to-sentia-black/40 backdrop-blur-sm rounded-2xl p-8 border border-sentia-cyan/20 hover:border-sentia-cyan/40 transition-all duration-500 hover:transform hover:scale-105">
                 <Image
                   src="/sentialab.png"
                   alt="SentiaLab Logo"
                   width={200}
                   height={200}
-                  className="mx-auto mb-6 filter brightness-110"
+                  className="mx-auto mb-6 filter brightness-110 hover:brightness-125 transition-all duration-300"
                 />
                 
-                {/* Tech Stack Icons */}
+                {/* Animated Tech Stack Icons */}
                 <div className="grid grid-cols-3 gap-4 mt-8">
-                  <div className="bg-sentia-cyan/10 rounded-xl p-4 text-center border border-sentia-cyan/20">
-                    <div className="text-2xl mb-2">🤖</div>
+                  <div className="bg-sentia-cyan/10 rounded-xl p-4 text-center border border-sentia-cyan/20 hover:bg-sentia-cyan/20 hover:scale-110 transition-all duration-300 cursor-pointer">
+                    <div className="text-2xl mb-2 animate-bounce" style={{animationDelay: '2s'}}>🤖</div>
                     <div className="text-xs text-gray-300">Robotics</div>
                   </div>
-                  <div className="bg-sentia-yellow/10 rounded-xl p-4 text-center border border-sentia-yellow/20">
-                    <div className="text-2xl mb-2">🧠</div>
+                  <div className="bg-sentia-yellow/10 rounded-xl p-4 text-center border border-sentia-yellow/20 hover:bg-sentia-yellow/20 hover:scale-110 transition-all duration-300 cursor-pointer">
+                    <div className="text-2xl mb-2 animate-bounce" style={{animationDelay: '2.5s'}}>🧠</div>
                     <div className="text-xs text-gray-300">AI/ML</div>
                   </div>
-                  <div className="bg-sentia-purple/10 rounded-xl p-4 text-center border border-sentia-purple/20">
-                    <div className="text-2xl mb-2">⚡</div>
+                  <div className="bg-sentia-purple/10 rounded-xl p-4 text-center border border-sentia-purple/20 hover:bg-sentia-purple/20 hover:scale-110 transition-all duration-300 cursor-pointer">
+                    <div className="text-2xl mb-2 animate-bounce" style={{animationDelay: '3s'}}>⚡</div>
                     <div className="text-xs text-gray-300">IoT</div>
                   </div>
                 </div>
               </div>
               
-              {/* Background Decoration */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-sentia-cyan/20 rounded-full blur-xl"></div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-sentia-purple/20 rounded-full blur-xl"></div>
+              {/* Enhanced Background Decoration with Animation */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-sentia-cyan/20 rounded-full blur-xl animate-pulse"></div>
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-sentia-purple/20 rounded-full blur-xl animate-pulse" style={{animationDelay: '1s'}}></div>
+              <div className="absolute top-1/2 -right-8 w-16 h-16 bg-sentia-yellow/20 rounded-full blur-lg animate-pulse" style={{animationDelay: '2s'}}></div>
             </div>
           </div>
         </div>
@@ -280,6 +300,17 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Floating Action Button */}
+      <div className="fixed bottom-8 right-8 z-50">
+        <button className="group bg-sentia-cyan hover:bg-sentia-cyan/80 text-sentia-black p-4 rounded-full shadow-2xl hover:shadow-sentia-cyan/25 transition-all duration-300 transform hover:scale-110 animate-bounce">
+          <svg className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+          </svg>
+          <span className="absolute -top-2 -right-2 w-3 h-3 bg-sentia-yellow rounded-full animate-pulse"></span>
+        </button>
+      </div>
     </div>
   );
 }
