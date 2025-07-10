@@ -29,9 +29,27 @@ export default function Home() {
               <span className="text-2xl font-bold text-white">SentiaLab</span>
             </div>
             <div className="hidden md:flex space-x-8">
-              <a href="#about" className="text-white hover:text-sentia-cyan transition-colors">About</a>
-              <a href="#services" className="text-white hover:text-sentia-cyan transition-colors">Services</a>
-              <a href="#contact" className="text-white hover:text-sentia-cyan transition-colors">Contact</a>
+              <a href="#about" className="text-white hover:text-sentia-cyan transition-colors relative group">
+                About
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-sentia-cyan transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a href="#services" className="text-white hover:text-sentia-cyan transition-colors relative group">
+                Services
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-sentia-cyan transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a href="#contact" className="text-white hover:text-sentia-cyan transition-colors relative group">
+                Contact
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-sentia-cyan transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            </div>
+            
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <button className="text-white hover:text-sentia-cyan p-2">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+              </button>
             </div>
           </div>
         </div>
@@ -240,14 +258,83 @@ export default function Home() {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: "Custom Robotics", desc: "Tailored robotic solutions for industrial and consumer applications" },
-              { title: "AI Development", desc: "Machine learning models and AI integration services" },
-              { title: "IoT Solutions", desc: "Connected device ecosystems and smart infrastructure" },
-              { title: "Consulting", desc: "Expert guidance on technology adoption and digital transformation" }
+              { title: "Custom Robotics", desc: "Tailored robotic solutions for industrial and consumer applications", icon: "🤖" },
+              { title: "AI Development", desc: "Machine learning models and AI integration services", icon: "🧠" },
+              { title: "IoT Solutions", desc: "Connected device ecosystems and smart infrastructure", icon: "🌐" },
+              { title: "Consulting", desc: "Expert guidance on technology adoption and digital transformation", icon: "💡" }
             ].map((service, index) => (
-              <div key={index} className="p-6 bg-sentia-black/60 rounded-xl border border-sentia-dark hover:border-sentia-cyan/50 transition-all duration-300 hover:transform hover:scale-105">
-                <h4 className="text-xl font-semibold text-sentia-cyan mb-3">{service.title}</h4>
-                <p className="text-gray-300 text-sm leading-relaxed">{service.desc}</p>
+              <div key={index} className="group p-6 bg-sentia-black/60 rounded-xl border border-sentia-dark hover:border-sentia-cyan/50 transition-all duration-300 hover:transform hover:scale-105 cursor-pointer relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-sentia-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative z-10">
+                  <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">{service.icon}</div>
+                  <h4 className="text-xl font-semibold text-sentia-cyan mb-3">{service.title}</h4>
+                  <p className="text-gray-300 text-sm leading-relaxed">{service.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Showcase/Portfolio Section */}
+      <section className="py-24 px-4 bg-sentia-black/50 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Innovation in <span className="text-sentia-yellow">Action</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Discover how we're transforming industries with cutting-edge technology solutions.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Smart Factory Automation",
+                category: "Robotics",
+                description: "Autonomous manufacturing system increasing efficiency by 300%",
+                metrics: "300% Efficiency Boost",
+                color: "cyan"
+              },
+              {
+                title: "AI-Powered Diagnostics",
+                category: "Artificial Intelligence",
+                description: "Medical imaging AI with 99.2% accuracy in early detection",
+                metrics: "99.2% Accuracy",
+                color: "yellow"
+              },
+              {
+                title: "IoT Smart Cities",
+                category: "Embedded Systems",
+                description: "Connected infrastructure reducing energy consumption by 40%",
+                metrics: "40% Energy Saved",
+                color: "purple"
+              }
+            ].map((project, index) => (
+              <div key={index} className="group relative bg-gradient-to-br from-sentia-dark/60 to-sentia-black/60 rounded-2xl p-6 border border-sentia-dark hover:border-sentia-cyan/40 transition-all duration-500 hover:transform hover:scale-105 cursor-pointer overflow-hidden">
+                <div className={`absolute inset-0 bg-gradient-to-br ${project.color === 'cyan' ? 'from-sentia-cyan/5' : project.color === 'yellow' ? 'from-sentia-yellow/5' : 'from-sentia-purple/5'} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
+                
+                <div className="relative z-10">
+                  <div className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-4 ${project.color === 'cyan' ? 'bg-sentia-cyan/20 text-sentia-cyan' : project.color === 'yellow' ? 'bg-sentia-yellow/20 text-sentia-yellow' : 'bg-sentia-purple/20 text-sentia-purple'}`}>
+                    {project.category}
+                  </div>
+                  
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-sentia-cyan transition-colors duration-300">
+                    {project.title}
+                  </h3>
+                  
+                  <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                    {project.description}
+                  </p>
+                  
+                  <div className={`inline-flex items-center px-4 py-2 rounded-lg ${project.color === 'cyan' ? 'bg-sentia-cyan/10 text-sentia-cyan' : project.color === 'yellow' ? 'bg-sentia-yellow/10 text-sentia-yellow' : 'bg-sentia-purple/10 text-sentia-purple'} text-sm font-semibold`}>
+                    <span className="mr-2">📊</span>
+                    {project.metrics}
+                  </div>
+                </div>
+                
+                <div className="absolute -bottom-2 -right-2 w-20 h-20 bg-sentia-cyan/10 rounded-full blur-xl group-hover:bg-sentia-cyan/20 transition-all duration-500"></div>
               </div>
             ))}
           </div>
@@ -255,27 +342,131 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 bg-sentia-black/90">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
-            Let's Build the <span className="text-sentia-cyan">Future</span> Together
-          </h2>
-          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-            Ready to transform your ideas into reality? Get in touch with our team of experts.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <a
-              href="mailto:contact@sentialab.com"
-              className="bg-sentia-cyan hover:bg-sentia-cyan/80 text-sentia-black font-semibold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
-            >
-              Email Us
-            </a>
-            <a
-              href="tel:+1234567890"
-              className="border-2 border-sentia-cyan text-sentia-cyan hover:bg-sentia-cyan hover:text-sentia-black font-semibold py-4 px-8 rounded-full transition-all duration-300"
-            >
-              Call Us
-            </a>
+      <section id="contact" className="py-24 px-4 bg-sentia-black/90 relative overflow-hidden">
+        {/* Background Animation */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-sentia-cyan/5 rounded-full blur-2xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-40 h-40 bg-sentia-purple/5 rounded-full blur-2xl animate-pulse" style={{animationDelay: '1s'}}></div>
+        </div>
+        
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Contact Info */}
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  Let's Build the <span className="text-sentia-cyan">Future</span> Together
+                </h2>
+                <p className="text-xl text-gray-300 leading-relaxed">
+                  Ready to transform your ideas into reality? Get in touch with our team of experts and discover how we can accelerate your innovation journey.
+                </p>
+              </div>
+              
+              {/* Contact Methods */}
+              <div className="space-y-6">
+                <div className="flex items-center space-x-4 group cursor-pointer">
+                  <div className="w-12 h-12 bg-sentia-cyan/20 rounded-xl flex items-center justify-center group-hover:bg-sentia-cyan/30 transition-colors duration-300">
+                    <svg className="w-6 h-6 text-sentia-cyan" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-white font-semibold">Email Us</h4>
+                    <p className="text-gray-400 text-sm">contact@sentialab.com</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-center space-x-4 group cursor-pointer">
+                  <div className="w-12 h-12 bg-sentia-yellow/20 rounded-xl flex items-center justify-center group-hover:bg-sentia-yellow/30 transition-colors duration-300">
+                    <svg className="w-6 h-6 text-sentia-yellow" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-white font-semibold">Call Us</h4>
+                    <p className="text-gray-400 text-sm">+1 (555) 123-4567</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-center space-x-4 group cursor-pointer">
+                  <div className="w-12 h-12 bg-sentia-purple/20 rounded-xl flex items-center justify-center group-hover:bg-sentia-purple/30 transition-colors duration-300">
+                    <svg className="w-6 h-6 text-sentia-purple" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-white font-semibold">Visit Us</h4>
+                    <p className="text-gray-400 text-sm">Silicon Valley, CA</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Quick Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 pt-6">
+                <a
+                  href="mailto:contact@sentialab.com"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-sentia-cyan hover:bg-sentia-cyan/80 text-sentia-black font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-sentia-cyan/25"
+                >
+                  <span>Start a Project</span>
+                  <svg className="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </a>
+                <button className="inline-flex items-center justify-center px-8 py-4 border-2 border-sentia-cyan text-sentia-cyan hover:bg-sentia-cyan hover:text-sentia-black font-semibold rounded-lg transition-all duration-300">
+                  Schedule Consultation
+                </button>
+              </div>
+            </div>
+            
+            {/* Right Side - Quick Contact Form */}
+            <div className="bg-gradient-to-br from-sentia-dark/40 to-sentia-black/40 backdrop-blur-sm rounded-2xl p-8 border border-sentia-cyan/20">
+              <h3 className="text-2xl font-bold text-white mb-6">Quick Contact</h3>
+              
+              <form className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="Your Name"
+                      className="w-full px-4 py-3 bg-sentia-dark/50 border border-sentia-dark rounded-lg text-white placeholder-gray-400 focus:border-sentia-cyan focus:outline-none focus:ring-2 focus:ring-sentia-cyan/20 transition-all duration-300"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="email"
+                      placeholder="Your Email"
+                      className="w-full px-4 py-3 bg-sentia-dark/50 border border-sentia-dark rounded-lg text-white placeholder-gray-400 focus:border-sentia-cyan focus:outline-none focus:ring-2 focus:ring-sentia-cyan/20 transition-all duration-300"
+                    />
+                  </div>
+                </div>
+                
+                <div>
+                  <select className="w-full px-4 py-3 bg-sentia-dark/50 border border-sentia-dark rounded-lg text-white focus:border-sentia-cyan focus:outline-none focus:ring-2 focus:ring-sentia-cyan/20 transition-all duration-300">
+                    <option value="">Select Service</option>
+                    <option value="robotics">Custom Robotics</option>
+                    <option value="ai">AI Development</option>
+                    <option value="iot">IoT Solutions</option>
+                    <option value="consulting">Consulting</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <textarea
+                    rows={4}
+                    placeholder="Tell us about your project..."
+                    className="w-full px-4 py-3 bg-sentia-dark/50 border border-sentia-dark rounded-lg text-white placeholder-gray-400 focus:border-sentia-cyan focus:outline-none focus:ring-2 focus:ring-sentia-cyan/20 transition-all duration-300 resize-none"
+                  ></textarea>
+                </div>
+                
+                <button
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-sentia-cyan to-sentia-yellow hover:from-sentia-cyan/80 hover:to-sentia-yellow/80 text-sentia-black font-semibold py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
@@ -301,14 +492,34 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* Floating Action Button */}
-      <div className="fixed bottom-8 right-8 z-50">
-        <button className="group bg-sentia-cyan hover:bg-sentia-cyan/80 text-sentia-black p-4 rounded-full shadow-2xl hover:shadow-sentia-cyan/25 transition-all duration-300 transform hover:scale-110 animate-bounce">
+      {/* Floating Action Buttons */}
+      <div className="fixed bottom-8 right-8 z-50 flex flex-col space-y-4">
+        {/* Main Contact Button */}
+        <button className="group bg-sentia-cyan hover:bg-sentia-cyan/80 text-sentia-black p-4 rounded-full shadow-2xl hover:shadow-sentia-cyan/25 transition-all duration-300 transform hover:scale-110 animate-bounce relative">
           <svg className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
             <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
             <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
           </svg>
           <span className="absolute -top-2 -right-2 w-3 h-3 bg-sentia-yellow rounded-full animate-pulse"></span>
+          
+          {/* Tooltip */}
+          <div className="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-sentia-black/90 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+            Get in Touch
+            <div className="absolute left-full top-1/2 -translate-y-1/2 border-4 border-transparent border-l-sentia-black/90"></div>
+          </div>
+        </button>
+        
+        {/* Scroll to Top Button */}
+        <button className="group bg-sentia-purple/20 hover:bg-sentia-purple/40 backdrop-blur-sm text-sentia-purple border border-sentia-purple/30 p-3 rounded-full shadow-lg hover:shadow-sentia-purple/25 transition-all duration-300 transform hover:scale-110 opacity-0 scroll-to-top">
+          <svg className="w-5 h-5 group-hover:-translate-y-1 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
+          </svg>
+          
+          {/* Tooltip */}
+          <div className="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-sentia-black/90 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+            Back to Top
+            <div className="absolute left-full top-1/2 -translate-y-1/2 border-4 border-transparent border-l-sentia-black/90"></div>
+          </div>
         </button>
       </div>
     </div>
