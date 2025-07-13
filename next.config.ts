@@ -15,7 +15,12 @@ const nextConfig: NextConfig = {
      *
      * @see https://nextjs.org/docs/app/api-reference/next-config-js/basePath
      */
-    basePath: isDevelopment ? undefined :"/website",
+    basePath: isDevelopment ? "" : "/website",
+
+    /**
+     * Set asset prefix for GitHub Pages
+     */
+    assetPrefix: isDevelopment ? "" : "/website/",
   
     /**
      * Disable server-based image optimization. Next.js does not support
@@ -26,6 +31,11 @@ const nextConfig: NextConfig = {
     images: {
       unoptimized: true,
     },
+    
+    /**
+     * Ensure trailing slash for static export
+     */
+    trailingSlash: true,
 };
 
 export default nextConfig;

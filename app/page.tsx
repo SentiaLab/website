@@ -1,6 +1,7 @@
 import Image from "next/image";
 import ScrollEffects from "./components/ScrollEffects";
 import ParticleBackground from "./components/ParticleBackground";
+import { assetPath } from "./lib/utils";
 
 export default function Home() {
   return (
@@ -26,7 +27,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-sentia-cyan/20 rounded-xl blur-md group-hover:bg-sentia-cyan/30 transition-all duration-300"></div>
                 <div className="relative bg-gradient-to-br from-sentia-dark/60 to-sentia-black/60 p-2 rounded-xl border border-sentia-cyan/20 group-hover:border-sentia-cyan/40 transition-all duration-300">
                   <Image
-                    src="/sentialab.png"
+                    src={assetPath("/sentialab.png")}
                     alt="SentiaLab Logo"
                     width={40}
                     height={40}
@@ -188,7 +189,7 @@ export default function Home() {
             <div className="relative animate-on-scroll">
               <div className="relative z-10 bg-gradient-to-br from-sentia-dark/40 to-sentia-black/40 backdrop-blur-sm rounded-2xl p-8 border border-sentia-cyan/20 hover:border-sentia-cyan/40 transition-all duration-500 card-hover pulse-glow">
                 <Image
-                  src="/sentialab.png"
+                  src={assetPath("/sentialab.png")}
                   alt="SentiaLab Logo"
                   width={200}
                   height={200}
@@ -567,7 +568,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
               <Image
-                src="/sentialab.png"
+                src={assetPath("/sentialab.png")}
                 alt="SentiaLab Logo"
                 width={32}
                 height={32}

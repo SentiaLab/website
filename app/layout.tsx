@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { assetPath } from "./lib/utils";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -19,12 +20,12 @@ export const metadata: Metadata = {
   description: "SentiaLab is a tech company focused on robotics, AI and embedded systems solutions.",
   icons: {
     icon: [
-      { url: '/favicon.ico' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: assetPath('/favicon.ico') },
+      { url: assetPath('/favicon-16x16.png'), sizes: '16x16', type: 'image/png' },
+      { url: assetPath('/favicon-32x32.png'), sizes: '32x32', type: 'image/png' },
     ],
     apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      { url: assetPath('/apple-touch-icon.png'), sizes: '180x180', type: 'image/png' },
     ],
   },
 };
