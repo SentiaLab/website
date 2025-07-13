@@ -27,15 +27,79 @@ export default function ScrollEffects() {
       }
     };
 
+    // Animated Counter Function
+    const animateCounter = (element: HTMLElement, target: number, duration: number = 2000) => {
+      const start = 0;
+      const increment = target / (duration / 16);
+      let current = start;
+      
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          element.textContent = target.toString() + '+';
+          clearInterval(timer);
+        } else {
+          element.textContent = Math.floor(current).toString() + '+';
+        }
+      }, 16);
+    };
+
+    // Intersection Observer for reveal animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const element = entry.target as HTMLElement;
+          
+          // Add reveal animation
+          if (element.classList.contains('animate-on-scroll')) {
+            element.classList.add('in-view');
+          }
+          
+          // Animate counters
+          if (element.classList.contains('counter')) {
+            const target = parseInt(element.dataset.target || '0');
+            animateCounter(element, target);
+            observer.unobserve(element);
+          }
+          
+          // Stagger animations for card grids
+          if (element.classList.contains('stagger-item')) {
+            const delay = parseInt(element.dataset.delay || '0');
+            setTimeout(() => {
+              element.classList.add('in-view');
+            }, delay);
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Observe all elements that need scroll animations
+    const scrollElements = document.querySelectorAll('.animate-on-scroll, .counter, .stagger-item');
+    scrollElements.forEach(el => observer.observe(el));
+
     const handleScroll = () => {
       updateScrollProgress();
       
-      // Add parallax effect to background elements
+      // Enhanced parallax effect
       const scrolled = window.scrollY;
-      const parallax = document.querySelectorAll('.parallax');
-      parallax.forEach((element) => {
-        const speed = 0.5;
+      const parallaxElements = document.querySelectorAll('.parallax');
+      
+      parallaxElements.forEach((element) => {
+        const speed = parseFloat(element.getAttribute('data-speed') || '0.5');
         const yPos = -(scrolled * speed);
+        (element as HTMLElement).style.transform = `translateY(${yPos}px)`;
+      });
+
+      // Floating elements animation
+      const floatingElements = document.querySelectorAll('.floating');
+      floatingElements.forEach((element, index) => {
+        const speed = 0.002 + (index * 0.001);
+        const yPos = Math.sin(scrolled * speed) * 10;
         (element as HTMLElement).style.transform = `translateY(${yPos}px)`;
       });
     };
@@ -117,6 +181,7 @@ export default function ScrollEffects() {
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
       if (scrollToTopBtn) {
         scrollToTopBtn.removeEventListener('click', scrollToTop);
       }

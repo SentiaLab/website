@@ -1,9 +1,11 @@
 import Image from "next/image";
 import ScrollEffects from "./components/ScrollEffects";
+import ParticleBackground from "./components/ParticleBackground";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-sentia-black via-sentia-dark to-sentia-dark">
+    <div className="min-h-screen bg-gradient-to-br from-sentia-black via-sentia-dark to-sentia-dark relative">
+      <ParticleBackground />
       <ScrollEffects />
       
       {/* Scroll Progress Indicator */}
@@ -121,105 +123,120 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="pt-24 pb-20 px-4 relative overflow-hidden">
-        {/* Animated Background Particles */}
+        {/* Enhanced Animated Background Particles */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-sentia-cyan/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-sentia-purple/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
-          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-sentia-yellow/5 rounded-full blur-2xl animate-pulse" style={{animationDelay: '2s'}}></div>
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-sentia-cyan/10 rounded-full blur-3xl animate-pulse morphing"></div>
+          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-sentia-purple/10 rounded-full blur-3xl animate-pulse morphing" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-sentia-yellow/5 rounded-full blur-2xl animate-pulse morphing" style={{animationDelay: '2s'}}></div>
+          
+          {/* Floating geometric shapes */}
+          <div className="absolute top-20 right-20 w-16 h-16 border border-sentia-cyan/20 rounded-lg floating parallax" data-speed="0.3"></div>
+          <div className="absolute bottom-32 left-16 w-12 h-12 bg-sentia-yellow/10 rounded-full floating parallax" data-speed="0.4" style={{animationDelay: '1.5s'}}></div>
+          <div className="absolute top-1/3 right-1/3 w-8 h-8 border border-sentia-purple/30 rotate-45 floating parallax" data-speed="0.2" style={{animationDelay: '3s'}}></div>
         </div>
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="space-y-8">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-sentia-cyan/10 border border-sentia-cyan/20 text-sentia-cyan text-sm font-medium animate-bounce">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-sentia-cyan/10 border border-sentia-cyan/20 text-sentia-cyan text-sm font-medium animate-bounce pulse-glow">
                 🚀 Pioneering Tech Innovation
               </div>
               
               <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
                 Building the
-                <span className="block text-transparent bg-gradient-to-r from-sentia-cyan via-sentia-yellow to-sentia-cyan bg-clip-text animate-pulse bg-size-200 bg-pos-0 hover:bg-pos-100 transition-all duration-3000">
+                <span className="block text-transparent bg-gradient-to-r from-sentia-cyan via-sentia-yellow to-sentia-cyan bg-clip-text text-shimmer bg-size-200 bg-pos-0 hover:bg-pos-100 transition-all duration-3000">
                   Future of Tech
                 </span>
               </h1>
               
-              <p className="text-xl text-gray-300 leading-relaxed max-w-lg opacity-0 animate-fade-in-up" style={{animationDelay: '0.5s', animationFillMode: 'forwards'}}>
+              <p className="text-xl text-gray-300 leading-relaxed max-w-lg animate-on-scroll">
                 SentiaLab specializes in cutting-edge robotics, artificial intelligence, and embedded systems that transform industries and enhance human capabilities.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in-up" style={{animationDelay: '1s', animationFillMode: 'forwards'}}>
-                <button className="group inline-flex items-center justify-center px-8 py-4 bg-sentia-cyan hover:bg-sentia-cyan/80 text-sentia-black font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-sentia-cyan/25">
+              <div className="flex flex-col sm:flex-row gap-4 animate-on-scroll">
+                <button className="group inline-flex items-center justify-center px-8 py-4 bg-sentia-cyan hover:bg-sentia-cyan/80 text-sentia-black font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-sentia-cyan/25 pulse-glow">
                   <span>Explore Solutions</span>
                   <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>
                 </button>
-                <button className="group inline-flex items-center justify-center px-8 py-4 border-2 border-sentia-dark text-white hover:border-sentia-cyan hover:text-sentia-cyan font-semibold rounded-lg transition-all duration-300 relative overflow-hidden">
+                <button className="group inline-flex items-center justify-center px-8 py-4 border-2 border-sentia-dark text-white hover:border-sentia-cyan hover:text-sentia-cyan font-semibold rounded-lg transition-all duration-300 relative overflow-hidden card-hover">
                   <span className="relative z-10">Watch Demo</span>
                   <div className="absolute inset-0 bg-sentia-cyan/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                 </button>
               </div>
               
-              {/* Animated Stats */}
-              <div className="grid grid-cols-3 gap-8 pt-8 border-t border-sentia-dark/50 opacity-0 animate-fade-in-up" style={{animationDelay: '1.5s', animationFillMode: 'forwards'}}>
-                <div className="group cursor-pointer">
-                  <div className="text-2xl font-bold text-sentia-cyan group-hover:scale-110 transition-transform duration-300">50+</div>
+              {/* Enhanced Animated Stats with Counters */}
+              <div className="grid grid-cols-3 gap-8 pt-8 border-t border-sentia-dark/50 animate-on-scroll">
+                <div className="group cursor-pointer text-center">
+                  <div className="counter text-3xl font-bold text-sentia-cyan group-hover:scale-110 transition-transform duration-300" data-target="50">0+</div>
                   <div className="text-sm text-gray-400">Projects Delivered</div>
                 </div>
-                <div className="group cursor-pointer">
-                  <div className="text-2xl font-bold text-sentia-cyan group-hover:scale-110 transition-transform duration-300">15+</div>
+                <div className="group cursor-pointer text-center">
+                  <div className="counter text-3xl font-bold text-sentia-cyan group-hover:scale-110 transition-transform duration-300" data-target="15">0+</div>
                   <div className="text-sm text-gray-400">Industry Partners</div>
                 </div>
-                <div className="group cursor-pointer">
-                  <div className="text-2xl font-bold text-sentia-cyan group-hover:scale-110 transition-transform duration-300">5+</div>
+                <div className="group cursor-pointer text-center">
+                  <div className="counter text-3xl font-bold text-sentia-cyan group-hover:scale-110 transition-transform duration-300" data-target="5">0+</div>
                   <div className="text-sm text-gray-400">Years Experience</div>
                 </div>
               </div>
             </div>
             
-            {/* Right Visual with Floating Animation */}
-            <div className="relative opacity-0 animate-fade-in-right" style={{animationDelay: '0.8s', animationFillMode: 'forwards'}}>
-              <div className="relative z-10 bg-gradient-to-br from-sentia-dark/40 to-sentia-black/40 backdrop-blur-sm rounded-2xl p-8 border border-sentia-cyan/20 hover:border-sentia-cyan/40 transition-all duration-500 hover:transform hover:scale-105">
+            {/* Right Visual with Enhanced Floating Animation */}
+            <div className="relative animate-on-scroll">
+              <div className="relative z-10 bg-gradient-to-br from-sentia-dark/40 to-sentia-black/40 backdrop-blur-sm rounded-2xl p-8 border border-sentia-cyan/20 hover:border-sentia-cyan/40 transition-all duration-500 card-hover pulse-glow">
                 <Image
                   src="/sentialab.png"
                   alt="SentiaLab Logo"
                   width={200}
                   height={200}
-                  className="mx-auto mb-6 filter brightness-110 hover:brightness-125 transition-all duration-300"
+                  className="mx-auto mb-6 filter brightness-110 hover:brightness-125 transition-all duration-300 floating"
                 />
                 
-                {/* Animated Tech Stack Icons */}
+                {/* Enhanced Animated Tech Stack Icons */}
                 <div className="grid grid-cols-3 gap-4 mt-8">
-                  <div className="bg-sentia-cyan/10 rounded-xl p-4 text-center border border-sentia-cyan/20 hover:bg-sentia-cyan/20 hover:scale-110 transition-all duration-300 cursor-pointer">
-                    <div className="text-2xl mb-2 animate-bounce" style={{animationDelay: '2s'}}>🤖</div>
+                  <div className="stagger-item bg-sentia-cyan/10 rounded-xl p-4 text-center border border-sentia-cyan/20 hover:bg-sentia-cyan/20 card-hover cursor-pointer" data-delay="0">
+                    <div className="text-2xl mb-2 floating">🤖</div>
                     <div className="text-xs text-gray-300">Robotics</div>
                   </div>
-                  <div className="bg-sentia-yellow/10 rounded-xl p-4 text-center border border-sentia-yellow/20 hover:bg-sentia-yellow/20 hover:scale-110 transition-all duration-300 cursor-pointer">
-                    <div className="text-2xl mb-2 animate-bounce" style={{animationDelay: '2.5s'}}>🧠</div>
+                  <div className="stagger-item bg-sentia-yellow/10 rounded-xl p-4 text-center border border-sentia-yellow/20 hover:bg-sentia-yellow/20 card-hover cursor-pointer" data-delay="200">
+                    <div className="text-2xl mb-2 floating" style={{animationDelay: '1s'}}>🧠</div>
                     <div className="text-xs text-gray-300">AI/ML</div>
                   </div>
-                  <div className="bg-sentia-purple/10 rounded-xl p-4 text-center border border-sentia-purple/20 hover:bg-sentia-purple/20 hover:scale-110 transition-all duration-300 cursor-pointer">
-                    <div className="text-2xl mb-2 animate-bounce" style={{animationDelay: '3s'}}>⚡</div>
+                  <div className="stagger-item bg-sentia-purple/10 rounded-xl p-4 text-center border border-sentia-purple/20 hover:bg-sentia-purple/20 card-hover cursor-pointer" data-delay="400">
+                    <div className="text-2xl mb-2 floating" style={{animationDelay: '2s'}}>⚡</div>
                     <div className="text-xs text-gray-300">IoT</div>
                   </div>
                 </div>
               </div>
               
-              {/* Enhanced Background Decoration with Animation */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-sentia-cyan/20 rounded-full blur-xl animate-pulse"></div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-sentia-purple/20 rounded-full blur-xl animate-pulse" style={{animationDelay: '1s'}}></div>
-              <div className="absolute top-1/2 -right-8 w-16 h-16 bg-sentia-yellow/20 rounded-full blur-lg animate-pulse" style={{animationDelay: '2s'}}></div>
+              {/* Enhanced Background Decoration with More Animation */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-sentia-cyan/20 rounded-full blur-xl animate-pulse floating"></div>
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-sentia-purple/20 rounded-full blur-xl animate-pulse floating" style={{animationDelay: '1s'}}></div>
+              <div className="absolute top-1/2 -right-8 w-16 h-16 bg-sentia-yellow/20 rounded-full blur-lg animate-pulse floating" style={{animationDelay: '2s'}}></div>
+              
+              {/* Additional decorative elements */}
+              <div className="absolute top-8 left-8 w-3 h-3 bg-sentia-cyan rounded-full animate-ping" style={{animationDelay: '3s'}}></div>
+              <div className="absolute bottom-8 right-8 w-2 h-2 bg-sentia-yellow rounded-full animate-ping" style={{animationDelay: '4s'}}></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 px-4 bg-sentia-black/30 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+      <section id="about" className="py-24 px-4 bg-sentia-black/30 backdrop-blur-sm relative">
+        {/* Parallax background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-10 w-20 h-20 border border-sentia-cyan/10 rounded-full parallax" data-speed="0.3"></div>
+          <div className="absolute bottom-20 right-20 w-16 h-16 bg-sentia-purple/5 rounded-lg rotate-45 parallax" data-speed="0.4"></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-16 animate-on-scroll">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              What We <span className="text-sentia-cyan">Specialize In</span>
+              What We <span className="text-sentia-cyan text-shimmer">Specialize In</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Our expertise spans across three core technological domains that are shaping the future of industry and innovation.
@@ -228,11 +245,11 @@ export default function Home() {
           
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Robotics */}
-            <div className="group relative overflow-hidden bg-gradient-to-br from-sentia-dark/80 to-sentia-black/80 rounded-2xl p-8 border border-sentia-cyan/20 hover:border-sentia-cyan/40 transition-all duration-500">
+            <div className="stagger-item group relative overflow-hidden bg-gradient-to-br from-sentia-dark/80 to-sentia-black/80 rounded-2xl p-8 border border-sentia-cyan/20 hover:border-sentia-cyan/40 transition-all duration-500 card-hover" data-delay="0">
               <div className="absolute inset-0 bg-gradient-to-br from-sentia-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10">
-                <div className="w-16 h-16 bg-sentia-cyan/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-3xl">🤖</span>
+                <div className="w-16 h-16 bg-sentia-cyan/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 pulse-glow">
+                  <span className="text-3xl floating">🤖</span>
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4">Advanced Robotics</h3>
                 <p className="text-gray-300 leading-relaxed mb-6">
@@ -240,15 +257,15 @@ export default function Home() {
                 </p>
                 <ul className="space-y-2 text-sm text-gray-400">
                   <li className="flex items-center">
-                    <span className="w-2 h-2 bg-sentia-cyan rounded-full mr-3"></span>
+                    <span className="w-2 h-2 bg-sentia-cyan rounded-full mr-3 animate-pulse"></span>
                     Industrial Automation
                   </li>
                   <li className="flex items-center">
-                    <span className="w-2 h-2 bg-sentia-cyan rounded-full mr-3"></span>
+                    <span className="w-2 h-2 bg-sentia-cyan rounded-full mr-3 animate-pulse" style={{animationDelay: '0.5s'}}></span>
                     Autonomous Navigation
                   </li>
                   <li className="flex items-center">
-                    <span className="w-2 h-2 bg-sentia-cyan rounded-full mr-3"></span>
+                    <span className="w-2 h-2 bg-sentia-cyan rounded-full mr-3 animate-pulse" style={{animationDelay: '1s'}}></span>
                     Human-Robot Interaction
                   </li>
                 </ul>
@@ -256,11 +273,11 @@ export default function Home() {
             </div>
             
             {/* AI */}
-            <div className="group relative overflow-hidden bg-gradient-to-br from-sentia-dark/80 to-sentia-black/80 rounded-2xl p-8 border border-sentia-yellow/20 hover:border-sentia-yellow/40 transition-all duration-500">
+            <div className="stagger-item group relative overflow-hidden bg-gradient-to-br from-sentia-dark/80 to-sentia-black/80 rounded-2xl p-8 border border-sentia-yellow/20 hover:border-sentia-yellow/40 transition-all duration-500 card-hover" data-delay="200">
               <div className="absolute inset-0 bg-gradient-to-br from-sentia-yellow/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10">
-                <div className="w-16 h-16 bg-sentia-yellow/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-3xl">🧠</span>
+                <div className="w-16 h-16 bg-sentia-yellow/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 pulse-glow">
+                  <span className="text-3xl floating" style={{animationDelay: '1s'}}>🧠</span>
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4">Artificial Intelligence</h3>
                 <p className="text-gray-300 leading-relaxed mb-6">
@@ -268,15 +285,15 @@ export default function Home() {
                 </p>
                 <ul className="space-y-2 text-sm text-gray-400">
                   <li className="flex items-center">
-                    <span className="w-2 h-2 bg-sentia-yellow rounded-full mr-3"></span>
+                    <span className="w-2 h-2 bg-sentia-yellow rounded-full mr-3 animate-pulse"></span>
                     Machine Learning Models
                   </li>
                   <li className="flex items-center">
-                    <span className="w-2 h-2 bg-sentia-yellow rounded-full mr-3"></span>
+                    <span className="w-2 h-2 bg-sentia-yellow rounded-full mr-3 animate-pulse" style={{animationDelay: '0.5s'}}></span>
                     Computer Vision
                   </li>
                   <li className="flex items-center">
-                    <span className="w-2 h-2 bg-sentia-yellow rounded-full mr-3"></span>
+                    <span className="w-2 h-2 bg-sentia-yellow rounded-full mr-3 animate-pulse" style={{animationDelay: '1s'}}></span>
                     Predictive Analytics
                   </li>
                 </ul>
@@ -284,11 +301,11 @@ export default function Home() {
             </div>
             
             {/* Embedded Systems */}
-            <div className="group relative overflow-hidden bg-gradient-to-br from-sentia-dark/80 to-sentia-black/80 rounded-2xl p-8 border border-sentia-purple/20 hover:border-sentia-purple/40 transition-all duration-500">
+            <div className="stagger-item group relative overflow-hidden bg-gradient-to-br from-sentia-dark/80 to-sentia-black/80 rounded-2xl p-8 border border-sentia-purple/20 hover:border-sentia-purple/40 transition-all duration-500 card-hover" data-delay="400">
               <div className="absolute inset-0 bg-gradient-to-br from-sentia-purple/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10">
-                <div className="w-16 h-16 bg-sentia-purple/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-3xl">⚡</span>
+                <div className="w-16 h-16 bg-sentia-purple/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 pulse-glow">
+                  <span className="text-3xl floating" style={{animationDelay: '2s'}}>⚡</span>
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4">Embedded Systems</h3>
                 <p className="text-gray-300 leading-relaxed mb-6">
@@ -296,15 +313,15 @@ export default function Home() {
                 </p>
                 <ul className="space-y-2 text-sm text-gray-400">
                   <li className="flex items-center">
-                    <span className="w-2 h-2 bg-sentia-purple rounded-full mr-3"></span>
+                    <span className="w-2 h-2 bg-sentia-purple rounded-full mr-3 animate-pulse"></span>
                     IoT Device Development
                   </li>
                   <li className="flex items-center">
-                    <span className="w-2 h-2 bg-sentia-purple rounded-full mr-3"></span>
+                    <span className="w-2 h-2 bg-sentia-purple rounded-full mr-3 animate-pulse" style={{animationDelay: '0.5s'}}></span>
                     Real-time Systems
                   </li>
                   <li className="flex items-center">
-                    <span className="w-2 h-2 bg-sentia-purple rounded-full mr-3"></span>
+                    <span className="w-2 h-2 bg-sentia-purple rounded-full mr-3 animate-pulse" style={{animationDelay: '1s'}}></span>
                     Edge Computing
                   </li>
                 </ul>
@@ -315,25 +332,34 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 px-4 bg-sentia-dark/20">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-12">
-            Our <span className="text-sentia-cyan">Services</span>
+      <section id="services" className="py-20 px-4 bg-sentia-dark/20 relative">
+        {/* Parallax decorations */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-10 right-10 w-24 h-24 border border-sentia-cyan/10 rounded-full parallax" data-speed="0.2"></div>
+          <div className="absolute bottom-10 left-10 w-16 h-16 bg-sentia-yellow/5 rounded-lg parallax" data-speed="0.3"></div>
+        </div>
+        
+        <div className="max-w-6xl mx-auto relative z-10">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-12 animate-on-scroll">
+            Our <span className="text-sentia-cyan text-shimmer">Services</span>
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: "Custom Robotics", desc: "Tailored robotic solutions for industrial and consumer applications", icon: "🤖" },
-              { title: "AI Development", desc: "Machine learning models and AI integration services", icon: "🧠" },
-              { title: "IoT Solutions", desc: "Connected device ecosystems and smart infrastructure", icon: "🌐" },
-              { title: "Consulting", desc: "Expert guidance on technology adoption and digital transformation", icon: "💡" }
+              { title: "Custom Robotics", desc: "Tailored robotic solutions for industrial and consumer applications", icon: "🤖", delay: 0 },
+              { title: "AI Development", desc: "Machine learning models and AI integration services", icon: "🧠", delay: 100 },
+              { title: "IoT Solutions", desc: "Connected device ecosystems and smart infrastructure", icon: "🌐", delay: 200 },
+              { title: "Consulting", desc: "Expert guidance on technology adoption and digital transformation", icon: "💡", delay: 300 }
             ].map((service, index) => (
-              <div key={index} className="group p-6 bg-sentia-black/60 rounded-xl border border-sentia-dark hover:border-sentia-cyan/50 transition-all duration-300 hover:transform hover:scale-105 cursor-pointer relative overflow-hidden">
+              <div key={index} className={`stagger-item group p-6 bg-sentia-black/60 rounded-xl border border-sentia-dark hover:border-sentia-cyan/50 transition-all duration-300 card-hover cursor-pointer relative overflow-hidden`} data-delay={service.delay}>
                 <div className="absolute inset-0 bg-gradient-to-br from-sentia-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10">
-                  <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">{service.icon}</div>
-                  <h4 className="text-xl font-semibold text-sentia-cyan mb-3">{service.title}</h4>
+                  <div className="text-3xl mb-4 floating group-hover:scale-110 transition-transform duration-300" style={{animationDelay: `${index * 0.5}s`}}>{service.icon}</div>
+                  <h4 className="text-xl font-semibold text-sentia-cyan mb-3 group-hover:text-white transition-colors duration-300">{service.title}</h4>
                   <p className="text-gray-300 text-sm leading-relaxed">{service.desc}</p>
                 </div>
+                
+                {/* Decorative corner accent */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-sentia-cyan/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             ))}
           </div>
@@ -348,7 +374,7 @@ export default function Home() {
               Innovation in <span className="text-sentia-yellow">Action</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Discover how we're transforming industries with cutting-edge technology solutions.
+              Discover how we&apos;re transforming industries with cutting-edge technology solutions.
             </p>
           </div>
           
@@ -419,7 +445,7 @@ export default function Home() {
             <div className="space-y-8">
               <div>
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                  Let's Build the <span className="text-sentia-cyan">Future</span> Together
+                  Let&apos;s Build the <span className="text-sentia-cyan">Future</span> Together
                 </h2>
                 <p className="text-xl text-gray-300 leading-relaxed">
                   Ready to transform your ideas into reality? Get in touch with our team of experts and discover how we can accelerate your innovation journey.
