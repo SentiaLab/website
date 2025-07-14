@@ -585,21 +585,6 @@ export default function Home() {
 
       {/* Floating Action Buttons */}
       <div className="fixed bottom-8 right-8 z-50 flex flex-col space-y-4">
-        {/* Main Contact Button */}
-        <button className="group bg-sentia-cyan hover:bg-sentia-cyan/80 text-sentia-black p-4 rounded-full shadow-2xl hover:shadow-sentia-cyan/25 transition-all duration-300 transform hover:scale-110 animate-bounce relative">
-          <svg className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-          </svg>
-          <span className="absolute -top-2 -right-2 w-3 h-3 bg-sentia-yellow rounded-full animate-pulse"></span>
-          
-          {/* Tooltip */}
-          <div className="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-sentia-black/90 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-            Get in Touch
-            <div className="absolute left-full top-1/2 -translate-y-1/2 border-4 border-transparent border-l-sentia-black/90"></div>
-          </div>
-        </button>
-        
         {/* Scroll to Top Button */}
         <button className="group bg-sentia-purple/20 hover:bg-sentia-purple/40 backdrop-blur-sm text-sentia-purple border border-sentia-purple/30 p-3 rounded-full shadow-lg hover:shadow-sentia-purple/25 transition-all duration-300 transform hover:scale-110 opacity-0 scroll-to-top">
           <svg className="w-5 h-5 group-hover:-translate-y-1 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
