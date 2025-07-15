@@ -2,6 +2,18 @@ import Image from "next/image";
 import ScrollEffects from "./components/ScrollEffects";
 import ParticleBackground from "./components/ParticleBackground";
 import { assetPath } from "./lib/utils";
+import { 
+  FaRocket, 
+  FaRobot, 
+  FaBrain, 
+  FaBolt, 
+  FaNetworkWired, 
+  FaLightbulb, 
+  FaChartBar,
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt 
+} from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -136,7 +148,8 @@ export default function Home() {
             {/* Left Content */}
             <div className="space-y-8">
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-sentia-cyan/10 border border-sentia-cyan/20 text-sentia-cyan text-sm font-medium animate-bounce pulse-glow">
-                🚀 Pioneering Tech Innovation
+                <FaRocket className="mr-2" />
+                Pioneering Tech Innovation
               </div>
               
               <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
@@ -194,15 +207,15 @@ export default function Home() {
                 {/* Enhanced Animated Tech Stack Icons */}
                 <div className="grid grid-cols-3 gap-4 mt-8">
                   <div className="stagger-item bg-sentia-cyan/10 rounded-xl p-4 text-center border border-sentia-cyan/20 hover:bg-sentia-cyan/20 card-hover cursor-pointer" data-delay="0">
-                    <div className="text-2xl mb-2 floating">🤖</div>
+                    <FaRobot className="text-2xl mb-2 mx-auto text-sentia-cyan floating" />
                     <div className="text-xs text-gray-300">Robotics</div>
                   </div>
                   <div className="stagger-item bg-sentia-yellow/10 rounded-xl p-4 text-center border border-sentia-yellow/20 hover:bg-sentia-yellow/20 card-hover cursor-pointer" data-delay="200">
-                    <div className="text-2xl mb-2 floating" style={{animationDelay: '1s'}}>🧠</div>
+                    <FaBrain className="text-2xl mb-2 mx-auto text-sentia-yellow floating" style={{animationDelay: '1s'}} />
                     <div className="text-xs text-gray-300">AI/ML</div>
                   </div>
                   <div className="stagger-item bg-sentia-purple/10 rounded-xl p-4 text-center border border-sentia-purple/20 hover:bg-sentia-purple/20 card-hover cursor-pointer" data-delay="400">
-                    <div className="text-2xl mb-2 floating" style={{animationDelay: '2s'}}>⚡</div>
+                    <FaBolt className="text-2xl mb-2 mx-auto text-sentia-purple floating" style={{animationDelay: '2s'}} />
                     <div className="text-xs text-gray-300">IoT</div>
                   </div>
                 </div>
@@ -245,7 +258,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-br from-sentia-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10">
                 <div className="w-16 h-16 bg-sentia-cyan/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 pulse-glow">
-                  <span className="text-3xl floating">🤖</span>
+                  <FaRobot className="text-3xl text-sentia-cyan floating" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4">Advanced Robotics</h3>
                 <p className="text-gray-300 leading-relaxed mb-6">
@@ -273,7 +286,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-br from-sentia-yellow/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10">
                 <div className="w-16 h-16 bg-sentia-yellow/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 pulse-glow">
-                  <span className="text-3xl floating" style={{animationDelay: '1s'}}>🧠</span>
+                  <FaBrain className="text-3xl text-sentia-yellow floating" style={{animationDelay: '1s'}} />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4">Artificial Intelligence</h3>
                 <p className="text-gray-300 leading-relaxed mb-6">
@@ -301,7 +314,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-br from-sentia-purple/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10">
                 <div className="w-16 h-16 bg-sentia-purple/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 pulse-glow">
-                  <span className="text-3xl floating" style={{animationDelay: '2s'}}>⚡</span>
+                  <FaBolt className="text-3xl text-sentia-purple floating" style={{animationDelay: '2s'}} />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4">Embedded Systems</h3>
                 <p className="text-gray-300 leading-relaxed mb-6">
@@ -341,23 +354,26 @@ export default function Home() {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: "Custom Robotics", desc: "Tailored robotic solutions for industrial and consumer applications", icon: "🤖", delay: 0 },
-              { title: "AI Development", desc: "Machine learning models and AI integration services", icon: "🧠", delay: 100 },
-              { title: "IoT Solutions", desc: "Connected device ecosystems and smart infrastructure", icon: "🌐", delay: 200 },
-              { title: "Consulting", desc: "Expert guidance on technology adoption and digital transformation", icon: "💡", delay: 300 }
-            ].map((service, index) => (
-              <div key={index} className={`stagger-item group p-6 bg-sentia-black/60 rounded-xl border border-sentia-dark hover:border-sentia-cyan/50 transition-all duration-300 card-hover cursor-pointer relative overflow-hidden`} data-delay={service.delay}>
-                <div className="absolute inset-0 bg-gradient-to-br from-sentia-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative z-10">
-                  <div className="text-3xl mb-4 floating group-hover:scale-110 transition-transform duration-300" style={{animationDelay: `${index * 0.5}s`}}>{service.icon}</div>
-                  <h4 className="text-xl font-semibold text-sentia-cyan mb-3 group-hover:text-white transition-colors duration-300">{service.title}</h4>
-                  <p className="text-gray-300 text-sm leading-relaxed">{service.desc}</p>
+              { title: "Custom Robotics", desc: "Tailored robotic solutions for industrial and consumer applications", icon: FaRobot, delay: 0 },
+              { title: "AI Development", desc: "Machine learning models and AI integration services", icon: FaBrain, delay: 100 },
+              { title: "IoT Solutions", desc: "Connected device ecosystems and smart infrastructure", icon: FaNetworkWired, delay: 200 },
+              { title: "Consulting", desc: "Expert guidance on technology adoption and digital transformation", icon: FaLightbulb, delay: 300 }
+            ].map((service, index) => {
+              const IconComponent = service.icon;
+              return (
+                <div key={index} className={`stagger-item group p-6 bg-sentia-black/60 rounded-xl border border-sentia-dark hover:border-sentia-cyan/50 transition-all duration-300 card-hover cursor-pointer relative overflow-hidden`} data-delay={service.delay}>
+                  <div className="absolute inset-0 bg-gradient-to-br from-sentia-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative z-10">
+                    <IconComponent className="text-3xl mb-4 text-sentia-cyan floating group-hover:scale-110 transition-transform duration-300" style={{animationDelay: `${index * 0.5}s`}} />
+                    <h4 className="text-xl font-semibold text-sentia-cyan mb-3 group-hover:text-white transition-colors duration-300">{service.title}</h4>
+                    <p className="text-gray-300 text-sm leading-relaxed">{service.desc}</p>
+                  </div>
+                  
+                  {/* Decorative corner accent */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-sentia-cyan/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
-                
-                {/* Decorative corner accent */}
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-sentia-cyan/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -415,7 +431,7 @@ export default function Home() {
                   </p>
                   
                   <div className={`inline-flex items-center px-4 py-2 rounded-lg ${project.color === 'cyan' ? 'bg-sentia-cyan/10 text-sentia-cyan' : project.color === 'yellow' ? 'bg-sentia-yellow/10 text-sentia-yellow' : 'bg-sentia-purple/10 text-sentia-purple'} text-sm font-semibold`}>
-                    <span className="mr-2">📊</span>
+                    <FaChartBar className="mr-2" />
                     {project.metrics}
                   </div>
                 </div>
@@ -452,10 +468,7 @@ export default function Home() {
               <div className="space-y-6">
                 <div className="flex items-center space-x-4 group cursor-pointer">
                   <div className="w-12 h-12 bg-sentia-cyan/20 rounded-xl flex items-center justify-center group-hover:bg-sentia-cyan/30 transition-colors duration-300">
-                    <svg className="w-6 h-6 text-sentia-cyan" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                    </svg>
+                    <FaEnvelope className="w-6 h-6 text-sentia-cyan" />
                   </div>
                   <div>
                     <h4 className="text-white font-semibold">Email Us</h4>
@@ -465,9 +478,7 @@ export default function Home() {
                 
                 <div className="flex items-center space-x-4 group cursor-pointer">
                   <div className="w-12 h-12 bg-sentia-yellow/20 rounded-xl flex items-center justify-center group-hover:bg-sentia-yellow/30 transition-colors duration-300">
-                    <svg className="w-6 h-6 text-sentia-yellow" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                    </svg>
+                    <FaPhone className="w-6 h-6 text-sentia-yellow" />
                   </div>
                   <div>
                     <h4 className="text-white font-semibold">Call Us</h4>
@@ -477,9 +488,7 @@ export default function Home() {
                 
                 <div className="flex items-center space-x-4 group cursor-pointer">
                   <div className="w-12 h-12 bg-sentia-purple/20 rounded-xl flex items-center justify-center group-hover:bg-sentia-purple/30 transition-colors duration-300">
-                    <svg className="w-6 h-6 text-sentia-purple" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                    </svg>
+                    <FaMapMarkerAlt className="w-6 h-6 text-sentia-purple" />
                   </div>
                   <div>
                     <h4 className="text-white font-semibold">Visit Us</h4>
