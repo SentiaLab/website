@@ -21,20 +21,15 @@ export default function Home() {
       <nav className="fixed top-0 w-full bg-sentia-black/80 backdrop-blur-2xl z-50 border-b border-sentia-cyan/10 shadow-2xl shadow-sentia-black/50 transition-all duration-500 navbar-scroll">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            {/* Logo Section with Enhanced Design */}
+            {/* Logo Section - Clean Design */}
             <div className="flex items-center space-x-3 group">
-              <div className="relative">
-                <div className="absolute inset-0 bg-sentia-cyan/20 rounded-xl blur-md group-hover:bg-sentia-cyan/30 transition-all duration-300"></div>
-                <div className="relative bg-gradient-to-br from-sentia-dark/60 to-sentia-black/60 p-2 rounded-xl border border-sentia-cyan/20 group-hover:border-sentia-cyan/40 transition-all duration-300">
-                  <Image
-                    src={assetPath("/sentialab.png")}
-                    alt="SentiaLab Logo"
-                    width={40}
-                    height={40}
-                    className="h-10 w-auto filter brightness-110"
-                  />
-                </div>
-              </div>
+              <Image
+                src={assetPath("/sentialab.png")}
+                alt="SentiaLab Logo"
+                width={40}
+                height={40}
+                className="h-10 w-auto filter brightness-110 group-hover:brightness-125 transition-all duration-300"
+              />
               <div className="flex flex-col">
                 <span className="text-2xl font-bold text-white group-hover:text-sentia-cyan transition-colors duration-300">SentiaLab</span>
                 <span className="text-xs text-sentia-cyan/60 font-medium tracking-wider uppercase">Tech Innovation</span>
