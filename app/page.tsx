@@ -18,7 +18,7 @@ export default function Home() {
       </div>
 
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-sentia-black/80 backdrop-blur-2xl z-50 border-b border-sentia-cyan/10 shadow-2xl shadow-sentia-black/50">
+      <nav className="fixed top-0 w-full bg-sentia-black/80 backdrop-blur-2xl z-50 border-b border-sentia-cyan/10 shadow-2xl shadow-sentia-black/50 transition-all duration-500 navbar-scroll">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo Section with Enhanced Design */}

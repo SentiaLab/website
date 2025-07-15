@@ -7,6 +7,7 @@ export default function ScrollEffects() {
     const updateScrollProgress = () => {
       const scrollProgress = document.querySelector('.scroll-progress') as HTMLElement;
       const scrollToTopBtn = document.querySelector('.scroll-to-top') as HTMLElement;
+      const navbar = document.querySelector('.navbar-scroll') as HTMLElement;
       
       if (scrollProgress) {
         const scrollTop = window.scrollY;
@@ -23,6 +24,17 @@ export default function ScrollEffects() {
         } else {
           scrollToTopBtn.style.opacity = '0';
           scrollToTopBtn.style.pointerEvents = 'none';
+        }
+      }
+
+      // Hide/show navbar on scroll
+      if (navbar) {
+        if (window.scrollY > 100) {
+          navbar.style.transform = 'translateY(-100%)';
+          navbar.style.opacity = '0';
+        } else {
+          navbar.style.transform = 'translateY(0)';
+          navbar.style.opacity = '1';
         }
       }
     };
