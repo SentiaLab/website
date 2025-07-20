@@ -108,10 +108,11 @@ export function Navigation() {
                                             <NavigationMenuLink
                                                 className={cn(
                                                     navigationMenuTriggerStyle(),
-                                                    "relative font-medium text-gray-700 dark:text-gray-300 hover:text-sentia-cyan dark:hover:text-sentia-cyan transition-colors duration-300",
-                                                    "after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-sentia-cyan after:to-sentia-purple",
-                                                    "after:transition-all after:duration-300 after:transform after:-translate-x-1/2",
-                                                    "hover:after:w-full",
+                                                    "relative font-medium bg-transparent rounded-lg px-4 py-2",
+                                                    "text-gray-700 dark:text-gray-300",
+                                                    "hover:bg-sentia-dark/10 dark:hover:bg-sentia-cyan/10",
+                                                    "hover:text-sentia-dark dark:hover:text-sentia-cyan",
+                                                    "transition-all duration-300 hover:shadow-lg hover:scale-105",
                                                 )}
                                             >
                                                 {item.name}
