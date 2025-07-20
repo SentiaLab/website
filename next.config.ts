@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-const isDevelopment = process.env.NODE_ENV === 'development';
+const isDevelopment = process.env.NODE_ENV === "development";
 
 const nextConfig: NextConfig = {
     /**
@@ -21,7 +21,7 @@ const nextConfig: NextConfig = {
      * Set asset prefix for GitHub Pages
      */
     assetPrefix: isDevelopment ? "" : "/website/",
-  
+
     /**
      * Disable server-based image optimization. Next.js does not support
      * dynamic features with static exports.
@@ -29,9 +29,9 @@ const nextConfig: NextConfig = {
      * @see https://nextjs.org/docs/app/api-reference/components/image#unoptimized
      */
     images: {
-      unoptimized: true,
+        unoptimized: true,
     },
-    
+
     /**
      * Ensure trailing slash for static export
      */

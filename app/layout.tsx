@@ -16,6 +16,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+    metadataBase: new URL("https://sentialab.com"),
     title: {
         default: "SentiaLab - Robotics, AI & Embedded Systems",
         template: "%s | SentiaLab",
@@ -70,11 +71,12 @@ export const metadata: Metadata = {
         apple: "/apple-touch-icon.png",
     },
     manifest: "/site.webmanifest",
-    viewport: {
-        width: "device-width",
-        initialScale: 1,
-        maximumScale: 5,
-    },
+};
+
+export const viewport = {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
 };
 
 export default function RootLayout({
