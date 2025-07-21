@@ -77,6 +77,7 @@ export function Navigation() {
                                         alt="SentiaLab"
                                         width={40}
                                         height={40}
+                                        priority
                                         className="transition-transform duration-300 group-hover:scale-110"
                                     />
                                 </div>
@@ -98,26 +99,23 @@ export function Navigation() {
                             <NavigationMenuList className="space-x-2">
                                 {navigationItems.map((item) => (
                                     <NavigationMenuItem key={item.name}>
-                                        <Link
+                                        <NavigationMenuLink
                                             href={item.href}
                                             onClick={(e) => {
                                                 e.preventDefault();
                                                 scrollToSection(item.href);
                                             }}
+                                            className={cn(
+                                                navigationMenuTriggerStyle(),
+                                                "relative font-medium bg-transparent rounded-lg px-4 py-2",
+                                                "text-gray-700 dark:text-gray-300",
+                                                "hover:bg-sentia-dark/10 dark:hover:bg-sentia-cyan/10",
+                                                "hover:text-sentia-dark dark:hover:text-sentia-cyan",
+                                                "transition-all duration-300 hover:shadow-lg hover:scale-105",
+                                            )}
                                         >
-                                            <NavigationMenuLink
-                                                className={cn(
-                                                    navigationMenuTriggerStyle(),
-                                                    "relative font-medium bg-transparent rounded-lg px-4 py-2",
-                                                    "text-gray-700 dark:text-gray-300",
-                                                    "hover:bg-sentia-dark/10 dark:hover:bg-sentia-cyan/10",
-                                                    "hover:text-sentia-dark dark:hover:text-sentia-cyan",
-                                                    "transition-all duration-300 hover:shadow-lg hover:scale-105",
-                                                )}
-                                            >
-                                                {item.name}
-                                            </NavigationMenuLink>
-                                        </Link>
+                                            {item.name}
+                                        </NavigationMenuLink>
                                     </NavigationMenuItem>
                                 ))}
                             </NavigationMenuList>
@@ -202,6 +200,7 @@ export function Navigation() {
                                             alt="SentiaLab"
                                             width={32}
                                             height={32}
+                                            priority
                                         />
                                         <span className="text-lg font-bold gradient-text">
                                             SentiaLab
