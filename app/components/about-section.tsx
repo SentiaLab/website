@@ -20,71 +20,73 @@ import {
 const values = [
     {
         icon: HiLightBulb,
-        title: "Innovation",
+        title: "Edge-First",
         description:
-            "Pushing boundaries with cutting-edge solutions that solve real-world problems.",
+            "Designing AI solutions that work where the action happens - directly on your devices and systems.",
     },
     {
         icon: HiShieldCheck,
-        title: "Reliability",
+        title: "Industrial-Grade",
         description:
-            "Delivering robust, tested solutions you can trust for mission-critical applications.",
+            "Building robust, reliable solutions that perform consistently in demanding real-world environments.",
     },
     {
         icon: HiUsers,
-        title: "Collaboration",
+        title: "Custom Solutions",
         description:
-            "Working closely with clients to understand their needs and exceed expectations.",
+            "Tailoring AI models and systems to your specific industry needs and operational requirements.",
     },
     {
         icon: HiTrophy,
-        title: "Excellence",
+        title: "Performance Focus",
         description:
-            "Maintaining the highest standards in every project we undertake.",
+            "Optimizing for real-time processing, low latency, and efficient resource utilization.",
     },
 ];
 
 const expertise = [
     {
-        icon: HiCog,
-        title: "Robotics Engineering",
-        description:
-            "Advanced robotic systems design, from concept to deployment",
-        technologies: [
-            "ROS",
-            "Arduino",
-            "Raspberry Pi",
-            "Industrial Automation",
-        ],
-    },
-    {
         icon: HiCpuChip,
-        title: "Artificial Intelligence",
+        title: "Edge AI Computing",
         description:
-            "Machine learning and AI solutions for intelligent automation",
-        technologies: ["TensorFlow", "PyTorch", "Computer Vision", "NLP"],
+            "Intelligent processing at the source with real-time AI inference on embedded systems and edge devices",
+        technologies: ["PyTorch", "CUDA", "Jetson", "ARM Cortex", "TensorRT"],
     },
     {
         icon: HiEye,
         title: "Computer Vision",
         description:
-            "Visual recognition and processing systems for various industries",
+            "Advanced visual intelligence for quality control, autonomous navigation, and predictive maintenance",
         technologies: [
             "OpenCV",
-            "Deep Learning",
-            "Image Processing",
+            "YOLO",
+            "Custom CNNs",
             "3D Vision",
+            "Real-time Processing",
         ],
     },
     {
         icon: HiGlobeAlt,
-        title: "IoT Solutions",
-        description: "Connected devices and smart systems for the modern world",
+        title: "Smart Automation",
+        description:
+            "Intelligent systems that adapt and optimize industrial processes through continuous learning",
         technologies: [
-            "Sensors",
-            "Wireless",
-            "Cloud Integration",
-            "Edge Computing",
+            "Industrial IoT",
+            "Digital Twins",
+            "Predictive Analytics",
+            "SCADA Integration",
+        ],
+    },
+    {
+        icon: HiCog,
+        title: "Robotics & Machinery",
+        description:
+            "Custom robotic solutions and intelligent machinery design for specialized industrial applications",
+        technologies: [
+            "ROS",
+            "Motion Control",
+            "Sensor Fusion",
+            "Custom Hardware",
         ],
     },
 ];
@@ -92,16 +94,16 @@ const expertise = [
 const achievements = [
     {
         icon: HiAcademicCap,
-        value: "15+",
-        label: "Years of Engineering Excellence",
+        value: "Advanced",
+        label: "AI Solutions",
     },
     {
         icon: HiRocketLaunch,
-        value: "100+",
-        label: "Successful Projects Delivered",
+        value: "Real-Time",
+        label: "Processing",
     },
-    { icon: HiGlobeAlt, value: "20+", label: "Countries Served" },
-    { icon: HiUsers, value: "50+", label: "Satisfied Clients" },
+    { icon: HiGlobeAlt, value: "Multi", label: "Industry Focus" },
+    { icon: HiUsers, value: "Custom", label: "Implementation" },
 ];
 
 export function AboutSection() {
@@ -126,16 +128,17 @@ export function AboutSection() {
                         About SentiaLab
                     </Badge>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-sentia-dark dark:text-gray-100 mb-6">
-                        Building the Future with
+                        Pioneering Edge AI for
                         <span className="gradient-text block md:inline md:ml-3">
-                            Intelligence & Innovation
+                            Intelligent Automation
                         </span>
                     </h2>
                     <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                        Founded on the vision of transforming industries through
-                        intelligent automation, SentiaLab combines 15+ years of
-                        engineering expertise with cutting-edge technology to
-                        deliver solutions that matter.
+                        SentiaLab specializes in Edge AI solutions that bring
+                        intelligent processing directly to your devices and
+                        systems. We combine computer vision, machine learning,
+                        and embedded systems to create autonomous solutions for
+                        the modern industrial landscape.
                     </p>
                 </motion.div>
 
@@ -150,31 +153,34 @@ export function AboutSection() {
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="space-y-6">
                             <h3 className="text-2xl md:text-3xl font-bold text-sentia-dark dark:text-gray-100">
-                                Our Journey
+                                Our Vision
                             </h3>
                             <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
                                 <p>
-                                    Born from a passion for engineering
-                                    excellence, SentiaLab started as a vision to
-                                    bridge the gap between complex robotics, AI
-                                    technologies, and real-world applications.
-                                    Based in Brazil, we&apos;ve grown to serve
-                                    clients worldwide.
+                                    SentiaLab emerged from the recognition that
+                                    the future belongs to intelligent edge
+                                    computing. While cloud AI has its place, the
+                                    real revolution happens when artificial
+                                    intelligence operates directly on your
+                                    devices, machinery, and systems.
                                 </p>
                                 <p>
-                                    Our team brings together deep expertise in
-                                    robotics, artificial intelligence, and
-                                    embedded systems. We don&apos;t just build
-                                    technology – we craft intelligent solutions
-                                    that solve meaningful problems and drive
-                                    innovation forward.
+                                    Our mission is to make advanced computer
+                                    vision and machine learning accessible to
+                                    industries seeking intelligent automation.
+                                    We believe that every machine should be
+                                    intelligent, every process should be
+                                    optimized, and every decision should be
+                                    data-driven.
                                 </p>
                                 <p>
-                                    From small startups to large enterprises,
-                                    we&apos;ve helped organizations across
-                                    various industries harness the power of
-                                    automation and intelligence to achieve their
-                                    goals and stay ahead of the competition.
+                                    Founded on deep expertise in embedded
+                                    systems and artificial intelligence, we
+                                    bridge the gap between cutting-edge research
+                                    and practical industrial applications. Our
+                                    solutions serve healthcare, manufacturing,
+                                    and automation sectors across multiple
+                                    regions.
                                 </p>
                             </div>
                         </div>
@@ -218,11 +224,11 @@ export function AboutSection() {
                 >
                     <div className="text-center mb-12">
                         <h3 className="text-2xl md:text-3xl font-bold text-sentia-dark dark:text-gray-100 mb-4">
-                            Our Expertise
+                            Core Capabilities
                         </h3>
                         <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                            Specialized knowledge across multiple domains to
-                            deliver comprehensive solutions
+                            Comprehensive Edge AI solutions designed to
+                            transform how industries operate and make decisions
                         </p>
                     </div>
 
@@ -284,10 +290,10 @@ export function AboutSection() {
                 >
                     <div className="text-center mb-12">
                         <h3 className="text-2xl md:text-3xl font-bold text-sentia-dark dark:text-gray-100 mb-4">
-                            Our Values
+                            Our Approach
                         </h3>
                         <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                            The principles that guide everything we do
+                            The principles that drive our Edge AI solutions
                         </p>
                     </div>
 

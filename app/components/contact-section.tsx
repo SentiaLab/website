@@ -30,7 +30,8 @@ export function ContactSection() {
                     </h2>
                     <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                         Ready to transform your ideas into intelligent
-                        solutions? Contact us to discuss your project.
+                        solutions? Contact our team to discuss your Edge AI
+                        project.
                     </p>
                 </motion.div>
 
@@ -48,12 +49,12 @@ export function ContactSection() {
                                     <HiEnvelope className="w-8 h-8 text-sentia-cyan" />
                                 </div>
                                 <h3 className="text-2xl font-bold text-sentia-dark mb-4">
-                                    Contact Us
+                                    Contact SentiaLab
                                 </h3>
                                 <p className="text-gray-600 mb-6">
                                     Ready to start your project? Send us an
                                     email or schedule a meeting to discuss your
-                                    needs.
+                                    Edge AI needs.
                                 </p>
 
                                 <div className="space-y-4">

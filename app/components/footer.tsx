@@ -15,13 +15,7 @@ import {
     HiCog,
     HiCommandLine,
 } from "react-icons/hi2";
-import {
-    SiLinkedin,
-    SiX,
-    SiGithub,
-    SiYoutube,
-    SiInstagram,
-} from "react-icons/si";
+import { SiGithub } from "react-icons/si";
 
 const footerNavigation = {
     services: [
@@ -50,24 +44,10 @@ const footerNavigation = {
 
 const socialLinks = [
     {
-        name: "LinkedIn",
-        href: "#",
-        icon: SiLinkedin,
-        color: "hover:text-blue-600",
-    },
-    { name: "X", href: "#", icon: SiX, color: "hover:text-gray-900" },
-    { name: "GitHub", href: "#", icon: SiGithub, color: "hover:text-gray-900" },
-    {
-        name: "YouTube",
-        href: "#",
-        icon: SiYoutube,
-        color: "hover:text-red-600",
-    },
-    {
-        name: "Instagram",
-        href: "#",
-        icon: SiInstagram,
-        color: "hover:text-pink-600",
+        name: "GitHub",
+        href: "https://github.com/SentiaLab",
+        icon: SiGithub,
+        color: "hover:text-gray-900",
     },
 ];
 
@@ -81,26 +61,26 @@ const contactInfo = [
     {
         icon: HiMapPin,
         label: "Location",
-        value: "Brazil • Worldwide",
+        value: "Atibaia, Brazil • Remote Worldwide",
         href: "#contact",
     },
     {
         icon: HiGlobeAlt,
-        label: "Remote Work",
-        value: "Available Globally",
-        href: "#contact",
+        label: "Experience",
+        value: "15+ Years Engineering",
+        href: "#experience",
     },
 ];
 
 const industries = [
-    "Manufacturing",
-    "Healthcare",
-    "Agriculture",
-    "Automotive",
-    "Energy",
-    "Defense",
-    "Research",
-    "Startups",
+    "Edge AI",
+    "Healthcare Tech",
+    "Smart Manufacturing",
+    "Autonomous Systems",
+    "Computer Vision",
+    "Industrial IoT",
+    "Robotics",
+    "Intelligent Automation",
 ];
 
 export function Footer() {
@@ -371,8 +351,8 @@ export function Footer() {
                                 © {currentYear} SentiaLab. All rights reserved.
                             </p>
                             <p className="text-gray-500 dark:text-gray-600 text-xs mt-1">
-                                Built with passion for innovation and
-                                excellence.
+                                Engineered with passion in Brazil 🇧🇷 • Serving
+                                the world
                             </p>
                         </div>
 
