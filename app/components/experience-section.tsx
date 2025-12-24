@@ -120,17 +120,17 @@ export function ExperienceSection() {
                 >
                     <Badge
                         variant="secondary"
-                        className="mb-4 dark:bg-sentia-dark/50 dark:text-sentia-cyan dark:border-sentia-cyan/30"
+                        className="mb-4 bg-sentia-cyan/10 text-sentia-cyan border-sentia-cyan/20 dark:bg-sentia-cyan/20"
                     >
                         Company Capabilities
                     </Badge>
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-sentia-dark dark:text-gray-100 mb-6">
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-sentia-dark dark:text-white mb-6">
                         Proven Edge AI Solutions
-                        <span className="gradient-text block md:inline md:ml-3">
+                        <span className="gradient-text block mt-2">
                             Across Industries
                         </span>
                     </h2>
-                    <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
                         SentiaLab delivers cutting-edge AI solutions deployed
                         directly on your devices and systems, enabling real-time
                         intelligence and autonomous operation.
@@ -156,29 +156,30 @@ export function ExperienceSection() {
                             }}
                             viewport={{ once: true }}
                         >
-                            <Card className="h-full card-hover dark:bg-slate-800/50 dark:border-slate-700/50">
-                                <CardContent className="p-6">
-                                    <div className="flex items-start space-x-4">
+                            <Card className="h-full card-hover glass-effect border-0">
+                                <CardContent className="p-8">
+                                    <div className="flex items-start space-x-6">
                                         <div
-                                            className={`w-12 h-12 bg-gradient-to-br ${capability.color} rounded-lg flex items-center justify-center flex-shrink-0`}
+                                            className={`w-14 h-14 bg-gradient-to-br ${capability.color} rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg`}
                                         >
-                                            <capability.icon className="w-6 h-6 text-white" />
+                                            <capability.icon className="w-7 h-7 text-white" />
                                         </div>
                                         <div className="flex-1">
-                                            <h3 className="text-xl font-bold text-sentia-dark dark:text-gray-100 mb-2">
+                                            <h3 className="text-2xl font-bold text-sentia-dark dark:text-white mb-3">
                                                 {capability.title}
                                             </h3>
-                                            <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+                                            <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
                                                 {capability.description}
                                             </p>
-                                            <div className="mb-4">
-                                                <h4 className="font-semibold text-sentia-dark dark:text-gray-100 mb-2">
-                                                    Key Features:
+                                            <div className="mb-6">
+                                                <h4 className="font-semibold text-sentia-dark dark:text-white mb-3 text-sm uppercase tracking-wider">
+                                                    Key Features
                                                 </h4>
-                                                <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-1 text-sm">
+                                                <ul className="space-y-2">
                                                     {capability.highlights.map(
                                                         (highlight, i) => (
-                                                            <li key={i}>
+                                                            <li key={i} className="flex items-center text-gray-600 dark:text-gray-400 text-sm">
+                                                                <div className="w-1.5 h-1.5 rounded-full bg-sentia-cyan mr-2" />
                                                                 {highlight}
                                                             </li>
                                                         ),
@@ -191,7 +192,7 @@ export function ExperienceSection() {
                                                         <Badge
                                                             key={industry}
                                                             variant="secondary"
-                                                            className="text-xs dark:bg-slate-700/50 dark:text-gray-300 dark:border-slate-600"
+                                                            className="text-xs bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-200 border-0"
                                                         >
                                                             {industry}
                                                         </Badge>
@@ -223,15 +224,15 @@ export function ExperienceSection() {
                             {companyStats.map((stat, index) => (
                                 <Card
                                     key={index}
-                                    className="dark:bg-slate-800/50 dark:border-slate-700/50"
+                                    className="glass-effect border-0 card-hover"
                                 >
                                     <CardContent className="p-6">
                                         <div className="flex items-center space-x-4">
-                                            <div className="text-2xl font-bold text-sentia-cyan">
+                                            <div className="text-3xl font-bold gradient-text">
                                                 {stat.metric}
                                             </div>
                                             <div>
-                                                <h4 className="font-semibold text-sentia-dark dark:text-gray-100">
+                                                <h4 className="font-bold text-sentia-dark dark:text-white">
                                                     {stat.label}
                                                 </h4>
                                                 <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -257,30 +258,33 @@ export function ExperienceSection() {
                             Leadership & Foundation
                         </h3>
 
-                        <Card className="dark:bg-slate-800/50 dark:border-slate-700/50 mb-6">
-                            <CardContent className="p-6">
-                                <h4 className="text-lg font-semibold text-sentia-dark dark:text-gray-100 mb-3">
+                        <Card className="glass-effect border-0 mb-6">
+                            <CardContent className="p-8">
+                                <h4 className="text-xl font-bold text-sentia-dark dark:text-white mb-4">
                                     Expert Leadership
                                 </h4>
-                                <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-4">
+                                <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6">
                                     SentiaLab is founded and led by experienced
                                     engineers with deep expertise in embedded
                                     systems and artificial intelligence.
                                 </p>
-                                <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2 text-sm">
+                                <ul className="space-y-3">
                                     {founderBackground.map((item, index) => (
-                                        <li key={index}>{item}</li>
+                                        <li key={index} className="flex items-start text-sm text-gray-600 dark:text-gray-400">
+                                            <HiShieldCheck className="w-5 h-5 text-sentia-cyan mr-2 flex-shrink-0" />
+                                            {item}
+                                        </li>
                                     ))}
                                 </ul>
                             </CardContent>
                         </Card>
 
-                        <Card className="dark:bg-slate-800/50 dark:border-slate-700/50">
-                            <CardContent className="p-6">
-                                <h4 className="text-lg font-semibold text-sentia-dark dark:text-gray-100 mb-3">
+                        <Card className="glass-effect border-0">
+                            <CardContent className="p-8">
+                                <h4 className="text-xl font-bold text-sentia-dark dark:text-white mb-4">
                                     Quality Assurance
                                 </h4>
-                                <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                                <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
                                     Our solutions are built on proven
                                     methodologies with extensive experience in
                                     testing, validation, and quality assurance
