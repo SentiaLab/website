@@ -40,24 +40,27 @@ export function HeroSection() {
             className="relative min-h-screen flex items-center justify-center overflow-hidden"
         >
             {/* Background Elements */}
-            <div className="absolute inset-0 gradient-bg opacity-95 dark:hero-bg"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-sentia-black dark:to-[#1a1c2e]"></div>
 
-            {/* Animated Background Pattern */}
-            <div className="absolute inset-0">
-                <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-sentia-purple/20 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-sentia-yellow/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-sentia-cyan/15 rounded-full blur-3xl animate-bounce-gentle"></div>
+            {/* Animated Background Orbs */}
+            <div className="absolute inset-0 overflow-hidden">
+                <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-sentia-purple/20 rounded-full blur-[100px] animate-float opacity-70"></div>
+                <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-sentia-cyan/10 rounded-full blur-[120px] animate-float-delayed opacity-60"></div>
+                <div className="absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[140%] h-[600px] bg-gradient-to-r from-sentia-cyan/10 via-purple-500/10 to-sentia-cyan/10 rounded-[100%] blur-[130px] opacity-70"></div>
+                <div className="absolute top-0 right-0 w-[800px] h-[600px] bg-sentia-purple/10 rounded-full blur-[150px] transform translate-x-1/3 -translate-y-1/4"></div>
             </div>
 
-            {/* Grid Pattern Overlay */}
+            {/* Grid Pattern Overlay with Radial Mask */}
             <div
-                className="absolute inset-0 opacity-5"
+                className="absolute inset-0 opacity-[0.03] dark:opacity-[0.1]"
                 style={{
                     backgroundImage: `
-                        linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
+                        linear-gradient(rgba(0,0,0,0.5) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(0,0,0,0.5) 1px, transparent 1px)
                     `,
-                    backgroundSize: "50px 50px",
+                    backgroundSize: "60px 60px",
+                    maskImage: "radial-gradient(circle at center, black, transparent 80%)",
+                    WebkitMaskImage: "radial-gradient(circle at center, black, transparent 80%)",
                 }}
             ></div>
 
@@ -70,9 +73,9 @@ export function HeroSection() {
                         transition={{ duration: 0.8 }}
                         className="space-y-4"
                     >
-                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-normal pb-2">
+                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-sentia-dark dark:text-white leading-[1.1] pb-2">
                             Next-Generation
-                            <span className="block bg-gradient-to-r from-sentia-yellow to-sentia-purple dark:from-sentia-cyan dark:to-purple-400 bg-clip-text text-transparent pb-4">
+                            <span className="block bg-gradient-to-r from-sentia-cyan via-purple-500 to-sentia-purple bg-clip-text text-transparent pb-4 animate-gradient-x">
                                 Edge AI Solutions
                             </span>
                         </h1>
@@ -83,7 +86,7 @@ export function HeroSection() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.1 }}
-                        className="text-xl md:text-2xl text-white/90 max-w-3xl leading-relaxed"
+                        className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl leading-relaxed"
                     >
                         Pioneering intelligent edge computing solutions that
                         bring AI processing directly to your devices and
@@ -110,9 +113,9 @@ export function HeroSection() {
                                     type: "spring",
                                     stiffness: 100,
                                 }}
-                                className="flex items-center space-x-2 bg-white/15 dark:bg-sentia-dark/30 backdrop-blur-sm border border-white/20 dark:border-sentia-cyan/30 rounded-full px-4 py-2 text-white"
+                                className="flex items-center space-x-2 bg-white/50 dark:bg-white/5 backdrop-blur-md border border-gray-200 dark:border-white/10 rounded-full px-5 py-2.5 text-sentia-dark dark:text-gray-200 shadow-sm hover:border-sentia-cyan/50 hover:shadow-sentia-cyan/20 transition-all duration-300"
                             >
-                                <tech.icon className="w-5 h-5" />
+                                <tech.icon className="w-5 h-5 text-sentia-cyan" />
                                 <span className="font-medium">{tech.name}</span>
                             </motion.div>
                         ))}
@@ -128,7 +131,7 @@ export function HeroSection() {
                         <Button
                             size="lg"
                             onClick={() => scrollToSection("#contact")}
-                            className="bg-white dark:bg-sentia-dark text-sentia-dark dark:text-white hover:bg-white/90 dark:hover:bg-sentia-dark/90 font-semibold px-8 py-4 text-lg group transition-all duration-300 hover:shadow-xl"
+                            className="bg-sentia-cyan hover:bg-sentia-cyan/90 text-white font-semibold px-8 py-6 text-lg rounded-full shadow-[0_0_20px_rgba(45,177,188,0.3)] hover:shadow-[0_0_30px_rgba(45,177,188,0.5)] transition-all duration-300 group"
                         >
                             Start Your Project
                             <HiArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -137,9 +140,9 @@ export function HeroSection() {
                             size="lg"
                             variant="outline"
                             onClick={() => scrollToSection("#services")}
-                            className="bg-sentia-yellow border-sentia-yellow text-sentia-dark hover:bg-sentia-yellow/90 hover:text-sentia-dark font-semibold px-8 py-4 text-lg group"
+                            className="bg-transparent border-2 border-gray-300 dark:border-white/20 text-sentia-dark dark:text-white hover:bg-gray-100 dark:hover:bg-white/10 font-semibold px-8 py-6 text-lg rounded-full transition-all duration-300"
                         >
-                            <HiPlay className="mr-2 w-5 h-5" />
+                            <HiPlay className="mr-2 w-5 h-5 text-sentia-cyan" />
                             Explore Services
                         </Button>
                     </motion.div>
@@ -149,7 +152,7 @@ export function HeroSection() {
                         initial={{ opacity: 0, y: 40 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
-                        className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-12 border-t border-white/20 dark:border-sentia-cyan/20"
+                        className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-12 border-t border-gray-200 dark:border-white/10"
                     >
                         {stats.map((stat, index) => (
                             <motion.div
@@ -162,10 +165,10 @@ export function HeroSection() {
                                 }}
                                 className="text-center"
                             >
-                                <div className="text-2xl md:text-3xl font-bold text-white dark:text-sentia-cyan mb-2">
+                                <div className="text-3xl md:text-4xl font-bold text-sentia-dark dark:text-white mb-2">
                                     {stat.number}
                                 </div>
-                                <div className="text-sm md:text-base text-white/80 dark:text-gray-300 font-medium">
+                                <div className="text-sm md:text-base text-gray-600 dark:text-gray-400 font-medium tracking-wide">
                                     {stat.label}
                                 </div>
                             </motion.div>

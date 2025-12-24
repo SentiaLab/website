@@ -54,7 +54,7 @@ export function Navigation() {
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
                 scrolled
-                    ? "bg-white/90 dark:bg-slate-900/95 shadow-lg backdrop-blur-md border-b border-gray-200/20 dark:border-sentia-cyan/20"
+                    ? "glass-effect border-b-0"
                     : "bg-transparent",
             )}
         >
@@ -145,7 +145,7 @@ export function Navigation() {
                                 <Button
                                     variant="ghost"
                                     size="icon"
-                                    className="text-gray-700 dark:text-gray-300 hover:text-sentia-cyan hover:bg-sentia-cyan/10 dark:hover:bg-sentia-cyan/20"
+                                    className="text-sentia-dark dark:text-white hover:bg-white/20 rounded-full w-10 h-10"
                                 >
                                     <AnimatePresence mode="wait">
                                         {isOpen ? (
@@ -192,7 +192,7 @@ export function Navigation() {
                             </SheetTrigger>
                             <SheetContent
                                 side="right"
-                                className="w-[300px] sm:w-[400px]"
+                                className="w-[300px] sm:w-[400px] glass-effect border-l border-white/20"
                             >
                                 <div className="flex flex-col space-y-4 mt-8">
                                     <div className="flex items-center space-x-3 pb-4 border-b border-gray-200">

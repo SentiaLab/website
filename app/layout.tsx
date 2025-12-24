@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { BackgroundPattern } from "@/components/background-pattern";
 
 const inter = Inter({
     subsets: ["latin"],
@@ -91,6 +92,7 @@ export default function RootLayout({
             >
                 <ThemeProvider>
                     <div className="relative min-h-screen bg-background">
+                        <BackgroundPattern />
                         {children}
                     </div>
                 </ThemeProvider>

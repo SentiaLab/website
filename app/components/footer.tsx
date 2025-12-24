@@ -61,7 +61,7 @@ const contactInfo = [
     {
         icon: HiMapPin,
         label: "Location",
-        value: "Atibaia, Brazil • Remote Worldwide",
+        value: "Santo André, Brazil • Remote Worldwide",
         href: "#contact",
     },
     {
@@ -96,7 +96,11 @@ export function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-sentia-dark dark:footer-bg text-white overflow-hidden relative">
+        <footer className="bg-sentia-black relative overflow-hidden text-white">
+            {/* Ambient Background */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
+            <div className="absolute -top-40 -right-40 w-96 h-96 bg-sentia-purple/20 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-20 -left-20 w-72 h-72 bg-sentia-cyan/10 rounded-full blur-3xl pointer-events-none" />
             {/* Background Pattern */}
             <div
                 className="absolute inset-0 opacity-5"
@@ -137,7 +141,7 @@ export function Footer() {
                                 </span>
                             </div>
 
-                            <p className="text-gray-300 dark:text-gray-400 leading-relaxed max-w-md">
+                            <p className="text-gray-400 dark:text-gray-400 leading-relaxed max-w-md">
                                 Transforming industries through intelligent
                                 automation. We specialize in robotics,
                                 artificial intelligence, and embedded systems

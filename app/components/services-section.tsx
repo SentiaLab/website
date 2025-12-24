@@ -162,7 +162,7 @@ export function ServicesSection() {
     };
 
     return (
-        <section id="services" className="section-padding bg-white">
+        <section id="services" className="section-padding relative">
             <div className="container-max">
                 {/* Section Header */}
                 <motion.div
@@ -175,13 +175,13 @@ export function ServicesSection() {
                     <Badge variant="secondary" className="mb-4">
                         Our Services
                     </Badge>
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-sentia-dark mb-6">
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-sentia-dark dark:text-white mb-6">
                         Comprehensive Solutions for
-                        <span className="gradient-text block md:inline md:ml-3">
+                        <span className="gradient-text block mt-2">
                             Modern Challenges
                         </span>
                     </h2>
-                    <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
                         From concept to deployment, we deliver end-to-end
                         solutions that combine cutting-edge technology with
                         practical engineering expertise.
@@ -198,19 +198,19 @@ export function ServicesSection() {
                             transition={{ duration: 0.8, delay: index * 0.1 }}
                             viewport={{ once: true }}
                         >
-                            <Card className="h-full card-hover group">
+                            <Card className="h-full card-hover group glass-effect border-0">
                                 <CardContent className="p-8">
                                     <div className="flex items-start space-x-4 mb-6">
                                         <div
-                                            className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
+                                            className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}
                                         >
                                             <service.icon className="w-8 h-8 text-white" />
                                         </div>
                                         <div className="flex-1">
-                                            <h3 className="text-2xl font-bold text-sentia-dark mb-2">
+                                            <h3 className="text-2xl font-bold text-sentia-dark dark:text-white mb-2 group-hover:text-sentia-cyan transition-colors">
                                                 {service.title}
                                             </h3>
-                                            <p className="text-gray-600 leading-relaxed">
+                                            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                                                 {service.description}
                                             </p>
                                         </div>
@@ -218,8 +218,9 @@ export function ServicesSection() {
 
                                     <div className="space-y-6">
                                         <div>
-                                            <h4 className="font-semibold text-sentia-dark mb-3">
-                                                Key Features:
+                                            <h4 className="font-semibold text-sentia-dark dark:text-white mb-3 flex items-center">
+                                                <HiBolt className="w-4 h-4 text-sentia-yellow mr-2" />
+                                                Key Features
                                             </h4>
                                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                                                 {service.features.map(
@@ -228,8 +229,8 @@ export function ServicesSection() {
                                                             key={feature}
                                                             className="flex items-center space-x-2"
                                                         >
-                                                            <HiCheckCircle className="w-4 h-4 text-sentia-cyan flex-shrink-0" />
-                                                            <span className="text-gray-600 text-sm">
+                                                            <div className="w-1.5 h-1.5 rounded-full bg-sentia-cyan flex-shrink-0" />
+                                                            <span className="text-gray-600 dark:text-gray-400 text-sm">
                                                                 {feature}
                                                             </span>
                                                         </div>
@@ -239,8 +240,8 @@ export function ServicesSection() {
                                         </div>
 
                                         <div>
-                                            <h4 className="font-semibold text-sentia-dark mb-3">
-                                                Technologies:
+                                            <h4 className="font-semibold text-sentia-dark dark:text-white mb-3">
+                                                Technologies
                                             </h4>
                                             <div className="flex flex-wrap gap-2">
                                                 {service.technologies.map(
@@ -248,7 +249,7 @@ export function ServicesSection() {
                                                         <Badge
                                                             key={tech}
                                                             variant="secondary"
-                                                            className="text-xs bg-sentia-cyan/10 text-sentia-cyan hover:bg-sentia-cyan/20"
+                                                            className="text-xs bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-200 border-0 hover:bg-sentia-cyan/20 hover:text-sentia-cyan transition-colors"
                                                         >
                                                             {tech}
                                                         </Badge>
@@ -272,12 +273,11 @@ export function ServicesSection() {
                     className="mb-20"
                 >
                     <div className="text-center mb-12">
-                        <h3 className="text-2xl md:text-3xl font-bold text-sentia-dark mb-4">
+                        <h3 className="text-3xl font-bold text-sentia-dark dark:text-white mb-4">
                             Our Process
                         </h3>
-                        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            A proven methodology that ensures successful project
-                            delivery
+                        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                            A proven methodology that ensures successful project delivery
                         </p>
                     </div>
 
@@ -294,18 +294,18 @@ export function ServicesSection() {
                                 viewport={{ once: true }}
                                 className="relative"
                             >
-                                <Card className="text-center card-hover">
-                                    <CardContent className="p-6">
-                                        <div className="w-12 h-12 bg-sentia-cyan/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                                            <step.icon className="w-6 h-6 text-sentia-cyan" />
+                                <Card className="text-center card-hover glass-effect border-0 h-full">
+                                    <CardContent className="p-8">
+                                        <div className="w-16 h-16 bg-sentia-cyan/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-sentia-cyan/20 transition-colors">
+                                            <step.icon className="w-8 h-8 text-sentia-cyan" />
                                         </div>
-                                        <div className="absolute -top-3 -left-3 w-8 h-8 bg-sentia-cyan text-white rounded-full flex items-center justify-center text-sm font-bold">
+                                        <div className="absolute -top-3 -left-3 w-8 h-8 bg-gradient-to-br from-sentia-cyan to-sentia-purple text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg">
                                             {index + 1}
                                         </div>
-                                        <h4 className="text-lg font-semibold text-sentia-dark mb-2">
+                                        <h4 className="text-xl font-bold text-sentia-dark dark:text-white mb-3">
                                             {step.title}
                                         </h4>
-                                        <p className="text-gray-600 text-sm">
+                                        <p className="text-gray-600 dark:text-gray-300">
                                             {step.description}
                                         </p>
                                     </CardContent>
@@ -370,9 +370,11 @@ export function ServicesSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
-                    className="text-center"
+                    className="text-center container-max"
                 >
-                    <Card className="gradient-bg text-white">
+                    <Card className="bg-gradient-to-br from-sentia-dark via-[#4B5282] to-sentia-purple text-white overflow-hidden relative border-0 shadow-2xl">
+                        <div className="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-sentia-cyan/20 rounded-full blur-3xl pointer-events-none" />
+                        <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-sentia-purple/20 rounded-full blur-3xl pointer-events-none" />
                         <CardContent className="p-12">
                             <h3 className="text-2xl md:text-3xl font-bold mb-4">
                                 Ready to Transform Your Ideas into Reality?

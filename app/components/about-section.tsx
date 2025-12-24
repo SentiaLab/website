@@ -110,7 +110,7 @@ export function AboutSection() {
     return (
         <section
             id="about"
-            className="section-padding bg-gradient-to-br from-gray-50 to-white dark:from-slate-900/50 dark:to-slate-800/30"
+            className="section-padding relative"
         >
             <div className="container-max">
                 {/* Section Header */}
@@ -123,17 +123,17 @@ export function AboutSection() {
                 >
                     <Badge
                         variant="secondary"
-                        className="mb-4 dark:bg-sentia-dark/50 dark:text-sentia-cyan dark:border-sentia-cyan/30"
+                        className="mb-4 bg-sentia-purple/10 text-sentia-purple border-sentia-purple/20 dark:bg-sentia-purple/20 dark:text-indigo-300"
                     >
                         About SentiaLab
                     </Badge>
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-sentia-dark dark:text-gray-100 mb-6">
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-sentia-dark dark:text-white mb-6">
                         Pioneering Edge AI for
-                        <span className="gradient-text block md:inline md:ml-3">
+                        <span className="gradient-text block mt-2">
                             Intelligent Automation
                         </span>
                     </h2>
-                    <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
                         SentiaLab specializes in Edge AI solutions that bring
                         intelligent processing directly to your devices and
                         systems. We combine computer vision, machine learning,
@@ -151,11 +151,11 @@ export function AboutSection() {
                     className="mb-20"
                 >
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
-                        <div className="space-y-6">
-                            <h3 className="text-2xl md:text-3xl font-bold text-sentia-dark dark:text-gray-100">
+                        <div className="space-y-8">
+                            <h3 className="text-3xl font-bold text-sentia-dark dark:text-white">
                                 Our Vision
                             </h3>
-                            <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+                            <div className="space-y-6 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                                 <p>
                                     SentiaLab emerged from the recognition that
                                     the future belongs to intelligent edge
@@ -196,11 +196,11 @@ export function AboutSection() {
                                 {achievements.map((achievement) => (
                                     <Card
                                         key={achievement.label}
-                                        className="card-hover dark:bg-slate-800/50 dark:border-slate-700/50"
+                                        className="card-hover glass-effect border-0"
                                     >
                                         <CardContent className="p-6 text-center">
                                             <achievement.icon className="w-8 h-8 text-sentia-cyan mx-auto mb-3" />
-                                            <div className="text-2xl font-bold text-sentia-dark dark:text-gray-100 mb-2">
+                                            <div className="text-2xl font-bold text-sentia-dark dark:text-white mb-2">
                                                 {achievement.value}
                                             </div>
                                             <div className="text-sm text-gray-600 dark:text-gray-400 font-medium">
@@ -223,10 +223,10 @@ export function AboutSection() {
                     className="mb-20"
                 >
                     <div className="text-center mb-12">
-                        <h3 className="text-2xl md:text-3xl font-bold text-sentia-dark dark:text-gray-100 mb-4">
+                        <h3 className="text-3xl font-bold text-sentia-dark dark:text-white mb-4">
                             Core Capabilities
                         </h3>
-                        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                        <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                             Comprehensive Edge AI solutions designed to
                             transform how industries operate and make decisions
                         </p>
@@ -244,7 +244,7 @@ export function AboutSection() {
                                 }}
                                 viewport={{ once: true }}
                             >
-                                <Card className="h-full card-hover border-l-4 border-l-sentia-cyan dark:bg-slate-800/50 dark:border-slate-700/50 dark:border-l-sentia-cyan">
+                                <Card className="h-full card-hover glass-effect border-0 border-l-4 border-l-sentia-cyan">
                                     <CardContent className="p-6">
                                         <div className="flex items-start space-x-4">
                                             <div className="flex-shrink-0">
@@ -253,7 +253,7 @@ export function AboutSection() {
                                                 </div>
                                             </div>
                                             <div className="flex-1">
-                                                <h4 className="text-xl font-semibold text-sentia-dark dark:text-gray-100 mb-2">
+                                                <h4 className="text-xl font-bold text-sentia-dark dark:text-white mb-2">
                                                     {item.title}
                                                 </h4>
                                                 <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
@@ -265,7 +265,7 @@ export function AboutSection() {
                                                             <Badge
                                                                 key={tech}
                                                                 variant="secondary"
-                                                                className="text-xs dark:bg-slate-700/50 dark:text-gray-300 dark:border-slate-600"
+                                                                className="text-xs bg-white/50 dark:bg-white/10 text-gray-700 dark:text-gray-200"
                                                             >
                                                                 {tech}
                                                             </Badge>
@@ -289,10 +289,10 @@ export function AboutSection() {
                     viewport={{ once: true }}
                 >
                     <div className="text-center mb-12">
-                        <h3 className="text-2xl md:text-3xl font-bold text-sentia-dark dark:text-gray-100 mb-4">
+                        <h3 className="text-3xl font-bold text-sentia-dark dark:text-white mb-4">
                             Our Approach
                         </h3>
-                        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                        <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                             The principles that drive our Edge AI solutions
                         </p>
                     </div>
@@ -311,12 +311,12 @@ export function AboutSection() {
                                 }}
                                 viewport={{ once: true }}
                             >
-                                <Card className="h-full text-center card-hover group dark:bg-slate-800/50 dark:border-slate-700/50">
+                                <Card className="h-full text-center card-hover group glass-effect border-0">
                                     <CardContent className="p-6">
-                                        <div className="w-16 h-16 bg-gradient-to-br from-sentia-cyan to-sentia-purple rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                                        <div className="w-16 h-16 bg-gradient-to-br from-sentia-cyan to-sentia-purple rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md">
                                             <value.icon className="w-8 h-8 text-white" />
                                         </div>
-                                        <h4 className="text-xl font-semibold text-sentia-dark dark:text-gray-100 mb-3">
+                                        <h4 className="text-xl font-bold text-sentia-dark dark:text-white mb-3">
                                             {value.title}
                                         </h4>
                                         <p className="text-gray-600 dark:text-gray-300 leading-relaxed">

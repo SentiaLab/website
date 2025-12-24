@@ -9,7 +9,7 @@ import { HiEnvelope, HiCalendar, HiArrowUpRight } from "react-icons/hi2";
 
 export function ContactSection() {
     return (
-        <section id="contact" className="section-padding bg-white">
+        <section id="contact" className="section-padding relative">
             <div className="container-max">
                 {/* Section Header */}
                 <motion.div
@@ -22,13 +22,13 @@ export function ContactSection() {
                     <Badge variant="secondary" className="mb-4">
                         Get In Touch
                     </Badge>
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-sentia-dark mb-6">
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-sentia-dark dark:text-white mb-6">
                         Let&apos;s Build Something
-                        <span className="gradient-text block md:inline md:ml-3">
+                        <span className="gradient-text block mt-2">
                             Amazing Together
                         </span>
                     </h2>
-                    <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
                         Ready to transform your ideas into intelligent
                         solutions? Contact our team to discuss your Edge AI
                         project.
@@ -43,26 +43,26 @@ export function ContactSection() {
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <Card className="shadow-lg">
+                        <Card className="glass-effect border-0">
                             <CardContent className="p-8 text-center">
-                                <div className="w-16 h-16 bg-sentia-cyan/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <div className="w-16 h-16 bg-sentia-cyan/10 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
                                     <HiEnvelope className="w-8 h-8 text-sentia-cyan" />
                                 </div>
-                                <h3 className="text-2xl font-bold text-sentia-dark mb-4">
+                                <h3 className="text-2xl font-bold text-sentia-dark dark:text-white mb-4">
                                     Contact SentiaLab
                                 </h3>
-                                <p className="text-gray-600 mb-6">
+                                <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-lg mx-auto leading-relaxed">
                                     Ready to start your project? Send us an
                                     email or schedule a meeting to discuss your
                                     Edge AI needs.
                                 </p>
 
                                 <div className="space-y-4">
-                                    <div className="flex items-center justify-center space-x-3">
-                                        <HiEnvelope className="w-5 h-5 text-sentia-cyan" />
+                                    <div className="flex items-center justify-center space-x-3 group cursor-pointer">
+                                        <HiEnvelope className="w-5 h-5 text-sentia-cyan group-hover:scale-110 transition-transform" />
                                         <a
                                             href="mailto:contact@sentialab.com"
-                                            className="text-lg font-semibold text-sentia-dark hover:text-sentia-cyan transition-colors"
+                                            className="text-lg font-semibold text-sentia-dark dark:text-white hover:text-sentia-cyan transition-colors"
                                         >
                                             contact@sentialab.com
                                         </a>
@@ -77,7 +77,7 @@ export function ContactSection() {
                                         >
                                             <Button
                                                 size="lg"
-                                                className="bg-sentia-dark text-white hover:bg-sentia-dark/90 font-semibold px-8 py-4 text-lg group"
+                                                className="bg-sentia-cyan hover:bg-sentia-cyan/90 text-white font-semibold px-8 py-6 text-lg group rounded-full shadow-[0_0_20px_rgba(45,177,188,0.3)] hover:shadow-[0_0_30px_rgba(45,177,188,0.5)] transition-all duration-300"
                                             >
                                                 <HiCalendar className="mr-2 w-5 h-5" />
                                                 Schedule a Meeting
