@@ -46,7 +46,8 @@ export function HeroSection() {
             <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-sentia-purple/20 rounded-full blur-[100px] animate-float opacity-70"></div>
                 <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-sentia-cyan/10 rounded-full blur-[120px] animate-float-delayed opacity-60"></div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-sentia-dark/5 dark:bg-sentia-cyan/5 rounded-full blur-[150px] animate-pulse-glow"></div>
+                <div className="absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[140%] h-[600px] bg-gradient-to-r from-sentia-cyan/10 via-purple-500/10 to-sentia-cyan/10 rounded-[100%] blur-[130px] opacity-70"></div>
+                <div className="absolute top-0 right-0 w-[800px] h-[600px] bg-sentia-purple/10 rounded-full blur-[150px] transform translate-x-1/3 -translate-y-1/4"></div>
             </div>
 
             {/* Grid Pattern Overlay with Radial Mask */}
