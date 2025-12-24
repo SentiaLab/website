@@ -61,7 +61,7 @@ const contactInfo = [
     {
         icon: HiMapPin,
         label: "Location",
-        value: "Atibaia, Brazil • Remote Worldwide",
+        value: "Santo André, Brazil • Remote Worldwide",
         href: "#contact",
     },
     {
