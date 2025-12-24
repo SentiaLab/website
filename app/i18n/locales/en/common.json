@@ -1,0 +1,427 @@
+{
+    "meta": {
+        "title": "SentiaLab - Robotics, AI & Embedded Systems",
+        "description": "SentiaLab specializes in robotics, artificial intelligence, and embedded systems. We develop innovative solutions combining computer vision, IoT, and machine design. Based in Brazil, serving clients worldwide."
+    },
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "services": "Services",
+        "capabilities": "Capabilities",
+        "contact": "Contact",
+        "getStarted": "Get Started"
+    },
+    "hero": {
+        "title": {
+            "line1": "Next-Generation",
+            "line2": "Edge AI Solutions"
+        },
+        "description": "Pioneering intelligent edge computing solutions that bring AI processing directly to your devices and machinery. We specialize in real-time computer vision, autonomous systems, and intelligent automation for industries ready to embrace the future.",
+        "technologies": {
+            "edgeAI": "Edge AI",
+            "computerVision": "Computer Vision",
+            "robotics": "Robotics",
+            "smartAutomation": "Smart Automation"
+        },
+        "cta": {
+            "primary": "Start Your Project",
+            "secondary": "Explore Services"
+        },
+        "stats": {
+            "realTime": {
+                "number": "Real-Time",
+                "label": "AI Processing"
+            },
+            "edge": {
+                "number": "Edge",
+                "label": "Computing Focus"
+            },
+            "custom": {
+                "number": "Custom",
+                "label": "Solutions"
+            },
+            "operation": {
+                "number": "24/7",
+                "label": "System Operation"
+            }
+        }
+    },
+    "about": {
+        "badge": "About SentiaLab",
+        "title": {
+            "line1": "Pioneering Edge AI for",
+            "line2": "Intelligent Automation"
+        },
+        "description": "SentiaLab specializes in Edge AI solutions that bring intelligent processing directly to your devices and systems. We combine computer vision, machine learning, and embedded systems to create autonomous solutions for the modern industrial landscape.",
+        "vision": {
+            "title": "Our Vision",
+            "paragraphs": [
+                "SentiaLab emerged from the recognition that the future belongs to intelligent edge computing. While cloud AI has its place, the real revolution happens when artificial intelligence operates directly on your devices, machinery, and systems.",
+                "Our mission is to make advanced computer vision and machine learning accessible to industries seeking intelligent automation. We believe that every machine should be intelligent, every process should be optimized, and every decision should be data-driven.",
+                "Founded on deep expertise in embedded systems and artificial intelligence, we bridge the gap between cutting-edge research and practical industrial applications. Our solutions serve healthcare, manufacturing, and automation sectors across multiple regions."
+            ]
+        },
+        "achievements": {
+            "advanced": {
+                "value": "Advanced",
+                "label": "AI Solutions"
+            },
+            "realTime": {
+                "value": "Real-Time",
+                "label": "Processing"
+            },
+            "multi": {
+                "value": "Multi",
+                "label": "Industry Focus"
+            },
+            "custom": {
+                "value": "Custom",
+                "label": "Implementation"
+            }
+        },
+        "capabilities": {
+            "title": "Core Capabilities",
+            "description": "Comprehensive Edge AI solutions designed to transform how industries operate and make decisions",
+            "items": {
+                "edgeAI": {
+                    "title": "Edge AI Computing",
+                    "description": "Intelligent processing at the source with real-time AI inference on embedded systems and edge devices"
+                },
+                "computerVision": {
+                    "title": "Computer Vision",
+                    "description": "Advanced visual intelligence for quality control, autonomous navigation, and predictive maintenance"
+                },
+                "smartAutomation": {
+                    "title": "Smart Automation",
+                    "description": "Intelligent systems that adapt and optimize industrial processes through continuous learning"
+                },
+                "robotics": {
+                    "title": "Robotics & Machinery",
+                    "description": "Custom robotic solutions and intelligent machinery design for specialized industrial applications"
+                }
+            }
+        },
+        "approach": {
+            "title": "Our Approach",
+            "description": "The principles that drive our Edge AI solutions",
+            "values": {
+                "edgeFirst": {
+                    "title": "Edge-First",
+                    "description": "Designing AI solutions that work where the action happens - directly on your devices and systems."
+                },
+                "industrialGrade": {
+                    "title": "Industrial-Grade",
+                    "description": "Building robust, reliable solutions that perform consistently in demanding real-world environments."
+                },
+                "customSolutions": {
+                    "title": "Custom Solutions",
+                    "description": "Tailoring AI models and systems to your specific industry needs and operational requirements."
+                },
+                "performanceFocus": {
+                    "title": "Performance Focus",
+                    "description": "Optimizing for real-time processing, low latency, and efficient resource utilization."
+                }
+            }
+        }
+    },
+    "services": {
+        "badge": "Our Services",
+        "title": {
+            "line1": "Comprehensive Solutions for",
+            "line2": "Modern Challenges"
+        },
+        "description": "From concept to deployment, we deliver end-to-end solutions that combine cutting-edge technology with practical engineering expertise.",
+        "items": {
+            "edgeComputerVision": {
+                "title": "Edge Computer Vision",
+                "description": "Real-time visual intelligence processing directly on your devices and systems for instant decision-making.",
+                "features": [
+                    "Real-time Object Detection & Tracking",
+                    "Quality Control Automation",
+                    "Autonomous Navigation Systems",
+                    "Predictive Maintenance Vision",
+                    "Custom Neural Network Deployment",
+                    "Multi-Camera Coordination"
+                ]
+            },
+            "edgeAIComputing": {
+                "title": "Edge AI Computing",
+                "description": "Intelligent processing at the source with custom AI models optimized for embedded systems and real-time performance.",
+                "features": [
+                    "Custom AI Model Development",
+                    "Neural Network Optimization",
+                    "Real-time Inference Engines",
+                    "Edge Computing Architecture",
+                    "Low-latency Processing",
+                    "Resource-efficient AI"
+                ]
+            },
+            "smartAutomation": {
+                "title": "Smart Automation",
+                "description": "Intelligent industrial systems that adapt, learn, and optimize operations through continuous AI-driven insights.",
+                "features": [
+                    "Adaptive Control Systems",
+                    "Predictive Analytics",
+                    "Digital Twin Integration",
+                    "Autonomous Process Optimization",
+                    "Smart Sensor Networks",
+                    "Industry 4.0 Solutions"
+                ]
+            },
+            "robotics": {
+                "title": "Robotics & Custom Machinery",
+                "description": "Intelligent robotic solutions and specialized machinery design with integrated AI for autonomous operation.",
+                "features": [
+                    "Autonomous Mobile Robots",
+                    "Custom Robotic Systems",
+                    "Intelligent Machinery Design",
+                    "Sensor Fusion & Navigation",
+                    "Collaborative Robot Solutions",
+                    "Specialized Automation Equipment"
+                ]
+            }
+        },
+        "keyFeatures": "Key Features",
+        "technologies": "Technologies",
+        "process": {
+            "title": "Our Process",
+            "description": "A proven methodology that ensures successful project delivery",
+            "steps": {
+                "discovery": {
+                    "title": "Discovery",
+                    "description": "Understanding your challenges and requirements"
+                },
+                "design": {
+                    "title": "Design",
+                    "description": "Creating innovative solutions tailored to your needs"
+                },
+                "development": {
+                    "title": "Development",
+                    "description": "Building robust, scalable systems with best practices"
+                },
+                "deployment": {
+                    "title": "Deployment",
+                    "description": "Seamless integration and comprehensive testing"
+                }
+            }
+        },
+        "whyChoose": {
+            "title": "Why Choose SentiaLab",
+            "description": "The advantages that set us apart in delivering exceptional results",
+            "benefits": {
+                "provenExpertise": {
+                    "title": "Proven Expertise",
+                    "description": "15+ years of engineering excellence across multiple domains"
+                },
+                "rapidDelivery": {
+                    "title": "Rapid Delivery",
+                    "description": "Agile development process ensuring quick time-to-market"
+                },
+                "qualityAssurance": {
+                    "title": "Quality Assurance",
+                    "description": "Rigorous testing and validation for reliable solutions"
+                },
+                "globalSupport": {
+                    "title": "Global Support",
+                    "description": "Remote collaboration and support worldwide"
+                }
+            }
+        },
+        "cta": {
+            "title": "Ready to Transform Your Ideas into Reality?",
+            "description": "Let's discuss how our expertise can help you achieve your goals. Get in touch for a free consultation.",
+            "button": "Start Your Project"
+        }
+    },
+    "experience": {
+        "badge": "Company Capabilities",
+        "title": {
+            "line1": "Proven Edge AI Solutions",
+            "line2": "Across Industries"
+        },
+        "description": "SentiaLab delivers cutting-edge AI solutions deployed directly on your devices and systems, enabling real-time intelligence and autonomous operation.",
+        "capabilities": {
+            "healthcareEdgeAI": {
+                "title": "Healthcare Edge AI",
+                "description": "Advanced computer vision solutions for healthcare applications with real-time processing and edge deployment.",
+                "highlights": [
+                    "Real-time action and event detection systems",
+                    "Optimized neural networks for healthcare environments",
+                    "Edge computing deployment on specialized hardware",
+                    "HIPAA-compliant AI processing solutions"
+                ],
+                "industries": [
+                    "Healthcare",
+                    "Assisted Living",
+                    "Medical Devices"
+                ]
+            },
+            "industrialEdgeComputing": {
+                "title": "Industrial Edge Computing",
+                "description": "Mission-critical embedded AI systems for manufacturing, semiconductor, and precision industries.",
+                "highlights": [
+                    "Real-time processing for industrial applications",
+                    "High-reliability systems with 99.9% uptime",
+                    "Integration with existing manufacturing systems",
+                    "Custom hardware-software optimization"
+                ],
+                "industries": [
+                    "Manufacturing",
+                    "Semiconductor",
+                    "Automotive"
+                ]
+            },
+            "autonomousVehicleSystems": {
+                "title": "Autonomous Vehicle Systems",
+                "description": "Intelligent transportation and fleet management solutions with distributed AI processing.",
+                "highlights": [
+                    "Multi-sensor fusion for autonomous navigation",
+                    "Real-time decision making for vehicle systems",
+                    "Fleet-wide intelligence and coordination",
+                    "Predictive maintenance and optimization"
+                ],
+                "industries": [
+                    "Transportation",
+                    "Logistics",
+                    "Commercial Vehicles"
+                ]
+            },
+            "smartInfrastructure": {
+                "title": "Smart Infrastructure",
+                "description": "AI-powered systems for intelligent infrastructure management and automated control.",
+                "highlights": [
+                    "Automated classification and monitoring systems",
+                    "Computer vision for infrastructure analysis",
+                    "Real-time data processing and decision making",
+                    "Integration with existing control systems"
+                ],
+                "industries": [
+                    "Smart Cities",
+                    "Infrastructure",
+                    "Security"
+                ]
+            }
+        },
+        "keyFeatures": "Key Features",
+        "performance": {
+            "title": "Our Performance",
+            "stats": {
+                "advanced": {
+                    "metric": "Advanced",
+                    "label": "AI Architecture",
+                    "description": "Sophisticated solutions designed for edge deployment"
+                },
+                "realTime": {
+                    "metric": "Real-Time",
+                    "label": "Processing Capability",
+                    "description": "Low-latency inference for critical applications"
+                },
+                "multiIndustry": {
+                    "metric": "Multi-Industry",
+                    "label": "Solutions Portfolio",
+                    "description": "Proven deployments across diverse sectors"
+                },
+                "autonomous": {
+                    "metric": "24/7",
+                    "label": "Autonomous Operation",
+                    "description": "Self-managing systems with minimal intervention"
+                }
+            }
+        },
+        "leadership": {
+            "title": "Leadership & Foundation",
+            "expertLeadership": {
+                "title": "Expert Leadership",
+                "description": "SentiaLab is founded and led by experienced engineers with deep expertise in embedded systems and artificial intelligence.",
+                "background": [
+                    "Advanced degree in Information Engineering with focus on Deep Learning and Computer Vision",
+                    "15+ years of embedded systems experience across international markets",
+                    "Proven track record with leading technology companies in multiple sectors",
+                    "Published research in computer vision and machine learning applications",
+                    "Former AI instructor at prestigious engineering institutions"
+                ]
+            },
+            "qualityAssurance": {
+                "title": "Quality Assurance",
+                "description": "Our solutions are built on proven methodologies with extensive experience in testing, validation, and quality assurance across multiple industries including healthcare, automotive, and manufacturing."
+            }
+        }
+    },
+    "contact": {
+        "badge": "Get In Touch",
+        "title": {
+            "line1": "Let's Build Something",
+            "line2": "Amazing Together"
+        },
+        "description": "Ready to transform your ideas into intelligent solutions? Contact our team to discuss your Edge AI project.",
+        "card": {
+            "title": "Contact SentiaLab",
+            "description": "Ready to start your project? Send us an email or schedule a meeting to discuss your Edge AI needs.",
+            "scheduleMeeting": "Schedule a Meeting"
+        }
+    },
+    "footer": {
+        "description": "Transforming industries through intelligent automation. We specialize in robotics, artificial intelligence, and embedded systems that solve real-world challenges.",
+        "contactInfo": {
+            "email": {
+                "label": "Email",
+                "value": "contact@sentialab.com"
+            },
+            "location": {
+                "label": "Location",
+                "value": "Santo André, Brazil • Remote Worldwide"
+            },
+            "experience": {
+                "label": "Experience",
+                "value": "15+ Years Engineering"
+            }
+        },
+        "sections": {
+            "services": "Services",
+            "company": "Company",
+            "resources": "Resources"
+        },
+        "services": {
+            "computerVision": "Computer Vision",
+            "iotSolutions": "IoT Solutions",
+            "machineDesign": "Machine Design",
+            "artificialIntelligence": "Artificial Intelligence",
+            "embeddedSystems": "Embedded Systems",
+            "systemIntegration": "System Integration"
+        },
+        "company": {
+            "aboutUs": "About Us",
+            "ourProcess": "Our Process",
+            "careers": "Careers",
+            "blog": "Blog"
+        },
+        "resources": {
+            "documentation": "Documentation",
+            "apiReference": "API Reference",
+            "knowledgeBase": "Knowledge Base",
+            "whitePapers": "White Papers",
+            "technicalSupport": "Technical Support",
+            "training": "Training"
+        },
+        "industries": {
+            "title": "Industries We Serve",
+            "items": [
+                "Edge AI",
+                "Healthcare Tech",
+                "Smart Manufacturing",
+                "Autonomous Systems",
+                "Computer Vision",
+                "Industrial IoT",
+                "Robotics",
+                "Intelligent Automation"
+            ]
+        },
+        "copyright": "© {year} SentiaLab. All rights reserved.",
+        "tagline": "Engineered with passion in Brazil 🇧🇷 • Serving the world",
+        "legal": {
+            "privacyPolicy": "Privacy Policy",
+            "termsOfService": "Terms of Service",
+            "sitemap": "Sitemap"
+        }
+    }
+}

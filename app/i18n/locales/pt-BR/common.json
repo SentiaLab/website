@@ -1,0 +1,427 @@
+{
+    "meta": {
+        "title": "SentiaLab - Robótica, IA e Sistemas Embarcados",
+        "description": "A SentiaLab é especializada em robótica, inteligência artificial e sistemas embarcados. Desenvolvemos soluções inovadoras combinando visão computacional, IoT e design de máquinas. Sediados no Brasil, atendemos clientes em todo o mundo."
+    },
+    "nav": {
+        "home": "Início",
+        "about": "Sobre",
+        "services": "Serviços",
+        "capabilities": "Capacidades",
+        "contact": "Contato",
+        "getStarted": "Começar"
+    },
+    "hero": {
+        "title": {
+            "line1": "Soluções de",
+            "line2": "IA de Borda de Nova Geração"
+        },
+        "description": "Soluções pioneiras de computação de borda inteligente que trazem processamento de IA diretamente para seus dispositivos e máquinas. Somos especializados em visão computacional em tempo real, sistemas autônomos e automação inteligente para indústrias prontas para abraçar o futuro.",
+        "technologies": {
+            "edgeAI": "IA de Borda",
+            "computerVision": "Visão Computacional",
+            "robotics": "Robótica",
+            "smartAutomation": "Automação Inteligente"
+        },
+        "cta": {
+            "primary": "Iniciar Seu Projeto",
+            "secondary": "Explorar Serviços"
+        },
+        "stats": {
+            "realTime": {
+                "number": "Tempo Real",
+                "label": "Processamento de IA"
+            },
+            "edge": {
+                "number": "Borda",
+                "label": "Foco em Computação"
+            },
+            "custom": {
+                "number": "Sob Medida",
+                "label": "Soluções"
+            },
+            "operation": {
+                "number": "24/7",
+                "label": "Operação do Sistema"
+            }
+        }
+    },
+    "about": {
+        "badge": "Sobre a SentiaLab",
+        "title": {
+            "line1": "Pioneiros em IA de Borda para",
+            "line2": "Automação Inteligente"
+        },
+        "description": "A SentiaLab é especializada em soluções de IA de Borda que trazem processamento inteligente diretamente para seus dispositivos e sistemas. Combinamos visão computacional, aprendizado de máquina e sistemas embarcados para criar soluções autônomas para o cenário industrial moderno.",
+        "vision": {
+            "title": "Nossa Visão",
+            "paragraphs": [
+                "A SentiaLab surgiu do reconhecimento de que o futuro pertence à computação de borda inteligente. Embora a IA na nuvem tenha seu lugar, a verdadeira revolução acontece quando a inteligência artificial opera diretamente em seus dispositivos, máquinas e sistemas.",
+                "Nossa missão é tornar a visão computacional avançada e o aprendizado de máquina acessíveis às indústrias que buscam automação inteligente. Acreditamos que toda máquina deve ser inteligente, todo processo deve ser otimizado e toda decisão deve ser orientada por dados.",
+                "Fundada em profunda experiência em sistemas embarcados e inteligência artificial, fazemos a ponte entre pesquisas de ponta e aplicações industriais práticas. Nossas soluções atendem aos setores de saúde, manufatura e automação em múltiplas regiões."
+            ]
+        },
+        "achievements": {
+            "advanced": {
+                "value": "Avançado",
+                "label": "Soluções de IA"
+            },
+            "realTime": {
+                "value": "Tempo Real",
+                "label": "Processamento"
+            },
+            "multi": {
+                "value": "Multi",
+                "label": "Foco Industrial"
+            },
+            "custom": {
+                "value": "Sob Medida",
+                "label": "Implementação"
+            }
+        },
+        "capabilities": {
+            "title": "Capacidades Principais",
+            "description": "Soluções abrangentes de IA de Borda projetadas para transformar como as indústrias operam e tomam decisões",
+            "items": {
+                "edgeAI": {
+                    "title": "Computação de IA de Borda",
+                    "description": "Processamento inteligente na fonte com inferência de IA em tempo real em sistemas embarcados e dispositivos de borda"
+                },
+                "computerVision": {
+                    "title": "Visão Computacional",
+                    "description": "Inteligência visual avançada para controle de qualidade, navegação autônoma e manutenção preditiva"
+                },
+                "smartAutomation": {
+                    "title": "Automação Inteligente",
+                    "description": "Sistemas inteligentes que adaptam e otimizam processos industriais através de aprendizado contínuo"
+                },
+                "robotics": {
+                    "title": "Robótica e Máquinas",
+                    "description": "Soluções robóticas personalizadas e design de máquinas inteligentes para aplicações industriais especializadas"
+                }
+            }
+        },
+        "approach": {
+            "title": "Nossa Abordagem",
+            "description": "Os princípios que impulsionam nossas soluções de IA de Borda",
+            "values": {
+                "edgeFirst": {
+                    "title": "Borda Primeiro",
+                    "description": "Projetando soluções de IA que funcionam onde a ação acontece - diretamente em seus dispositivos e sistemas."
+                },
+                "industrialGrade": {
+                    "title": "Nível Industrial",
+                    "description": "Construindo soluções robustas e confiáveis que performam consistentemente em ambientes exigentes do mundo real."
+                },
+                "customSolutions": {
+                    "title": "Soluções Personalizadas",
+                    "description": "Adaptando modelos de IA e sistemas às suas necessidades específicas da indústria e requisitos operacionais."
+                },
+                "performanceFocus": {
+                    "title": "Foco em Desempenho",
+                    "description": "Otimizando para processamento em tempo real, baixa latência e utilização eficiente de recursos."
+                }
+            }
+        }
+    },
+    "services": {
+        "badge": "Nossos Serviços",
+        "title": {
+            "line1": "Soluções Completas para",
+            "line2": "Desafios Modernos"
+        },
+        "description": "Do conceito à implantação, entregamos soluções de ponta a ponta que combinam tecnologia de vanguarda com expertise prática em engenharia.",
+        "items": {
+            "edgeComputerVision": {
+                "title": "Visão Computacional de Borda",
+                "description": "Processamento de inteligência visual em tempo real diretamente em seus dispositivos e sistemas para tomada de decisão instantânea.",
+                "features": [
+                    "Detecção e Rastreamento de Objetos em Tempo Real",
+                    "Automação de Controle de Qualidade",
+                    "Sistemas de Navegação Autônoma",
+                    "Visão para Manutenção Preditiva",
+                    "Implantação de Redes Neurais Personalizadas",
+                    "Coordenação Multi-Câmera"
+                ]
+            },
+            "edgeAIComputing": {
+                "title": "Computação de IA de Borda",
+                "description": "Processamento inteligente na fonte com modelos de IA personalizados otimizados para sistemas embarcados e desempenho em tempo real.",
+                "features": [
+                    "Desenvolvimento de Modelos de IA Personalizados",
+                    "Otimização de Redes Neurais",
+                    "Motores de Inferência em Tempo Real",
+                    "Arquitetura de Computação de Borda",
+                    "Processamento de Baixa Latência",
+                    "IA Eficiente em Recursos"
+                ]
+            },
+            "smartAutomation": {
+                "title": "Automação Inteligente",
+                "description": "Sistemas industriais inteligentes que adaptam, aprendem e otimizam operações através de insights contínuos orientados por IA.",
+                "features": [
+                    "Sistemas de Controle Adaptativo",
+                    "Análise Preditiva",
+                    "Integração com Digital Twin",
+                    "Otimização Autônoma de Processos",
+                    "Redes de Sensores Inteligentes",
+                    "Soluções da Indústria 4.0"
+                ]
+            },
+            "robotics": {
+                "title": "Robótica e Máquinas Personalizadas",
+                "description": "Soluções robóticas inteligentes e design de máquinas especializadas com IA integrada para operação autônoma.",
+                "features": [
+                    "Robôs Móveis Autônomos",
+                    "Sistemas Robóticos Personalizados",
+                    "Design de Máquinas Inteligentes",
+                    "Fusão de Sensores e Navegação",
+                    "Soluções de Robôs Colaborativos",
+                    "Equipamentos de Automação Especializados"
+                ]
+            }
+        },
+        "keyFeatures": "Recursos Principais",
+        "technologies": "Tecnologias",
+        "process": {
+            "title": "Nosso Processo",
+            "description": "Uma metodologia comprovada que garante a entrega bem-sucedida do projeto",
+            "steps": {
+                "discovery": {
+                    "title": "Descoberta",
+                    "description": "Entendendo seus desafios e requisitos"
+                },
+                "design": {
+                    "title": "Design",
+                    "description": "Criando soluções inovadoras adaptadas às suas necessidades"
+                },
+                "development": {
+                    "title": "Desenvolvimento",
+                    "description": "Construindo sistemas robustos e escaláveis com as melhores práticas"
+                },
+                "deployment": {
+                    "title": "Implantação",
+                    "description": "Integração perfeita e testes abrangentes"
+                }
+            }
+        },
+        "whyChoose": {
+            "title": "Por Que Escolher a SentiaLab",
+            "description": "As vantagens que nos diferenciam na entrega de resultados excepcionais",
+            "benefits": {
+                "provenExpertise": {
+                    "title": "Expertise Comprovada",
+                    "description": "15+ anos de excelência em engenharia em múltiplos domínios"
+                },
+                "rapidDelivery": {
+                    "title": "Entrega Rápida",
+                    "description": "Processo de desenvolvimento ágil garantindo rápido time-to-market"
+                },
+                "qualityAssurance": {
+                    "title": "Garantia de Qualidade",
+                    "description": "Testes rigorosos e validação para soluções confiáveis"
+                },
+                "globalSupport": {
+                    "title": "Suporte Global",
+                    "description": "Colaboração remota e suporte mundial"
+                }
+            }
+        },
+        "cta": {
+            "title": "Pronto para Transformar Suas Ideias em Realidade?",
+            "description": "Vamos discutir como nossa expertise pode ajudá-lo a alcançar seus objetivos. Entre em contato para uma consulta gratuita.",
+            "button": "Iniciar Seu Projeto"
+        }
+    },
+    "experience": {
+        "badge": "Capacidades da Empresa",
+        "title": {
+            "line1": "Soluções Comprovadas de IA de Borda",
+            "line2": "Em Todos os Setores"
+        },
+        "description": "A SentiaLab entrega soluções de IA de ponta implantadas diretamente em seus dispositivos e sistemas, permitindo inteligência em tempo real e operação autônoma.",
+        "capabilities": {
+            "healthcareEdgeAI": {
+                "title": "IA de Borda para Saúde",
+                "description": "Soluções avançadas de visão computacional para aplicações de saúde com processamento em tempo real e implantação em borda.",
+                "highlights": [
+                    "Sistemas de detecção de ações e eventos em tempo real",
+                    "Redes neurais otimizadas para ambientes de saúde",
+                    "Implantação de computação de borda em hardware especializado",
+                    "Soluções de processamento de IA em conformidade com HIPAA"
+                ],
+                "industries": [
+                    "Saúde",
+                    "Vida Assistida",
+                    "Dispositivos Médicos"
+                ]
+            },
+            "industrialEdgeComputing": {
+                "title": "Computação de Borda Industrial",
+                "description": "Sistemas de IA embarcados de missão crítica para manufatura, semicondutores e indústrias de precisão.",
+                "highlights": [
+                    "Processamento em tempo real para aplicações industriais",
+                    "Sistemas de alta confiabilidade com 99,9% de uptime",
+                    "Integração com sistemas de manufatura existentes",
+                    "Otimização personalizada de hardware-software"
+                ],
+                "industries": [
+                    "Manufatura",
+                    "Semicondutores",
+                    "Automotivo"
+                ]
+            },
+            "autonomousVehicleSystems": {
+                "title": "Sistemas de Veículos Autônomos",
+                "description": "Soluções inteligentes de transporte e gestão de frotas com processamento de IA distribuído.",
+                "highlights": [
+                    "Fusão multi-sensorial para navegação autônoma",
+                    "Tomada de decisão em tempo real para sistemas veiculares",
+                    "Inteligência e coordenação em toda a frota",
+                    "Manutenção preditiva e otimização"
+                ],
+                "industries": [
+                    "Transporte",
+                    "Logística",
+                    "Veículos Comerciais"
+                ]
+            },
+            "smartInfrastructure": {
+                "title": "Infraestrutura Inteligente",
+                "description": "Sistemas alimentados por IA para gestão de infraestrutura inteligente e controle automatizado.",
+                "highlights": [
+                    "Sistemas automatizados de classificação e monitoramento",
+                    "Visão computacional para análise de infraestrutura",
+                    "Processamento de dados em tempo real e tomada de decisão",
+                    "Integração com sistemas de controle existentes"
+                ],
+                "industries": [
+                    "Cidades Inteligentes",
+                    "Infraestrutura",
+                    "Segurança"
+                ]
+            }
+        },
+        "keyFeatures": "Recursos Principais",
+        "performance": {
+            "title": "Nosso Desempenho",
+            "stats": {
+                "advanced": {
+                    "metric": "Avançado",
+                    "label": "Arquitetura de IA",
+                    "description": "Soluções sofisticadas projetadas para implantação em borda"
+                },
+                "realTime": {
+                    "metric": "Tempo Real",
+                    "label": "Capacidade de Processamento",
+                    "description": "Inferência de baixa latência para aplicações críticas"
+                },
+                "multiIndustry": {
+                    "metric": "Multi-Indústria",
+                    "label": "Portfólio de Soluções",
+                    "description": "Implantações comprovadas em diversos setores"
+                },
+                "autonomous": {
+                    "metric": "24/7",
+                    "label": "Operação Autônoma",
+                    "description": "Sistemas autogerenciados com intervenção mínima"
+                }
+            }
+        },
+        "leadership": {
+            "title": "Liderança e Fundação",
+            "expertLeadership": {
+                "title": "Liderança Especializada",
+                "description": "A SentiaLab é fundada e liderada por engenheiros experientes com profunda expertise em sistemas embarcados e inteligência artificial.",
+                "background": [
+                    "Pós-graduação em Engenharia da Informação com foco em Deep Learning e Visão Computacional",
+                    "15+ anos de experiência em sistemas embarcados em mercados internacionais",
+                    "Histórico comprovado com empresas líderes de tecnologia em múltiplos setores",
+                    "Pesquisa publicada em aplicações de visão computacional e aprendizado de máquina",
+                    "Ex-instrutor de IA em instituições de engenharia de prestígio"
+                ]
+            },
+            "qualityAssurance": {
+                "title": "Garantia de Qualidade",
+                "description": "Nossas soluções são construídas em metodologias comprovadas com ampla experiência em testes, validação e garantia de qualidade em múltiplas indústrias, incluindo saúde, automotivo e manufatura."
+            }
+        }
+    },
+    "contact": {
+        "badge": "Entre em Contato",
+        "title": {
+            "line1": "Vamos Construir Algo",
+            "line2": "Incrível Juntos"
+        },
+        "description": "Pronto para transformar suas ideias em soluções inteligentes? Entre em contato com nossa equipe para discutir seu projeto de IA de Borda.",
+        "card": {
+            "title": "Contate a SentiaLab",
+            "description": "Pronto para iniciar seu projeto? Envie-nos um e-mail ou agende uma reunião para discutir suas necessidades de IA de Borda.",
+            "scheduleMeeting": "Agendar Reunião"
+        }
+    },
+    "footer": {
+        "description": "Transformando indústrias através de automação inteligente. Somos especializados em robótica, inteligência artificial e sistemas embarcados que resolvem desafios do mundo real.",
+        "contactInfo": {
+            "email": {
+                "label": "E-mail",
+                "value": "contact@sentialab.com"
+            },
+            "location": {
+                "label": "Localização",
+                "value": "Santo André, Brasil • Remoto Mundial"
+            },
+            "experience": {
+                "label": "Experiência",
+                "value": "15+ Anos de Engenharia"
+            }
+        },
+        "sections": {
+            "services": "Serviços",
+            "company": "Empresa",
+            "resources": "Recursos"
+        },
+        "services": {
+            "computerVision": "Visão Computacional",
+            "iotSolutions": "Soluções IoT",
+            "machineDesign": "Design de Máquinas",
+            "artificialIntelligence": "Inteligência Artificial",
+            "embeddedSystems": "Sistemas Embarcados",
+            "systemIntegration": "Integração de Sistemas"
+        },
+        "company": {
+            "aboutUs": "Sobre Nós",
+            "ourProcess": "Nosso Processo",
+            "careers": "Carreiras",
+            "blog": "Blog"
+        },
+        "resources": {
+            "documentation": "Documentação",
+            "apiReference": "Referência da API",
+            "knowledgeBase": "Base de Conhecimento",
+            "whitePapers": "White Papers",
+            "technicalSupport": "Suporte Técnico",
+            "training": "Treinamento"
+        },
+        "industries": {
+            "title": "Indústrias que Atendemos",
+            "items": [
+                "IA de Borda",
+                "Tecnologia para Saúde",
+                "Manufatura Inteligente",
+                "Sistemas Autônomos",
+                "Visão Computacional",
+                "IoT Industrial",
+                "Robótica",
+                "Automação Inteligente"
+            ]
+        },
+        "copyright": "© {year} SentiaLab. Todos os direitos reservados.",
+        "tagline": "Desenvolvido com paixão no Brasil 🇧🇷 • Atendendo o mundo",
+        "legal": {
+            "privacyPolicy": "Política de Privacidade",
+            "termsOfService": "Termos de Serviço",
+            "sitemap": "Mapa do Site"
+        }
+    }
+}

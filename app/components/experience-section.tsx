@@ -12,98 +12,135 @@ import {
     HiTruck,
     HiShieldCheck,
 } from "react-icons/hi2";
+import { useTranslation } from "@/i18n";
 
-const capabilities = [
-    {
-        icon: HiEye,
-        title: "Healthcare Edge AI",
-        description:
-            "Advanced computer vision solutions for healthcare applications with real-time processing and edge deployment.",
-        highlights: [
-            "Real-time action and event detection systems",
-            "Optimized neural networks for healthcare environments",
-            "Edge computing deployment on specialized hardware",
-            "HIPAA-compliant AI processing solutions",
-        ],
-        industries: ["Healthcare", "Assisted Living", "Medical Devices"],
-        color: "from-blue-500 to-cyan-500",
-    },
-    {
-        icon: HiCpuChip,
-        title: "Industrial Edge Computing",
-        description:
-            "Mission-critical embedded AI systems for manufacturing, semiconductor, and precision industries.",
-        highlights: [
-            "Real-time processing for industrial applications",
-            "High-reliability systems with 99.9% uptime",
-            "Integration with existing manufacturing systems",
-            "Custom hardware-software optimization",
-        ],
-        industries: ["Manufacturing", "Semiconductor", "Automotive"],
-        color: "from-purple-500 to-violet-500",
-    },
-    {
-        icon: HiTruck,
-        title: "Autonomous Vehicle Systems",
-        description:
-            "Intelligent transportation and fleet management solutions with distributed AI processing.",
-        highlights: [
-            "Multi-sensor fusion for autonomous navigation",
-            "Real-time decision making for vehicle systems",
-            "Fleet-wide intelligence and coordination",
-            "Predictive maintenance and optimization",
-        ],
-        industries: ["Transportation", "Logistics", "Commercial Vehicles"],
-        color: "from-green-500 to-emerald-500",
-    },
-    {
-        icon: HiGlobeAlt,
-        title: "Smart Infrastructure",
-        description:
-            "AI-powered systems for intelligent infrastructure management and automated control.",
-        highlights: [
-            "Automated classification and monitoring systems",
-            "Computer vision for infrastructure analysis",
-            "Real-time data processing and decision making",
-            "Integration with existing control systems",
-        ],
-        industries: ["Smart Cities", "Infrastructure", "Security"],
-        color: "from-orange-500 to-red-500",
-    },
-];
+const capabilityIcons = {
+    healthcareEdgeAI: HiEye,
+    industrialEdgeComputing: HiCpuChip,
+    autonomousVehicleSystems: HiTruck,
+    smartInfrastructure: HiGlobeAlt,
+};
 
-const companyStats = [
-    {
-        metric: "Advanced",
-        label: "AI Architecture",
-        description: "Sophisticated solutions designed for edge deployment",
-    },
-    {
-        metric: "Real-Time",
-        label: "Processing Capability",
-        description: "Low-latency inference for critical applications",
-    },
-    {
-        metric: "Multi-Industry",
-        label: "Solutions Portfolio",
-        description: "Proven deployments across diverse sectors",
-    },
-    {
-        metric: "24/7",
-        label: "Autonomous Operation",
-        description: "Self-managing systems with minimal intervention",
-    },
-];
-
-const founderBackground = [
-    "Advanced degree in Information Engineering with focus on Deep Learning and Computer Vision",
-    "15+ years of embedded systems experience across international markets",
-    "Proven track record with leading technology companies in multiple sectors",
-    "Published research in computer vision and machine learning applications",
-    "Former AI instructor at prestigious engineering institutions",
-];
+const capabilityColors = {
+    healthcareEdgeAI: "from-blue-500 to-cyan-500",
+    industrialEdgeComputing: "from-purple-500 to-violet-500",
+    autonomousVehicleSystems: "from-green-500 to-emerald-500",
+    smartInfrastructure: "from-orange-500 to-red-500",
+};
 
 export function ExperienceSection() {
+    const { t } = useTranslation();
+
+    const capabilities = [
+        {
+            key: "healthcareEdgeAI",
+            icon: capabilityIcons.healthcareEdgeAI,
+            color: capabilityColors.healthcareEdgeAI,
+            title: t("experience.capabilities.healthcareEdgeAI.title"),
+            description: t("experience.capabilities.healthcareEdgeAI.description"),
+            highlights: [
+                t("experience.capabilities.healthcareEdgeAI.highlights.0"),
+                t("experience.capabilities.healthcareEdgeAI.highlights.1"),
+                t("experience.capabilities.healthcareEdgeAI.highlights.2"),
+                t("experience.capabilities.healthcareEdgeAI.highlights.3"),
+            ],
+            industries: [
+                t("experience.capabilities.healthcareEdgeAI.industries.0"),
+                t("experience.capabilities.healthcareEdgeAI.industries.1"),
+                t("experience.capabilities.healthcareEdgeAI.industries.2"),
+            ],
+        },
+        {
+            key: "industrialEdgeComputing",
+            icon: capabilityIcons.industrialEdgeComputing,
+            color: capabilityColors.industrialEdgeComputing,
+            title: t("experience.capabilities.industrialEdgeComputing.title"),
+            description: t("experience.capabilities.industrialEdgeComputing.description"),
+            highlights: [
+                t("experience.capabilities.industrialEdgeComputing.highlights.0"),
+                t("experience.capabilities.industrialEdgeComputing.highlights.1"),
+                t("experience.capabilities.industrialEdgeComputing.highlights.2"),
+                t("experience.capabilities.industrialEdgeComputing.highlights.3"),
+            ],
+            industries: [
+                t("experience.capabilities.industrialEdgeComputing.industries.0"),
+                t("experience.capabilities.industrialEdgeComputing.industries.1"),
+                t("experience.capabilities.industrialEdgeComputing.industries.2"),
+            ],
+        },
+        {
+            key: "autonomousVehicleSystems",
+            icon: capabilityIcons.autonomousVehicleSystems,
+            color: capabilityColors.autonomousVehicleSystems,
+            title: t("experience.capabilities.autonomousVehicleSystems.title"),
+            description: t("experience.capabilities.autonomousVehicleSystems.description"),
+            highlights: [
+                t("experience.capabilities.autonomousVehicleSystems.highlights.0"),
+                t("experience.capabilities.autonomousVehicleSystems.highlights.1"),
+                t("experience.capabilities.autonomousVehicleSystems.highlights.2"),
+                t("experience.capabilities.autonomousVehicleSystems.highlights.3"),
+            ],
+            industries: [
+                t("experience.capabilities.autonomousVehicleSystems.industries.0"),
+                t("experience.capabilities.autonomousVehicleSystems.industries.1"),
+                t("experience.capabilities.autonomousVehicleSystems.industries.2"),
+            ],
+        },
+        {
+            key: "smartInfrastructure",
+            icon: capabilityIcons.smartInfrastructure,
+            color: capabilityColors.smartInfrastructure,
+            title: t("experience.capabilities.smartInfrastructure.title"),
+            description: t("experience.capabilities.smartInfrastructure.description"),
+            highlights: [
+                t("experience.capabilities.smartInfrastructure.highlights.0"),
+                t("experience.capabilities.smartInfrastructure.highlights.1"),
+                t("experience.capabilities.smartInfrastructure.highlights.2"),
+                t("experience.capabilities.smartInfrastructure.highlights.3"),
+            ],
+            industries: [
+                t("experience.capabilities.smartInfrastructure.industries.0"),
+                t("experience.capabilities.smartInfrastructure.industries.1"),
+                t("experience.capabilities.smartInfrastructure.industries.2"),
+            ],
+        },
+    ];
+
+    const companyStats = [
+        {
+            key: "advanced",
+            metric: t("experience.performance.stats.advanced.metric"),
+            label: t("experience.performance.stats.advanced.label"),
+            description: t("experience.performance.stats.advanced.description"),
+        },
+        {
+            key: "realTime",
+            metric: t("experience.performance.stats.realTime.metric"),
+            label: t("experience.performance.stats.realTime.label"),
+            description: t("experience.performance.stats.realTime.description"),
+        },
+        {
+            key: "multiIndustry",
+            metric: t("experience.performance.stats.multiIndustry.metric"),
+            label: t("experience.performance.stats.multiIndustry.label"),
+            description: t("experience.performance.stats.multiIndustry.description"),
+        },
+        {
+            key: "autonomous",
+            metric: t("experience.performance.stats.autonomous.metric"),
+            label: t("experience.performance.stats.autonomous.label"),
+            description: t("experience.performance.stats.autonomous.description"),
+        },
+    ];
+
+    const founderBackground = [
+        t("experience.leadership.expertLeadership.background.0"),
+        t("experience.leadership.expertLeadership.background.1"),
+        t("experience.leadership.expertLeadership.background.2"),
+        t("experience.leadership.expertLeadership.background.3"),
+        t("experience.leadership.expertLeadership.background.4"),
+    ];
+
     return (
         <section
             id="experience"
@@ -122,18 +159,16 @@ export function ExperienceSection() {
                         variant="secondary"
                         className="mb-4 bg-sentia-cyan/10 text-sentia-cyan border-sentia-cyan/20 dark:bg-sentia-cyan/20"
                     >
-                        Company Capabilities
+                        {t("experience.badge")}
                     </Badge>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-sentia-dark dark:text-white mb-6">
-                        Proven Edge AI Solutions
+                        {t("experience.title.line1")}
                         <span className="gradient-text block mt-2">
-                            Across Industries
+                            {t("experience.title.line2")}
                         </span>
                     </h2>
                     <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                        SentiaLab delivers cutting-edge AI solutions deployed
-                        directly on your devices and systems, enabling real-time
-                        intelligence and autonomous operation.
+                        {t("experience.description")}
                     </p>
                 </motion.div>
 
@@ -147,7 +182,7 @@ export function ExperienceSection() {
                 >
                     {capabilities.map((capability, index) => (
                         <motion.div
-                            key={capability.title}
+                            key={capability.key}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{
@@ -173,7 +208,7 @@ export function ExperienceSection() {
                                             </p>
                                             <div className="mb-6">
                                                 <h4 className="font-semibold text-sentia-dark dark:text-white mb-3 text-sm uppercase tracking-wider">
-                                                    Key Features
+                                                    {t("experience.keyFeatures")}
                                                 </h4>
                                                 <ul className="space-y-2">
                                                     {capability.highlights.map(
@@ -218,7 +253,7 @@ export function ExperienceSection() {
                     >
                         <h3 className="text-2xl font-bold text-sentia-dark dark:text-gray-100 mb-6 flex items-center">
                             <HiShieldCheck className="w-6 h-6 text-sentia-cyan mr-3" />
-                            Our Performance
+                            {t("experience.performance.title")}
                         </h3>
                         <div className="space-y-6">
                             {companyStats.map((stat, index) => (
@@ -255,18 +290,16 @@ export function ExperienceSection() {
                     >
                         <h3 className="text-2xl font-bold text-sentia-dark dark:text-gray-100 mb-6 flex items-center">
                             <HiAcademicCap className="w-6 h-6 text-sentia-cyan mr-3" />
-                            Leadership & Foundation
+                            {t("experience.leadership.title")}
                         </h3>
 
                         <Card className="glass-effect border-0 mb-6">
                             <CardContent className="p-8">
                                 <h4 className="text-xl font-bold text-sentia-dark dark:text-white mb-4">
-                                    Expert Leadership
+                                    {t("experience.leadership.expertLeadership.title")}
                                 </h4>
                                 <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6">
-                                    SentiaLab is founded and led by experienced
-                                    engineers with deep expertise in embedded
-                                    systems and artificial intelligence.
+                                    {t("experience.leadership.expertLeadership.description")}
                                 </p>
                                 <ul className="space-y-3">
                                     {founderBackground.map((item, index) => (
@@ -282,14 +315,10 @@ export function ExperienceSection() {
                         <Card className="glass-effect border-0">
                             <CardContent className="p-8">
                                 <h4 className="text-xl font-bold text-sentia-dark dark:text-white mb-4">
-                                    Quality Assurance
+                                    {t("experience.leadership.qualityAssurance.title")}
                                 </h4>
                                 <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-                                    Our solutions are built on proven
-                                    methodologies with extensive experience in
-                                    testing, validation, and quality assurance
-                                    across multiple industries including
-                                    healthcare, automotive, and manufacturing.
+                                    {t("experience.leadership.qualityAssurance.description")}
                                 </p>
                             </CardContent>
                         </Card>

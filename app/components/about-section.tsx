@@ -16,97 +16,131 @@ import {
     HiAcademicCap,
     HiRocketLaunch,
 } from "react-icons/hi2";
+import { useTranslation } from "@/i18n";
 
-const values = [
-    {
-        icon: HiLightBulb,
-        title: "Edge-First",
-        description:
-            "Designing AI solutions that work where the action happens - directly on your devices and systems.",
-    },
-    {
-        icon: HiShieldCheck,
-        title: "Industrial-Grade",
-        description:
-            "Building robust, reliable solutions that perform consistently in demanding real-world environments.",
-    },
-    {
-        icon: HiUsers,
-        title: "Custom Solutions",
-        description:
-            "Tailoring AI models and systems to your specific industry needs and operational requirements.",
-    },
-    {
-        icon: HiTrophy,
-        title: "Performance Focus",
-        description:
-            "Optimizing for real-time processing, low latency, and efficient resource utilization.",
-    },
-];
+const valueIcons = {
+    edgeFirst: HiLightBulb,
+    industrialGrade: HiShieldCheck,
+    customSolutions: HiUsers,
+    performanceFocus: HiTrophy,
+};
 
-const expertise = [
-    {
-        icon: HiCpuChip,
-        title: "Edge AI Computing",
-        description:
-            "Intelligent processing at the source with real-time AI inference on embedded systems and edge devices",
-        technologies: ["PyTorch", "CUDA", "Jetson", "ARM Cortex", "TensorRT"],
-    },
-    {
-        icon: HiEye,
-        title: "Computer Vision",
-        description:
-            "Advanced visual intelligence for quality control, autonomous navigation, and predictive maintenance",
-        technologies: [
-            "OpenCV",
-            "YOLO",
-            "Custom CNNs",
-            "3D Vision",
-            "Real-time Processing",
-        ],
-    },
-    {
-        icon: HiGlobeAlt,
-        title: "Smart Automation",
-        description:
-            "Intelligent systems that adapt and optimize industrial processes through continuous learning",
-        technologies: [
-            "Industrial IoT",
-            "Digital Twins",
-            "Predictive Analytics",
-            "SCADA Integration",
-        ],
-    },
-    {
-        icon: HiCog,
-        title: "Robotics & Machinery",
-        description:
-            "Custom robotic solutions and intelligent machinery design for specialized industrial applications",
-        technologies: [
-            "ROS",
-            "Motion Control",
-            "Sensor Fusion",
-            "Custom Hardware",
-        ],
-    },
-];
+const expertiseIcons = {
+    edgeAI: HiCpuChip,
+    computerVision: HiEye,
+    smartAutomation: HiGlobeAlt,
+    robotics: HiCog,
+};
 
-const achievements = [
-    {
-        icon: HiAcademicCap,
-        value: "Advanced",
-        label: "AI Solutions",
-    },
-    {
-        icon: HiRocketLaunch,
-        value: "Real-Time",
-        label: "Processing",
-    },
-    { icon: HiGlobeAlt, value: "Multi", label: "Industry Focus" },
-    { icon: HiUsers, value: "Custom", label: "Implementation" },
-];
+const achievementIcons = {
+    advanced: HiAcademicCap,
+    realTime: HiRocketLaunch,
+    multi: HiGlobeAlt,
+    custom: HiUsers,
+};
+
+const expertiseTechnologies: Record<string, string[]> = {
+    edgeAI: ["PyTorch", "CUDA", "Jetson", "ARM Cortex", "TensorRT"],
+    computerVision: ["OpenCV", "YOLO", "Custom CNNs", "3D Vision", "Real-time Processing"],
+    smartAutomation: ["Industrial IoT", "Digital Twins", "Predictive Analytics", "SCADA Integration"],
+    robotics: ["ROS", "Motion Control", "Sensor Fusion", "Custom Hardware"],
+};
 
 export function AboutSection() {
+    const { t } = useTranslation();
+
+    const values = [
+        {
+            key: "edgeFirst",
+            icon: valueIcons.edgeFirst,
+            title: t("about.approach.values.edgeFirst.title"),
+            description: t("about.approach.values.edgeFirst.description"),
+        },
+        {
+            key: "industrialGrade",
+            icon: valueIcons.industrialGrade,
+            title: t("about.approach.values.industrialGrade.title"),
+            description: t("about.approach.values.industrialGrade.description"),
+        },
+        {
+            key: "customSolutions",
+            icon: valueIcons.customSolutions,
+            title: t("about.approach.values.customSolutions.title"),
+            description: t("about.approach.values.customSolutions.description"),
+        },
+        {
+            key: "performanceFocus",
+            icon: valueIcons.performanceFocus,
+            title: t("about.approach.values.performanceFocus.title"),
+            description: t("about.approach.values.performanceFocus.description"),
+        },
+    ];
+
+    const expertise = [
+        {
+            key: "edgeAI",
+            icon: expertiseIcons.edgeAI,
+            title: t("about.capabilities.items.edgeAI.title"),
+            description: t("about.capabilities.items.edgeAI.description"),
+            technologies: expertiseTechnologies.edgeAI,
+        },
+        {
+            key: "computerVision",
+            icon: expertiseIcons.computerVision,
+            title: t("about.capabilities.items.computerVision.title"),
+            description: t("about.capabilities.items.computerVision.description"),
+            technologies: expertiseTechnologies.computerVision,
+        },
+        {
+            key: "smartAutomation",
+            icon: expertiseIcons.smartAutomation,
+            title: t("about.capabilities.items.smartAutomation.title"),
+            description: t("about.capabilities.items.smartAutomation.description"),
+            technologies: expertiseTechnologies.smartAutomation,
+        },
+        {
+            key: "robotics",
+            icon: expertiseIcons.robotics,
+            title: t("about.capabilities.items.robotics.title"),
+            description: t("about.capabilities.items.robotics.description"),
+            technologies: expertiseTechnologies.robotics,
+        },
+    ];
+
+    const achievements = [
+        {
+            key: "advanced",
+            icon: achievementIcons.advanced,
+            value: t("about.achievements.advanced.value"),
+            label: t("about.achievements.advanced.label"),
+        },
+        {
+            key: "realTime",
+            icon: achievementIcons.realTime,
+            value: t("about.achievements.realTime.value"),
+            label: t("about.achievements.realTime.label"),
+        },
+        {
+            key: "multi",
+            icon: achievementIcons.multi,
+            value: t("about.achievements.multi.value"),
+            label: t("about.achievements.multi.label"),
+        },
+        {
+            key: "custom",
+            icon: achievementIcons.custom,
+            value: t("about.achievements.custom.value"),
+            label: t("about.achievements.custom.label"),
+        },
+    ];
+
+    // Get vision paragraphs as array
+    const visionParagraphs = [
+        t("about.vision.paragraphs.0"),
+        t("about.vision.paragraphs.1"),
+        t("about.vision.paragraphs.2"),
+    ];
+
     return (
         <section
             id="about"
@@ -125,20 +159,16 @@ export function AboutSection() {
                         variant="secondary"
                         className="mb-4 bg-sentia-purple/10 text-sentia-purple border-sentia-purple/20 dark:bg-sentia-purple/20 dark:text-indigo-300"
                     >
-                        About SentiaLab
+                        {t("about.badge")}
                     </Badge>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-sentia-dark dark:text-white mb-6">
-                        Pioneering Edge AI for
+                        {t("about.title.line1")}
                         <span className="gradient-text block mt-2">
-                            Intelligent Automation
+                            {t("about.title.line2")}
                         </span>
                     </h2>
                     <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                        SentiaLab specializes in Edge AI solutions that bring
-                        intelligent processing directly to your devices and
-                        systems. We combine computer vision, machine learning,
-                        and embedded systems to create autonomous solutions for
-                        the modern industrial landscape.
+                        {t("about.description")}
                     </p>
                 </motion.div>
 
@@ -153,35 +183,12 @@ export function AboutSection() {
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="space-y-8">
                             <h3 className="text-3xl font-bold text-sentia-dark dark:text-white">
-                                Our Vision
+                                {t("about.vision.title")}
                             </h3>
                             <div className="space-y-6 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                                <p>
-                                    SentiaLab emerged from the recognition that
-                                    the future belongs to intelligent edge
-                                    computing. While cloud AI has its place, the
-                                    real revolution happens when artificial
-                                    intelligence operates directly on your
-                                    devices, machinery, and systems.
-                                </p>
-                                <p>
-                                    Our mission is to make advanced computer
-                                    vision and machine learning accessible to
-                                    industries seeking intelligent automation.
-                                    We believe that every machine should be
-                                    intelligent, every process should be
-                                    optimized, and every decision should be
-                                    data-driven.
-                                </p>
-                                <p>
-                                    Founded on deep expertise in embedded
-                                    systems and artificial intelligence, we
-                                    bridge the gap between cutting-edge research
-                                    and practical industrial applications. Our
-                                    solutions serve healthcare, manufacturing,
-                                    and automation sectors across multiple
-                                    regions.
-                                </p>
+                                {visionParagraphs.map((paragraph, index) => (
+                                    <p key={index}>{paragraph}</p>
+                                ))}
                             </div>
                         </div>
 
@@ -195,7 +202,7 @@ export function AboutSection() {
                             >
                                 {achievements.map((achievement) => (
                                     <Card
-                                        key={achievement.label}
+                                        key={achievement.key}
                                         className="card-hover glass-effect border-0"
                                     >
                                         <CardContent className="p-6 text-center">
@@ -224,18 +231,17 @@ export function AboutSection() {
                 >
                     <div className="text-center mb-12">
                         <h3 className="text-3xl font-bold text-sentia-dark dark:text-white mb-4">
-                            Core Capabilities
+                            {t("about.capabilities.title")}
                         </h3>
                         <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                            Comprehensive Edge AI solutions designed to
-                            transform how industries operate and make decisions
+                            {t("about.capabilities.description")}
                         </p>
                     </div>
 
                     <div className="tech-grid">
                         {expertise.map((item, index) => (
                             <motion.div
-                                key={item.title}
+                                key={item.key}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{
@@ -290,17 +296,17 @@ export function AboutSection() {
                 >
                     <div className="text-center mb-12">
                         <h3 className="text-3xl font-bold text-sentia-dark dark:text-white mb-4">
-                            Our Approach
+                            {t("about.approach.title")}
                         </h3>
                         <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                            The principles that drive our Edge AI solutions
+                            {t("about.approach.description")}
                         </p>
                     </div>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {values.map((value, index) => (
                             <motion.div
-                                key={value.title}
+                                key={value.key}
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{

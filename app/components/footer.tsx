@@ -16,30 +16,21 @@ import {
     HiCommandLine,
 } from "react-icons/hi2";
 import { SiGithub } from "react-icons/si";
+import { useTranslation } from "@/i18n";
 
-const footerNavigation = {
-    services: [
-        { name: "Computer Vision", href: "#services", icon: HiEye },
-        { name: "IoT Solutions", href: "#services", icon: HiGlobeAlt },
-        { name: "Machine Design", href: "#services", icon: HiCog },
-        { name: "Artificial Intelligence", href: "#services", icon: HiCpuChip },
-        { name: "Embedded Systems", href: "#services", icon: HiCpuChip },
-        { name: "System Integration", href: "#services", icon: HiCommandLine },
-    ],
-    company: [
-        { name: "About Us", href: "#about" },
-        { name: "Our Process", href: "#services" },
-        { name: "Careers", href: "#contact" },
-        { name: "Blog", href: "#contact" },
-    ],
-    resources: [
-        { name: "Documentation", href: "#contact" },
-        { name: "API Reference", href: "#contact" },
-        { name: "Knowledge Base", href: "#contact" },
-        { name: "White Papers", href: "#contact" },
-        { name: "Technical Support", href: "#contact" },
-        { name: "Training", href: "#contact" },
-    ],
+const serviceIcons = {
+    computerVision: HiEye,
+    iotSolutions: HiGlobeAlt,
+    machineDesign: HiCog,
+    artificialIntelligence: HiCpuChip,
+    embeddedSystems: HiCpuChip,
+    systemIntegration: HiCommandLine,
+};
+
+const contactInfoIcons = {
+    email: HiEnvelope,
+    location: HiMapPin,
+    experience: HiGlobeAlt,
 };
 
 const socialLinks = [
@@ -51,39 +42,67 @@ const socialLinks = [
     },
 ];
 
-const contactInfo = [
-    {
-        icon: HiEnvelope,
-        label: "Email",
-        value: "contact@sentialab.com",
-        href: "mailto:contact@sentialab.com",
-    },
-    {
-        icon: HiMapPin,
-        label: "Location",
-        value: "Santo André, Brazil • Remote Worldwide",
-        href: "#contact",
-    },
-    {
-        icon: HiGlobeAlt,
-        label: "Experience",
-        value: "15+ Years Engineering",
-        href: "#experience",
-    },
-];
-
-const industries = [
-    "Edge AI",
-    "Healthcare Tech",
-    "Smart Manufacturing",
-    "Autonomous Systems",
-    "Computer Vision",
-    "Industrial IoT",
-    "Robotics",
-    "Intelligent Automation",
-];
-
 export function Footer() {
+    const { t } = useTranslation();
+    const currentYear = new Date().getFullYear();
+
+    const footerNavigation = {
+        services: [
+            { key: "computerVision", name: t("footer.services.computerVision"), href: "#services", icon: serviceIcons.computerVision },
+            { key: "iotSolutions", name: t("footer.services.iotSolutions"), href: "#services", icon: serviceIcons.iotSolutions },
+            { key: "machineDesign", name: t("footer.services.machineDesign"), href: "#services", icon: serviceIcons.machineDesign },
+            { key: "artificialIntelligence", name: t("footer.services.artificialIntelligence"), href: "#services", icon: serviceIcons.artificialIntelligence },
+            { key: "embeddedSystems", name: t("footer.services.embeddedSystems"), href: "#services", icon: serviceIcons.embeddedSystems },
+            { key: "systemIntegration", name: t("footer.services.systemIntegration"), href: "#services", icon: serviceIcons.systemIntegration },
+        ],
+        company: [
+            { name: t("footer.company.aboutUs"), href: "#about" },
+            { name: t("footer.company.ourProcess"), href: "#services" },
+            { name: t("footer.company.careers"), href: "#contact" },
+            { name: t("footer.company.blog"), href: "#contact" },
+        ],
+        resources: [
+            { name: t("footer.resources.documentation"), href: "#contact" },
+            { name: t("footer.resources.apiReference"), href: "#contact" },
+            { name: t("footer.resources.knowledgeBase"), href: "#contact" },
+            { name: t("footer.resources.whitePapers"), href: "#contact" },
+            { name: t("footer.resources.technicalSupport"), href: "#contact" },
+            { name: t("footer.resources.training"), href: "#contact" },
+        ],
+    };
+
+    const contactInfo = [
+        {
+            icon: contactInfoIcons.email,
+            label: t("footer.contactInfo.email.label"),
+            value: t("footer.contactInfo.email.value"),
+            href: "mailto:contact@sentialab.com",
+        },
+        {
+            icon: contactInfoIcons.location,
+            label: t("footer.contactInfo.location.label"),
+            value: t("footer.contactInfo.location.value"),
+            href: "#contact",
+        },
+        {
+            icon: contactInfoIcons.experience,
+            label: t("footer.contactInfo.experience.label"),
+            value: t("footer.contactInfo.experience.value"),
+            href: "#experience",
+        },
+    ];
+
+    const industries = [
+        t("footer.industries.items.0"),
+        t("footer.industries.items.1"),
+        t("footer.industries.items.2"),
+        t("footer.industries.items.3"),
+        t("footer.industries.items.4"),
+        t("footer.industries.items.5"),
+        t("footer.industries.items.6"),
+        t("footer.industries.items.7"),
+    ];
+
     const scrollToSection = (href: string) => {
         if (href.startsWith("#")) {
             const element = document.querySelector(href);
@@ -92,8 +111,6 @@ export function Footer() {
             }
         }
     };
-
-    const currentYear = new Date().getFullYear();
 
     return (
         <footer className="bg-sentia-black relative overflow-hidden text-white">
@@ -142,10 +159,7 @@ export function Footer() {
                             </div>
 
                             <p className="text-gray-400 dark:text-gray-400 leading-relaxed max-w-md">
-                                Transforming industries through intelligent
-                                automation. We specialize in robotics,
-                                artificial intelligence, and embedded systems
-                                that solve real-world challenges.
+                                {t("footer.description")}
                             </p>
 
                             <div className="space-y-3">
@@ -205,13 +219,13 @@ export function Footer() {
                             viewport={{ once: true }}
                         >
                             <h3 className="text-lg font-semibold text-white mb-6">
-                                Services
+                                {t("footer.sections.services")}
                             </h3>
                             <ul className="space-y-3">
                                 {footerNavigation.services.map(
                                     (item, index) => (
                                         <motion.li
-                                            key={item.name}
+                                            key={item.key}
                                             initial={{ opacity: 0, x: -20 }}
                                             whileInView={{ opacity: 1, x: 0 }}
                                             transition={{
@@ -245,7 +259,7 @@ export function Footer() {
                             viewport={{ once: true }}
                         >
                             <h3 className="text-lg font-semibold text-white mb-6">
-                                Company
+                                {t("footer.sections.company")}
                             </h3>
                             <ul className="space-y-3">
                                 {footerNavigation.company.map((item, index) => (
@@ -280,7 +294,7 @@ export function Footer() {
                             viewport={{ once: true }}
                         >
                             <h3 className="text-lg font-semibold text-white mb-6">
-                                Resources
+                                {t("footer.sections.resources")}
                             </h3>
                             <ul className="space-y-3">
                                 {footerNavigation.resources.map(
@@ -319,7 +333,7 @@ export function Footer() {
                         className="mb-12 text-center"
                     >
                         <h3 className="text-lg font-semibold text-white mb-6">
-                            Industries We Serve
+                            {t("footer.industries.title")}
                         </h3>
                         <div className="flex flex-wrap justify-center gap-3">
                             {industries.map((industry, index) => (
@@ -352,11 +366,10 @@ export function Footer() {
                     >
                         <div className="text-center md:text-left">
                             <p className="text-gray-400 dark:text-gray-500 text-sm">
-                                © {currentYear} SentiaLab. All rights reserved.
+                                {t("footer.copyright", { year: currentYear })}
                             </p>
                             <p className="text-gray-500 dark:text-gray-600 text-xs mt-1">
-                                Engineered with passion in Brazil 🇧🇷 • Serving
-                                the world
+                                {t("footer.tagline")}
                             </p>
                         </div>
 
@@ -365,19 +378,19 @@ export function Footer() {
                                 onClick={() => scrollToSection("#contact")}
                                 className="hover:text-sentia-cyan transition-colors"
                             >
-                                Privacy Policy
+                                {t("footer.legal.privacyPolicy")}
                             </button>
                             <button
                                 onClick={() => scrollToSection("#contact")}
                                 className="hover:text-sentia-cyan transition-colors"
                             >
-                                Terms of Service
+                                {t("footer.legal.termsOfService")}
                             </button>
                             <button
                                 onClick={() => scrollToSection("#contact")}
                                 className="hover:text-sentia-cyan transition-colors"
                             >
-                                Sitemap
+                                {t("footer.legal.sitemap")}
                             </button>
                         </div>
                     </motion.div>

@@ -6,8 +6,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { HiEnvelope, HiCalendar, HiArrowUpRight } from "react-icons/hi2";
+import { useTranslation } from "@/i18n";
 
 export function ContactSection() {
+    const { t } = useTranslation();
+
     return (
         <section id="contact" className="section-padding relative">
             <div className="container-max">
@@ -20,18 +23,16 @@ export function ContactSection() {
                     className="text-center mb-16"
                 >
                     <Badge variant="secondary" className="mb-4">
-                        Get In Touch
+                        {t("contact.badge")}
                     </Badge>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-sentia-dark dark:text-white mb-6">
-                        Let&apos;s Build Something
+                        {t("contact.title.line1")}
                         <span className="gradient-text block mt-2">
-                            Amazing Together
+                            {t("contact.title.line2")}
                         </span>
                     </h2>
                     <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                        Ready to transform your ideas into intelligent
-                        solutions? Contact our team to discuss your Edge AI
-                        project.
+                        {t("contact.description")}
                     </p>
                 </motion.div>
 
@@ -49,12 +50,10 @@ export function ContactSection() {
                                     <HiEnvelope className="w-8 h-8 text-sentia-cyan" />
                                 </div>
                                 <h3 className="text-2xl font-bold text-sentia-dark dark:text-white mb-4">
-                                    Contact SentiaLab
+                                    {t("contact.card.title")}
                                 </h3>
                                 <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-lg mx-auto leading-relaxed">
-                                    Ready to start your project? Send us an
-                                    email or schedule a meeting to discuss your
-                                    Edge AI needs.
+                                    {t("contact.card.description")}
                                 </p>
 
                                 <div className="space-y-4">
@@ -80,7 +79,7 @@ export function ContactSection() {
                                                 className="bg-sentia-cyan hover:bg-sentia-cyan/90 text-white font-semibold px-8 py-6 text-lg group rounded-full shadow-[0_0_20px_rgba(45,177,188,0.3)] hover:shadow-[0_0_30px_rgba(45,177,188,0.5)] transition-all duration-300"
                                             >
                                                 <HiCalendar className="mr-2 w-5 h-5" />
-                                                Schedule a Meeting
+                                                {t("contact.card.scheduleMeeting")}
                                                 <HiArrowUpRight className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                                             </Button>
                                         </a>

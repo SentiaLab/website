@@ -11,22 +11,32 @@ import {
     HiPlay,
     HiGlobeAlt,
 } from "react-icons/hi2";
+import { useTranslation } from "@/i18n";
 
-const technologies = [
-    { name: "Edge AI", icon: HiCpuChip },
-    { name: "Computer Vision", icon: HiEye },
-    { name: "Robotics", icon: HiCog },
-    { name: "Smart Automation", icon: HiGlobeAlt },
-];
-
-const stats = [
-    { number: "Real-Time", label: "AI Processing" },
-    { number: "Edge", label: "Computing Focus" },
-    { number: "Custom", label: "Solutions" },
-    { number: "24/7", label: "System Operation" },
-];
+const technologyIcons = {
+    edgeAI: HiCpuChip,
+    computerVision: HiEye,
+    robotics: HiCog,
+    smartAutomation: HiGlobeAlt,
+};
 
 export function HeroSection() {
+    const { t } = useTranslation();
+
+    const technologies = [
+        { key: "edgeAI", name: t("hero.technologies.edgeAI"), icon: technologyIcons.edgeAI },
+        { key: "computerVision", name: t("hero.technologies.computerVision"), icon: technologyIcons.computerVision },
+        { key: "robotics", name: t("hero.technologies.robotics"), icon: technologyIcons.robotics },
+        { key: "smartAutomation", name: t("hero.technologies.smartAutomation"), icon: technologyIcons.smartAutomation },
+    ];
+
+    const stats = [
+        { number: t("hero.stats.realTime.number"), label: t("hero.stats.realTime.label") },
+        { number: t("hero.stats.edge.number"), label: t("hero.stats.edge.label") },
+        { number: t("hero.stats.custom.number"), label: t("hero.stats.custom.label") },
+        { number: t("hero.stats.operation.number"), label: t("hero.stats.operation.label") },
+    ];
+
     const scrollToSection = (href: string) => {
         const element = document.querySelector(href);
         if (element) {
@@ -74,9 +84,9 @@ export function HeroSection() {
                         className="space-y-4"
                     >
                         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-sentia-dark dark:text-white leading-[1.1] pb-2">
-                            Next-Generation
+                            {t("hero.title.line1")}
                             <span className="block bg-gradient-to-r from-sentia-cyan via-purple-500 to-sentia-purple bg-clip-text text-transparent pb-4 animate-gradient-x">
-                                Edge AI Solutions
+                                {t("hero.title.line2")}
                             </span>
                         </h1>
                     </motion.div>
@@ -88,11 +98,7 @@ export function HeroSection() {
                         transition={{ duration: 0.8, delay: 0.1 }}
                         className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl leading-relaxed"
                     >
-                        Pioneering intelligent edge computing solutions that
-                        bring AI processing directly to your devices and
-                        machinery. We specialize in real-time computer vision,
-                        autonomous systems, and intelligent automation for
-                        industries ready to embrace the future.
+                        {t("hero.description")}
                     </motion.p>
 
                     {/* Technology Pills */}
@@ -104,7 +110,7 @@ export function HeroSection() {
                     >
                         {technologies.map((tech, index) => (
                             <motion.div
-                                key={tech.name}
+                                key={tech.key}
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{
@@ -133,7 +139,7 @@ export function HeroSection() {
                             onClick={() => scrollToSection("#contact")}
                             className="bg-sentia-cyan hover:bg-sentia-cyan/90 text-white font-semibold px-8 py-6 text-lg rounded-full shadow-[0_0_20px_rgba(45,177,188,0.3)] hover:shadow-[0_0_30px_rgba(45,177,188,0.5)] transition-all duration-300 group"
                         >
-                            Start Your Project
+                            {t("hero.cta.primary")}
                             <HiArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </Button>
                         <Button
@@ -143,7 +149,7 @@ export function HeroSection() {
                             className="bg-transparent border-2 border-gray-300 dark:border-white/20 text-sentia-dark dark:text-white hover:bg-gray-100 dark:hover:bg-white/10 font-semibold px-8 py-6 text-lg rounded-full transition-all duration-300"
                         >
                             <HiPlay className="mr-2 w-5 h-5 text-sentia-cyan" />
-                            Explore Services
+                            {t("hero.cta.secondary")}
                         </Button>
                     </motion.div>
 

@@ -15,18 +15,21 @@ import {
 } from "@/components/ui/navigation-menu";
 import { HiMenu, HiX } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion";
-
-const navigationItems = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Capabilities", href: "#experience" },
-    { name: "Contact", href: "#contact" },
-];
+import { useTranslation } from "@/i18n";
+import { LanguageSwitcher } from "@/components/language-switcher";
 
 export function Navigation() {
+    const { t } = useTranslation();
     const [isOpen, setIsOpen] = React.useState(false);
     const [scrolled, setScrolled] = React.useState(false);
+
+    const navigationItems = [
+        { name: t("nav.home"), href: "#home" },
+        { name: t("nav.about"), href: "#about" },
+        { name: t("nav.services"), href: "#services" },
+        { name: t("nav.capabilities"), href: "#experience" },
+        { name: t("nav.contact"), href: "#contact" },
+    ];
 
     React.useEffect(() => {
         const handleScroll = () => {
@@ -123,18 +126,19 @@ export function Navigation() {
                         </NavigationMenu>
                     </motion.div>
 
-                    {/* CTA Button & Theme Toggle */}
+                    {/* CTA Button, Language Switcher & Theme Toggle */}
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, delay: 0.3 }}
                         className="hidden md:flex items-center space-x-3"
                     >
+                        <LanguageSwitcher />
                         <Button
                             onClick={() => scrollToSection("#contact")}
                             className="bg-sentia-dark text-white hover:bg-sentia-dark/90 font-semibold px-6 py-2 rounded-lg transition-all duration-300 hover:shadow-lg"
                         >
-                            Get Started
+                            {t("nav.getStarted")}
                         </Button>
                     </motion.div>
 
@@ -241,13 +245,14 @@ export function Navigation() {
                                         }}
                                         className="pt-4 space-y-4"
                                     >
+                                        <LanguageSwitcher variant="compact" />
                                         <Button
                                             onClick={() =>
                                                 scrollToSection("#contact")
                                             }
                                             className="bg-sentia-dark text-white hover:bg-sentia-dark/90 font-semibold py-3 px-6 rounded-lg transition-all duration-300 w-full"
                                         >
-                                            Get Started
+                                            {t("nav.getStarted")}
                                         </Button>
                                     </motion.div>
                                 </div>

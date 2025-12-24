@@ -1,37 +1,39 @@
 "use client";
 
 import * as React from "react";
-import { Navigation } from "@/components/navigation";
-import { HeroSection } from "@/components/hero-section";
-import { AboutSection } from "@/components/about-section";
-import { ServicesSection } from "@/components/services-section";
-import { ExperienceSection } from "@/components/experience-section";
-import { ContactSection } from "@/components/contact-section";
-import { Footer } from "@/components/footer";
+import { useRouter } from "next/navigation";
+import { getBestLocaleAsync, defaultLocale } from "@/i18n";
 
-export default function HomePage() {
-    return (
-        <main className="relative">
-            {/* Navigation */}
-            <Navigation />
+export default function RootPage() {
+    const router = useRouter();
+    const [isLoading, setIsLoading] = React.useState(true);
 
-            {/* Hero Section */}
-            <HeroSection />
+    React.useEffect(() => {
+        async function detectAndRedirect() {
+            try {
+                const locale = await getBestLocaleAsync();
+                router.replace(`/${locale}/`);
+            } catch {
+                // Fallback to default locale
+                router.replace(`/${defaultLocale}/`);
+            } finally {
+                setIsLoading(false);
+            }
+        }
 
-            {/* About Section */}
-            <AboutSection />
+        detectAndRedirect();
+    }, [router]);
 
-            {/* Services Section */}
-            <ServicesSection />
+    if (isLoading) {
+        return (
+            <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-sentia-black dark:to-[#1a1c2e]">
+                <div className="text-center">
+                    <div className="w-12 h-12 border-4 border-sentia-cyan/30 border-t-sentia-cyan rounded-full animate-spin mx-auto mb-4" />
+                    <p className="text-gray-600 dark:text-gray-400">Loading...</p>
+                </div>
+            </div>
+        );
+    }
 
-            {/* Experience Section */}
-            <ExperienceSection />
-
-            {/* Contact Section */}
-            <ContactSection />
-
-            {/* Footer */}
-            <Footer />
-        </main>
-    );
+    return null;
 }
