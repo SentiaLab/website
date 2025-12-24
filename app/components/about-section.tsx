@@ -110,7 +110,7 @@ export function AboutSection() {
     return (
         <section
             id="about"
-            className="section-padding bg-gradient-to-br from-gray-50 to-white dark:from-slate-900/50 dark:to-slate-800/30"
+            className="section-padding relative"
         >
             <div className="container-max">
                 {/* Section Header */}

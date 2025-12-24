@@ -9,7 +9,7 @@ import { HiEnvelope, HiCalendar, HiArrowUpRight } from "react-icons/hi2";
 
 export function ContactSection() {
     return (
-        <section id="contact" className="section-padding bg-white">
+        <section id="contact" className="section-padding relative">
             <div className="container-max">
                 {/* Section Header */}
                 <motion.div

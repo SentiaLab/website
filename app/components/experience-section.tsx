@@ -107,7 +107,7 @@ export function ExperienceSection() {
     return (
         <section
             id="experience"
-            className="section-padding bg-white dark:bg-slate-900"
+            className="section-padding relative"
         >
             <div className="container-max">
                 {/* Section Header */}
