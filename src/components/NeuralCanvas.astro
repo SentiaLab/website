@@ -1,0 +1,192 @@
+<!-- Dense neural network layer canvas background for hero -->
+<canvas
+  id="neural-canvas"
+  class="absolute inset-0 w-full h-full"
+  aria-hidden="true"
+></canvas>
+
+<script>
+  interface LayerNode {
+    x: number;
+    y: number;
+    baseX: number;
+    baseY: number;
+    phase: number;
+    speed: number;
+    driftX: number;
+    driftY: number;
+  }
+
+  function initMeshCanvas() {
+    const canvas = document.getElementById('neural-canvas') as HTMLCanvasElement;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let animationId: number;
+    let nodes: LayerNode[] = [];
+    let connections: [number, number, number][] = []; // [fromIdx, toIdx, weight]
+
+    function resize() {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = canvas.offsetWidth * dpr;
+      canvas.height = canvas.offsetHeight * dpr;
+      ctx!.scale(dpr, dpr);
+    }
+
+    function createNetwork() {
+      const w = canvas.offsetWidth;
+      const h = canvas.offsetHeight;
+      nodes = [];
+      connections = [];
+
+      // Dense layer structure filling the full canvas
+      const isSmall = w < 600;
+      const layerSizes = isSmall
+        ? [6, 10, 14, 18, 22, 18, 14, 10, 6]
+        : [8, 14, 20, 26, 32, 36, 32, 26, 20, 14, 8];
+
+      const numLayers = layerSizes.length;
+      const marginX = w * 0.03;
+      const layerSpacing = (w - marginX * 2) / (numLayers - 1);
+      const marginY = h * 0.04;
+      const usableH = h - marginY * 2;
+
+      // Create neurons arranged in vertical columns per layer
+      for (let l = 0; l < numLayers; l++) {
+        const count = layerSizes[l];
+        const x = marginX + l * layerSpacing;
+        const neuronSpacing = usableH / (count + 1);
+
+        for (let n = 0; n < count; n++) {
+          const y = marginY + neuronSpacing * (n + 1);
+          nodes.push({
+            x,
+            y,
+            baseX: x,
+            baseY: y,
+            phase: Math.random() * Math.PI * 2,
+            speed: 0.003 + Math.random() * 0.004,
+            driftX: 2 + Math.random() * 4,
+            driftY: 2 + Math.random() * 3,
+          });
+        }
+      }
+
+      // Create connections between adjacent layers (pruned for density control)
+      for (let l = 0; l < numLayers - 1; l++) {
+        const currentStart = layerSizes.slice(0, l).reduce((a, b) => a + b, 0);
+        const nextStart = currentStart + layerSizes[l];
+        const currentCount = layerSizes[l];
+        const nextCount = layerSizes[l + 1];
+
+        for (let i = 0; i < currentCount; i++) {
+          for (let j = 0; j < nextCount; j++) {
+            // Connect based on vertical proximity + some randomness
+            const relI = i / (currentCount - 1 || 1);
+            const relJ = j / (nextCount - 1 || 1);
+            const dist = Math.abs(relI - relJ);
+
+            // Close neurons connect more often; far ones rarely
+            if (dist < 0.25 || (dist < 0.5 && Math.random() < 0.3) || Math.random() < 0.05) {
+              const weight = 0.03 + Math.random() * 0.05;
+              connections.push([currentStart + i, nextStart + j, weight]);
+            }
+          }
+        }
+      }
+    }
+
+    function draw() {
+      const w = canvas.offsetWidth;
+      const h = canvas.offsetHeight;
+      ctx!.clearRect(0, 0, w, h);
+
+      // Gentle drift
+      for (const node of nodes) {
+        node.phase += node.speed;
+        node.x = node.baseX + Math.sin(node.phase) * node.driftX;
+        node.y = node.baseY + Math.cos(node.phase * 0.8) * node.driftY;
+      }
+
+      // Draw connections — faint lines
+      for (const [i, j, weight] of connections) {
+        const a = nodes[i];
+        const b = nodes[j];
+        ctx!.beginPath();
+        ctx!.moveTo(a.x, a.y);
+        ctx!.lineTo(b.x, b.y);
+        ctx!.strokeStyle = `rgba(140, 148, 197, ${weight})`;
+        ctx!.lineWidth = 0.5;
+        ctx!.stroke();
+      }
+
+      // Draw nodes — tiny, subtle
+      for (const node of nodes) {
+        ctx!.beginPath();
+        ctx!.arc(node.x, node.y, 1, 0, Math.PI * 2);
+        ctx!.fillStyle = 'rgba(45, 177, 188, 0.15)';
+        ctx!.fill();
+      }
+
+      animationId = requestAnimationFrame(draw);
+    }
+
+    // Static draw for reduced motion
+    function drawStatic() {
+      ctx!.clearRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
+
+      for (const [i, j, weight] of connections) {
+        const a = nodes[i];
+        const b = nodes[j];
+        ctx!.beginPath();
+        ctx!.moveTo(a.x, a.y);
+        ctx!.lineTo(b.x, b.y);
+        ctx!.strokeStyle = `rgba(140, 148, 197, ${weight})`;
+        ctx!.lineWidth = 0.5;
+        ctx!.stroke();
+      }
+
+      for (const node of nodes) {
+        ctx!.beginPath();
+        ctx!.arc(node.x, node.y, 1, 0, Math.PI * 2);
+        ctx!.fillStyle = 'rgba(45, 177, 188, 0.12)';
+        ctx!.fill();
+      }
+    }
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    resize();
+    createNetwork();
+
+    if (prefersReducedMotion) {
+      drawStatic();
+      return;
+    }
+
+    draw();
+
+    let resizeTimer: ReturnType<typeof setTimeout>;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        resize();
+        createNetwork();
+      }, 200);
+    });
+
+    // Cleanup on page transitions
+    document.addEventListener('astro:before-swap', () => {
+      cancelAnimationFrame(animationId);
+    });
+  }
+
+  initMeshCanvas();
+  document.addEventListener('astro:after-swap', () => {
+    if (document.getElementById('neural-canvas')) {
+      initMeshCanvas();
+    }
+  });
+</script>
