@@ -1,0 +1,26 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  align?: 'left' | 'center';
+}
+
+const { title, subtitle, align = 'center' } = Astro.props;
+---
+
+<div class:list={['mb-16 animate-on-scroll', align === 'center' ? 'text-center' : 'text-left']}>
+  <h2 class="text-3xl sm:text-4xl font-bold text-gray-100 mb-4">
+    {title}
+  </h2>
+  <div
+    class:list={[
+      'h-1 w-20 rounded-full bg-gradient-to-r from-teal to-lavender mb-6',
+      align === 'center' ? 'mx-auto' : '',
+    ]}
+  />
+  {subtitle && (
+    <p class="text-lg text-lavender/70 max-w-2xl" class:list={[align === 'center' && 'mx-auto']}>
+      {subtitle}
+    </p>
+  )}
+</div>

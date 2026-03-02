@@ -1,0 +1,136 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+
+const services = [
+  {
+    title: 'Edge AI Solutions',
+    color: 'teal',
+    description: 'We design, train, and deploy optimized neural networks on resource-constrained hardware, enabling real-time inference where cloud connectivity is not viable.',
+    deliverables: [
+      'Custom model design & training for your use case',
+      'Model optimization, quantization & TensorRT acceleration',
+      'NVIDIA Jetson & embedded GPU deployment',
+      'Multi-stream video analytics pipelines',
+      'Performance benchmarking & latency optimization',
+    ],
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>`,
+  },
+  {
+    title: 'Computer Vision Systems',
+    color: 'gold',
+    description: 'Full vision pipelines covering data collection, annotation, model training, and deployment. Detection, classification, and activity recognition running in real time.',
+    deliverables: [
+      'Object detection & classification systems',
+      'Activity & action recognition pipelines',
+      'Real-time multi-camera video processing',
+      'Data annotation pipeline setup & management',
+      'Production-ready C++ vision applications',
+    ],
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>`,
+  },
+  {
+    title: 'Embedded Systems Engineering',
+    color: 'lavender',
+    description: 'Reliable software for constrained platforms. We develop embedded Linux applications, firmware, and hardware-software integrations for industrial and IoT environments.',
+    deliverables: [
+      'Embedded Linux & Yocto BSP development',
+      'Bare-metal & RTOS firmware engineering',
+      'Industrial protocol integration (CAN, J1939)',
+      'IoT device firmware & connectivity',
+      'Cross-compilation & toolchain configuration',
+    ],
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>`,
+  },
+  {
+    title: 'MLOps & Deployment Infrastructure',
+    color: 'teal',
+    description: 'The infrastructure that takes models from notebooks to production: CI/CD pipelines, containerized deployments, and automated workflows for edge ML.',
+    deliverables: [
+      'End-to-end ML pipeline design & automation',
+      'Model versioning, testing & validation workflows',
+      'Docker containerization for ML workloads',
+      'CI/CD for edge device deployment',
+      'Cross-compilation for ARM & embedded targets',
+    ],
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>`,
+  },
+];
+---
+
+<Layout title="Services | SentiaLab" description="SentiaLab's services: Edge AI, Computer Vision, Embedded Systems, and MLOps solutions.">
+  <section class="pt-28 pb-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Our Services"
+        subtitle="We help companies move AI from the cloud to the edge, building systems that run reliably on real hardware."
+      />
+
+      <div class="space-y-8">
+        {services.map((service) => (
+          <div
+            class="animate-on-scroll rounded-2xl border bg-navy/30 border-navy-light/20 hover:border-teal/30 transition-all duration-300 overflow-hidden"
+          >
+            <div class="p-8 sm:p-10">
+              <div class="flex flex-col sm:flex-row sm:items-start gap-6">
+                <!-- Icon -->
+                <div class="shrink-0">
+                  <div
+                    class:list={[
+                      'w-16 h-16 rounded-2xl flex items-center justify-center',
+                      service.color === 'teal' ? 'bg-teal/10 text-teal' :
+                      service.color === 'gold' ? 'bg-gold/10 text-gold' :
+                      'bg-lavender/10 text-lavender',
+                    ]}
+                    set:html={service.icon}
+                  />
+                </div>
+
+                <!-- Content -->
+                <div class="flex-1">
+                  <h3 class="text-xl sm:text-2xl font-bold text-gray-100 mb-3">{service.title}</h3>
+                  <p class="text-gray-400 leading-relaxed mb-6 max-w-3xl">{service.description}</p>
+
+                  <!-- What We Deliver -->
+                  <h4 class="text-sm font-semibold text-lavender/80 uppercase tracking-wider mb-3">What We Deliver</h4>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {service.deliverables.map((item) => (
+                      <div class="flex items-center gap-2 text-sm text-lavender/70">
+                        <svg
+                          class:list={[
+                            'w-4 h-4 shrink-0',
+                            service.color === 'teal' ? 'text-teal/70' :
+                            service.color === 'gold' ? 'text-gold/70' :
+                            'text-lavender/70',
+                          ]}
+                          fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        >
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- CTA -->
+      <div class="animate-on-scroll text-center mt-16">
+        <p class="text-gray-400 mb-6">Have a project that could use edge AI or embedded systems?</p>
+        <a
+          href="/contact/"
+          class="inline-flex items-center px-8 py-3.5 rounded-xl bg-teal text-charcoal-dark font-semibold text-sm tracking-wide hover:bg-teal-light transition-all duration-300 hover:shadow-lg hover:shadow-teal/20 hover:-translate-y-0.5"
+        >
+          Let's Talk
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

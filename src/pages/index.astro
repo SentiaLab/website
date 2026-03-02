@@ -1,0 +1,233 @@
+---
+import Layout from '../layouts/Layout.astro';
+import NeuralCanvas from '../components/NeuralCanvas.astro';
+---
+
+<Layout title="SentiaLab | Perception Engineered">
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+    <!-- Background gradient -->
+    <div class="absolute inset-0 bg-gradient-to-br from-charcoal-dark via-navy-dark to-charcoal-dark"></div>
+
+    <!-- Animated grid pattern -->
+    <div class="absolute inset-0 opacity-[0.04]" style="background-image: linear-gradient(var(--color-teal) 1px, transparent 1px), linear-gradient(90deg, var(--color-teal) 1px, transparent 1px); background-size: 60px 60px;"></div>
+
+    <!-- Neural network canvas -->
+    <NeuralCanvas />
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <!-- Logo -->
+      <div class="mb-10 hero-logo">
+        <img
+          src="/sentialab.png"
+          alt="SentiaLab"
+          class="w-28 h-28 sm:w-36 sm:h-36 mx-auto invert opacity-90"
+        />
+      </div>
+
+      <!-- Tagline -->
+      <h1 class="hero-title text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
+        <span class="text-gray-100">Sentia</span><span class="text-teal">Lab</span>
+      </h1>
+
+      <p class="hero-subtitle text-xl sm:text-2xl text-lavender font-light tracking-wide mb-4">
+        Perception Engineered
+      </p>
+
+      <p class="hero-description text-base sm:text-lg text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">
+        We build and deploy intelligent systems that run on the edge, combining
+        <span class="text-teal">computer vision</span>,
+        <span class="text-gold">deep learning</span>, and
+        <span class="text-lavender">embedded hardware</span>
+        into products that work in the real world.
+      </p>
+
+      <!-- CTA -->
+      <div class="hero-cta flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/expertise/"
+          class="inline-flex items-center justify-center px-8 py-3.5 rounded-xl bg-teal text-charcoal-dark font-semibold text-sm tracking-wide hover:bg-teal-light transition-all duration-300 hover:shadow-lg hover:shadow-teal/20 hover:-translate-y-0.5"
+        >
+          Explore Our Services
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+        <a
+          href="/contact/"
+          class="inline-flex items-center justify-center px-8 py-3.5 rounded-xl border border-lavender/30 text-gray-300 font-medium text-sm tracking-wide hover:border-teal/50 hover:text-teal hover:bg-navy/20 transition-all duration-300"
+        >
+          Get in Touch
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-lavender/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- Highlights Strip -->
+  <section class="py-24 bg-navy-dark/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="stagger-children grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Edge AI -->
+        <div class="group p-8 rounded-2xl bg-charcoal/50 border border-navy-light/15 hover:border-teal/30 transition-all duration-300 hover:-translate-y-1">
+          <div class="w-14 h-14 rounded-xl bg-teal/10 flex items-center justify-center mb-6 group-hover:bg-teal/20 transition-colors">
+            <svg class="w-7 h-7 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-100 mb-3">Edge AI</h3>
+          <p class="text-sm text-lavender/60 leading-relaxed">
+            Optimized deep learning models running on constrained hardware
+            like NVIDIA Jetson, with TensorRT acceleration and real-time inference.
+          </p>
+        </div>
+
+        <!-- Computer Vision -->
+        <div class="group p-8 rounded-2xl bg-charcoal/50 border border-navy-light/15 hover:border-gold/30 transition-all duration-300 hover:-translate-y-1">
+          <div class="w-14 h-14 rounded-xl bg-gold/10 flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors">
+            <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-100 mb-3">Computer Vision</h3>
+          <p class="text-sm text-lavender/60 leading-relaxed">
+            Detection, classification, and action recognition pipelines
+            built for real-time video processing in production C++ systems.
+          </p>
+        </div>
+
+        <!-- Embedded Systems -->
+        <div class="group p-8 rounded-2xl bg-charcoal/50 border border-navy-light/15 hover:border-lavender/30 transition-all duration-300 hover:-translate-y-1">
+          <div class="w-14 h-14 rounded-xl bg-lavender/10 flex items-center justify-center mb-6 group-hover:bg-lavender/20 transition-colors">
+            <svg class="w-7 h-7 text-lavender" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-100 mb-3">Embedded Systems</h3>
+          <p class="text-sm text-lavender/60 leading-relaxed">
+            Reliable software for constrained platforms: embedded Linux, Yocto,
+            real-time protocols, and custom hardware integration.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Strip -->
+  <section class="py-16 border-y border-navy-light/10">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="animate-on-scroll grid grid-cols-2 md:grid-cols-4 gap-8 text-center" id="stats-section">
+        <div>
+          <div class="text-3xl font-bold text-teal mb-1">Edge</div>
+          <div class="text-xs uppercase tracking-wider text-lavender/50">First Architecture</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-teal mb-1">Real-Time</div>
+          <div class="text-xs uppercase tracking-wider text-lavender/50">Inference at Scale</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-teal mb-1" data-counter="5" data-suffix="+">0</div>
+          <div class="text-xs uppercase tracking-wider text-lavender/50">Industries Served</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-teal mb-1">End-to-End</div>
+          <div class="text-xs uppercase tracking-wider text-lavender/50">From Research to Deploy</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero-logo {
+    animation: floatIn 1s ease-out;
+  }
+  .hero-title {
+    animation: fadeUp 0.8s ease-out 0.2s both;
+  }
+  .hero-subtitle {
+    animation: fadeUp 0.8s ease-out 0.4s both;
+  }
+  .hero-description {
+    animation: fadeUp 0.8s ease-out 0.6s both;
+  }
+  .hero-cta {
+    animation: fadeUp 0.8s ease-out 0.8s both;
+  }
+
+  @keyframes floatIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8) translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<script>
+  function initCounters() {
+    const counters = document.querySelectorAll('[data-counter]');
+    if (!counters.length) return;
+
+    let animated = false;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !animated) {
+            animated = true;
+            counters.forEach((el) => {
+              const target = parseInt(el.getAttribute('data-counter') || '0', 10);
+              const suffix = el.getAttribute('data-suffix') || '';
+              const duration = 1500;
+              const start = performance.now();
+
+              function tick(now: number) {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                // Ease out cubic
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const current = Math.round(eased * target);
+                el.textContent = current + suffix;
+
+                if (progress < 1) {
+                  requestAnimationFrame(tick);
+                }
+              }
+
+              requestAnimationFrame(tick);
+            });
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    const section = document.getElementById('stats-section');
+    if (section) observer.observe(section);
+  }
+
+  initCounters();
+  document.addEventListener('astro:after-swap', initCounters);
+</script>
