@@ -1,0 +1,291 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+---
+
+<Layout title="Contact | SentiaLab" description="Get in touch with SentiaLab for robotics, AI, and embedded systems projects.">
+  <section class="pt-28 pb-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Get in Touch"
+        subtitle="Have a project in mind? Let's discuss how we can help."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <!-- Contact Info -->
+        <div class="animate-on-scroll-left space-y-8">
+          <div>
+            <h3 class="text-lg font-semibold text-gray-100 mb-6">Reach Out</h3>
+            <div class="space-y-5">
+              <!-- Email -->
+              <a
+                href="mailto:contact@sentialab.com"
+                class="flex items-center gap-4 group"
+              >
+                <div class="w-12 h-12 rounded-xl bg-teal/10 flex items-center justify-center group-hover:bg-teal/20 transition-colors">
+                  <svg class="w-5 h-5 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-sm text-lavender/50 mb-0.5">Email</p>
+                  <p class="text-gray-200 group-hover:text-teal transition-colors">contact@sentialab.com</p>
+                </div>
+              </a>
+
+              <!-- GitHub -->
+              <a
+                href="https://github.com/sentialab"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-4 group"
+              >
+                <div class="w-12 h-12 rounded-xl bg-lavender/10 flex items-center justify-center group-hover:bg-lavender/20 transition-colors">
+                  <svg class="w-5 h-5 text-lavender" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-sm text-lavender/50 mb-0.5">GitHub</p>
+                  <p class="text-gray-200 group-hover:text-teal transition-colors">github.com/sentialab</p>
+                </div>
+              </a>
+
+              <!-- LinkedIn -->
+              <a
+                href="https://linkedin.com/company/sentialab"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-4 group"
+              >
+                <div class="w-12 h-12 rounded-xl bg-lavender/10 flex items-center justify-center group-hover:bg-lavender/20 transition-colors">
+                  <svg class="w-5 h-5 text-lavender" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-sm text-lavender/50 mb-0.5">LinkedIn</p>
+                  <p class="text-gray-200 group-hover:text-teal transition-colors">SentiaLab</p>
+                </div>
+              </a>
+
+              <!-- Location -->
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center">
+                  <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-sm text-lavender/50 mb-0.5">Location</p>
+                  <p class="text-gray-200">São Paulo, Brazil</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="animate-on-scroll-right">
+          <form
+            id="contact-form"
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            class="space-y-5 p-8 rounded-2xl bg-navy/20 border border-navy-light/15"
+            novalidate
+          >
+            <input type="hidden" name="access_key" value="bb7506a4-bf32-4545-b018-fa7da8c297f1" />
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                minlength="2"
+                class="w-full px-4 py-3 rounded-xl bg-charcoal/50 border border-navy-light/20 text-gray-200 placeholder-lavender/30 focus:outline-none focus:border-teal/50 focus:ring-1 focus:ring-teal/20 transition-colors"
+                placeholder="Your name"
+              />
+              <p class="form-error hidden mt-1.5 text-xs text-red-400"></p>
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-4 py-3 rounded-xl bg-charcoal/50 border border-navy-light/20 text-gray-200 placeholder-lavender/30 focus:outline-none focus:border-teal/50 focus:ring-1 focus:ring-teal/20 transition-colors"
+                placeholder="your@email.com"
+              />
+              <p class="form-error hidden mt-1.5 text-xs text-red-400"></p>
+            </div>
+
+            <div>
+              <label for="subject" class="block text-sm font-medium text-gray-300 mb-2">Subject</label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                class="w-full px-4 py-3 rounded-xl bg-charcoal/50 border border-navy-light/20 text-gray-200 placeholder-lavender/30 focus:outline-none focus:border-teal/50 focus:ring-1 focus:ring-teal/20 transition-colors"
+                placeholder="Project inquiry"
+              />
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                minlength="10"
+                class="w-full px-4 py-3 rounded-xl bg-charcoal/50 border border-navy-light/20 text-gray-200 placeholder-lavender/30 focus:outline-none focus:border-teal/50 focus:ring-1 focus:ring-teal/20 transition-colors resize-none"
+                placeholder="Tell us about your project..."
+              ></textarea>
+              <p class="form-error hidden mt-1.5 text-xs text-red-400"></p>
+            </div>
+
+            <!-- Success/Error Messages -->
+            <div id="form-success" class="hidden p-4 rounded-xl bg-teal/10 border border-teal/20 text-teal text-sm text-center">
+              Message sent successfully! We'll get back to you soon.
+            </div>
+            <div id="form-global-error" class="hidden p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm text-center">
+              Something went wrong. Please try again or email us directly.
+            </div>
+
+            <button
+              type="submit"
+              id="submit-btn"
+              class="w-full px-6 py-3.5 rounded-xl bg-teal text-charcoal-dark font-semibold text-sm tracking-wide hover:bg-teal-light transition-all duration-300 hover:shadow-lg hover:shadow-teal/20 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            >
+              <span id="submit-text">Send Message</span>
+              <svg id="submit-spinner" class="hidden animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+              </svg>
+            </button>
+
+            <p class="text-xs text-lavender/30 text-center">
+              We typically respond within 24 hours.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  function initContactForm() {
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    if (!form) return;
+
+    const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+    const submitText = document.getElementById('submit-text');
+    const submitSpinner = document.getElementById('submit-spinner');
+    const successMsg = document.getElementById('form-success');
+    const globalError = document.getElementById('form-global-error');
+
+    function validateField(input: HTMLInputElement | HTMLTextAreaElement): string {
+      if (input.required && !input.value.trim()) {
+        return `${input.labels?.[0]?.textContent || 'This field'} is required.`;
+      }
+      if (input.type === 'email' && input.value) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(input.value)) return 'Please enter a valid email address.';
+      }
+      if (input.minLength > 0 && input.value.length < input.minLength) {
+        return `Must be at least ${input.minLength} characters.`;
+      }
+      return '';
+    }
+
+    function showFieldError(input: HTMLInputElement | HTMLTextAreaElement, message: string) {
+      const errorEl = input.parentElement?.querySelector('.form-error');
+      if (errorEl) {
+        errorEl.textContent = message;
+        errorEl.classList.remove('hidden');
+      }
+      input.classList.add('border-red-500/50');
+      input.classList.remove('border-navy-light/20');
+    }
+
+    function clearFieldError(input: HTMLInputElement | HTMLTextAreaElement) {
+      const errorEl = input.parentElement?.querySelector('.form-error');
+      if (errorEl) {
+        errorEl.textContent = '';
+        errorEl.classList.add('hidden');
+      }
+      input.classList.remove('border-red-500/50');
+      input.classList.add('border-navy-light/20');
+    }
+
+    // Real-time validation on blur
+    form.querySelectorAll('input, textarea').forEach((field) => {
+      field.addEventListener('blur', () => {
+        const input = field as HTMLInputElement | HTMLTextAreaElement;
+        const error = validateField(input);
+        if (error) {
+          showFieldError(input, error);
+        } else {
+          clearFieldError(input);
+        }
+      });
+
+      field.addEventListener('input', () => {
+        clearFieldError(field as HTMLInputElement | HTMLTextAreaElement);
+      });
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      successMsg?.classList.add('hidden');
+      globalError?.classList.add('hidden');
+
+      // Validate all fields
+      let hasErrors = false;
+      form.querySelectorAll('input[required], textarea[required]').forEach((field) => {
+        const input = field as HTMLInputElement | HTMLTextAreaElement;
+        const error = validateField(input);
+        if (error) {
+          showFieldError(input, error);
+          hasErrors = true;
+        }
+      });
+
+      if (hasErrors) return;
+
+      // Show loading state
+      submitBtn.disabled = true;
+      if (submitText) submitText.textContent = 'Sending...';
+      submitSpinner?.classList.remove('hidden');
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+
+        if (response.ok) {
+          form.reset();
+          successMsg?.classList.remove('hidden');
+        } else {
+          globalError?.classList.remove('hidden');
+        }
+      } catch {
+        globalError?.classList.remove('hidden');
+      } finally {
+        submitBtn.disabled = false;
+        if (submitText) submitText.textContent = 'Send Message';
+        submitSpinner?.classList.add('hidden');
+      }
+    });
+  }
+
+  initContactForm();
+  document.addEventListener('astro:after-swap', initContactForm);
+</script>

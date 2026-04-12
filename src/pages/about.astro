@@ -1,0 +1,94 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+---
+
+<Layout title="About | SentiaLab" description="Learn about SentiaLab's mission and approach to robotics, AI, and embedded systems.">
+  <section class="pt-28 pb-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="About SentiaLab"
+        subtitle="From the Latin sentīre, to feel, to perceive. We build systems that sense the world."
+      />
+
+      <!-- Mission Statement -->
+      <div class="animate-on-scroll max-w-3xl mx-auto mb-20">
+        <div class="p-8 rounded-2xl bg-navy/20 border border-navy-light/15">
+          <p class="text-lg text-gray-300 leading-relaxed mb-4">
+            <span class="text-teal font-semibold">SentiaLab</span> is a robotics, AI, and embedded systems company
+            based in <span class="text-lavender">São Paulo, Brazil</span>. We turn deep learning models into
+            production systems that run on constrained hardware.
+          </p>
+          <p class="text-base text-gray-400 leading-relaxed">
+            We take intelligent algorithms off the cloud and bring them to the edge, where latency,
+            bandwidth, and reliability actually matter. We work across the full lifecycle: model design, training,
+            optimization, and deployment on platforms like NVIDIA Jetson.
+          </p>
+        </div>
+      </div>
+
+      <!-- Our Approach -->
+      <div class="mb-20">
+        <h3 class="animate-on-scroll text-2xl font-bold text-gray-100 text-center mb-10">Our Approach</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="animate-on-scroll p-6 rounded-xl bg-charcoal/40 border border-navy-light/10 text-center">
+            <div class="w-12 h-12 rounded-xl bg-teal/10 flex items-center justify-center mx-auto mb-4">
+              <svg class="w-6 h-6 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
+            </div>
+            <h4 class="font-semibold text-gray-100 mb-2">Research-Driven</h4>
+            <p class="text-sm text-lavender/60 leading-relaxed">
+              We follow the latest deep learning and computer vision research closely, and apply what actually works to solve engineering problems.
+            </p>
+          </div>
+
+          <div class="animate-on-scroll p-6 rounded-xl bg-charcoal/40 border border-navy-light/10 text-center">
+            <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center mx-auto mb-4">
+              <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h4 class="font-semibold text-gray-100 mb-2">Edge-First</h4>
+            <p class="text-sm text-lavender/60 leading-relaxed">
+              We design for deployment constraints from day one. Every model is optimized for the target hardware, not adapted after the fact.
+            </p>
+          </div>
+
+          <div class="animate-on-scroll p-6 rounded-xl bg-charcoal/40 border border-navy-light/10 text-center">
+            <div class="w-12 h-12 rounded-xl bg-lavender/10 flex items-center justify-center mx-auto mb-4">
+              <svg class="w-6 h-6 text-lavender" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <h4 class="font-semibold text-gray-100 mb-2">Production-Grade</h4>
+            <p class="text-sm text-lavender/60 leading-relaxed">
+              We go beyond proof-of-concepts. Our systems are tested, maintainable, and built to run in production.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Industries -->
+      <div>
+        <h3 class="animate-on-scroll text-2xl font-bold text-gray-100 text-center mb-10">Industries We Serve</h3>
+        <div class="stagger-children grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+          {[
+            { name: 'Transportation', desc: 'Toll and traffic systems', icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h.01M12 7h.01M16 7h.01M3 12h18M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>` },
+            { name: 'Healthcare', desc: 'Patient monitoring and action detection', icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>` },
+            { name: 'Semiconductor', desc: 'Precision inspection and lithography', icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>` },
+            { name: 'Industrial IoT', desc: 'Automation and smart manufacturing', icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>` },
+            { name: 'Automotive', desc: 'Distributed control and diagnostics', icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>` },
+          ].map((industry) => (
+            <div class="text-center p-5 rounded-xl bg-charcoal/30 border border-navy-light/10 hover:border-teal/20 transition-all duration-300">
+              <div class="w-10 h-10 rounded-lg bg-teal/10 flex items-center justify-center mx-auto mb-3 text-teal" set:html={industry.icon} />
+              <h4 class="text-sm font-semibold text-gray-200 mb-1">{industry.name}</h4>
+              <p class="text-xs text-lavender/50">{industry.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

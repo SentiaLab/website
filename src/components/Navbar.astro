@@ -1,0 +1,103 @@
+---
+const currentPath = Astro.url.pathname;
+
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/about/', label: 'About' },
+  { href: '/expertise/', label: 'Services' },
+  { href: '/contact/', label: 'Contact' },
+];
+---
+
+<nav
+  class="fixed top-0 left-0 right-0 z-50 bg-charcoal-dark/80 backdrop-blur-lg border-b border-navy-light/30"
+  id="navbar"
+  aria-label="Main navigation"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3 group">
+        <img
+          src="/sentialab.png"
+          alt="SentiaLab"
+          class="h-9 w-9 transition-transform duration-300 group-hover:scale-110 invert"
+        />
+        <span class="text-lg font-semibold tracking-wide text-gray-100 group-hover:text-teal transition-colors">
+          SentiaLab
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center gap-1">
+        {links.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              'px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200',
+              currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href))
+                ? 'text-teal bg-navy/50'
+                : 'text-gray-300 hover:text-teal hover:bg-navy/30',
+            ]}
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden p-2 rounded-lg text-gray-300 hover:text-teal hover:bg-navy/30 transition-colors"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        <svg id="menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="menu-close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden hidden border-t border-navy-light/30 bg-charcoal-dark/95 backdrop-blur-lg">
+    <div class="px-4 py-3 space-y-1">
+      {links.map((link) => (
+        <a
+          href={link.href}
+          class:list={[
+            'block px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200',
+            currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href))
+              ? 'text-teal bg-navy/50'
+              : 'text-gray-300 hover:text-teal hover:bg-navy/30',
+          ]}
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</nav>
+
+<script>
+  function initMobileMenu() {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const openIcon = document.getElementById('menu-open-icon');
+    const closeIcon = document.getElementById('menu-close-icon');
+
+    btn?.addEventListener('click', () => {
+      const isOpen = !menu?.classList.contains('hidden');
+      menu?.classList.toggle('hidden');
+      openIcon?.classList.toggle('hidden');
+      closeIcon?.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+  }
+
+  initMobileMenu();
+  document.addEventListener('astro:after-swap', initMobileMenu);
+</script>
