@@ -6,6 +6,7 @@ import ThemeToggle from './ThemeToggle.astro';
 const links = [
   { href: '/#work', label: 'Work' },
   { href: '/#services', label: 'Services' },
+  { href: '/#process', label: 'Process' },
   { href: '/#about', label: 'About' },
 ];
 ---
@@ -22,7 +23,7 @@ const links = [
     </a>
 
     <!-- Section links: second row on phones, inline from 640px -->
-    <ul class="order-last flex w-full gap-6 font-mono text-[13px] text-muted sm:order-none sm:ml-auto sm:w-auto">
+    <ul class="order-last flex w-full gap-5 font-mono text-[13px] text-muted sm:order-none sm:ml-auto sm:w-auto">
       {links.map((link) => (
         <li>
           <a href={link.href} class="transition-colors hover:text-fg">{link.label}</a>
