@@ -1,16 +1,23 @@
 ---
+import '@fontsource-variable/inter';
+import '@fontsource/ibm-plex-serif/400.css';
+import '@fontsource/ibm-plex-serif/500.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/ibm-plex-mono/400-italic.css';
+import '@fontsource/ibm-plex-mono/500.css';
 import '../styles/global.css';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
-import BackToTop from '../components/BackToTop.astro';
-import { ClientRouter } from 'astro:transitions';
 
 interface Props {
   title: string;
   description?: string;
 }
 
-const { title, description = 'SentiaLab | Robotics, AI & Embedded Systems. Perception Engineered.' } = Astro.props;
+const {
+  title,
+  description = 'SentiaLab builds and deploys computer vision and deep learning systems on embedded hardware. Edge AI, computer vision and embedded systems engineering by Caio Piccirillo.',
+} = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -20,6 +27,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+
+    <!-- Apply a stored theme before first paint -->
+    <script is:inline>
+      try {
+        if (localStorage.getItem('theme') === 'dark') document.documentElement.dataset.theme = 'dark';
+      } catch (e) {}
+    </script>
 
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
@@ -31,64 +45,24 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/sentialab.png" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      as="style"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Preload critical assets -->
-    <link rel="preload" href="/sentialab.png" as="image" />
-
     <link rel="canonical" href={canonicalURL} />
     <title>{title}</title>
-    <ClientRouter />
   </head>
-  <body class="min-h-screen flex flex-col">
+  <body>
     <!-- Skip to content (a11y) -->
     <a
       href="#main-content"
-      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-teal focus:text-charcoal-dark focus:font-semibold focus:text-sm focus:outline-none"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-[3px] focus:bg-accent focus:px-4 focus:py-2 focus:font-mono focus:text-sm focus:text-on-accent"
     >
       Skip to main content
     </a>
 
-    <Navbar />
-    <main id="main-content" class="flex-1 page-enter" role="main">
-      <slot />
-    </main>
-    <Footer />
-    <BackToTop />
-
-    <script>
-      // Intersection Observer for scroll animations
-      function initScrollAnimations() {
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-              }
-            });
-          },
-          { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
-        );
-
-        document.querySelectorAll(
-          '.animate-on-scroll, .animate-on-scroll-left, .animate-on-scroll-right, .stagger-children'
-        ).forEach((el) => observer.observe(el));
-      }
-
-      // Run on initial load and after view transitions
-      initScrollAnimations();
-      document.addEventListener('astro:after-swap', initScrollAnimations);
-    </script>
+    <div class="frame flex min-h-screen flex-col">
+      <Navbar />
+      <main id="main-content" class="flex-1">
+        <slot />
+      </main>
+      <Footer />
+    </div>
   </body>
 </html>
