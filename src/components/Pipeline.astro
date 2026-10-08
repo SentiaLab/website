@@ -1,27 +1,30 @@
 ---
-const nodes = ['RTSP cameras', 'GStreamer', 'YOLO / TensorRT', 'DeepStream', 'Events over HTTP'];
-const highlighted = 'YOLO / TensorRT';
+// Stages are named by function, not by tool, so the figure holds for any stack or target.
+const stages = ['Cameras and sensors', 'Ingest and decode', 'Inference', 'Tracking and rules', 'Events and APIs'];
+const highlighted = 'Inference';
 ---
 
 <section class="border-b border-rule px-5 py-6 font-mono text-xs sm:px-7" aria-labelledby="pipeline-caption">
   <div class="flex items-baseline justify-between gap-4 text-muted">
-    <p id="pipeline-caption">A typical deployment: real-time detection on a Jetson Orin NX</p>
+    <p id="pipeline-caption">A typical perception pipeline, from sensor to decision</p>
     <span class="shrink-0" aria-hidden="true">FIG. 1</span>
   </div>
 
   <ol class="mt-3 flex flex-wrap items-center gap-y-2">
-    {nodes.map((node, index) => (
+    {stages.map((stage, index) => (
       <li class="flex items-center">
         {index > 0 && <span class="px-2 text-muted" aria-hidden="true">&rarr;</span>}
         <span
           class:list={[
             'rounded-[3px] border bg-surface px-3 py-2',
-            node === highlighted ? 'border-accent text-accent' : 'border-rule-strong',
+            stage === highlighted ? 'border-accent text-accent' : 'border-rule-strong',
           ]}
         >
-          {node}
+          {stage}
         </span>
       </li>
     ))}
   </ol>
+
+  <p class="mt-3 text-muted">Deployed on edge devices, on-premises servers or in the cloud.</p>
 </section>
