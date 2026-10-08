@@ -6,19 +6,19 @@ export interface Entry {
 export const steps: Entry[] = [
   {
     title: 'Assess',
-    text: 'We review the problem, the data you have and the hardware it must run on, and agree on what success means.',
+    text: 'We review the problem, the data you have and where the system must run, and agree on what success means.',
   },
   {
     title: 'Prototype',
-    text: 'We train a first model and run it on the target device early, so feasibility is proven on real hardware.',
+    text: 'We train a first model and run it on the target platform early, so feasibility is proven in the real environment.',
   },
   {
     title: 'Optimize',
-    text: 'We tune the model and the pipeline for the device until accuracy and latency meet the targets.',
+    text: 'We tune the model and the pipeline for the target platform until accuracy, latency and cost meet the targets.',
   },
   {
     title: 'Deploy',
-    text: 'We deliver production C++ with CI/CD and tests, and hand it over to your team.',
+    text: 'We deliver production software with CI/CD and tests, and hand it over to your team.',
   },
 ];
 
@@ -29,7 +29,7 @@ export const engagements: Entry[] = [
   },
   {
     title: 'Audit and optimization',
-    text: 'A review of an existing model or pipeline, with the changes needed to make it faster or deployable on edge hardware.',
+    text: 'A review of an existing model or pipeline, with the changes needed to make it faster, cheaper to run or deployable on the target platform.',
   },
   {
     title: 'Embedded engineering',
@@ -40,7 +40,7 @@ export const engagements: Entry[] = [
 export const clients: Entry[] = [
   {
     title: 'Product companies',
-    text: 'Adding a vision or edge AI feature to a hardware or software product.',
+    text: 'Adding a vision or AI feature to a hardware or software product.',
   },
   {
     title: 'Infrastructure and industrial operators',

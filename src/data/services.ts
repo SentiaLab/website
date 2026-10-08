@@ -8,12 +8,12 @@ export const services: Service[] = [
   {
     title: 'Edge AI',
     summary:
-      'We design, train and deploy optimized neural networks on resource-constrained hardware, for real-time inference where the cloud is not an option.',
+      'We design, train and deploy optimized neural networks for real-time inference, on constrained edge hardware or wherever the workload runs best.',
     deliverables: [
       'Custom model training for your use case',
-      'Export and optimization with ONNX and TensorRT',
-      'Deployment on NVIDIA Jetson',
-      'Video analytics pipelines with GStreamer and DeepStream',
+      'Model export and optimization for the target runtime',
+      'Deployment on embedded GPUs and edge devices',
+      'Real-time video analytics pipelines',
     ],
   },
   {
@@ -22,8 +22,8 @@ export const services: Service[] = [
     deliverables: [
       'Object detection and classification',
       'Action recognition',
-      'Annotation pipeline setup with CVAT',
-      'Production C++ vision applications',
+      'Annotation pipeline setup and management',
+      'Production-grade vision applications',
     ],
   },
   {
@@ -31,21 +31,21 @@ export const services: Service[] = [
     summary:
       'Reliable software for constrained platforms: embedded Linux applications, firmware and hardware integration.',
     deliverables: [
-      'Embedded Linux applications and Yocto recipes',
-      'Firmware in C and C++',
-      'CAN J1939 integration',
+      'Embedded Linux applications and custom images',
+      'Firmware development',
+      'Industrial and vehicle bus integration',
       'Cross-compilation and packaging',
     ],
   },
   {
     title: 'MLOps and deployment',
     summary:
-      'The infrastructure that takes a model from a notebook to a device: CI/CD, containers and automated testing.',
+      'The infrastructure that takes a model from a notebook to production, on a device, on-premises or in the cloud.',
     deliverables: [
-      'CI/CD with GitLab CI and GitHub Actions',
-      'Docker build environments',
-      'Automated unit testing',
-      'Kubernetes for development and production',
+      'CI/CD pipelines for models and software',
+      'Containerized build and runtime environments',
+      'Automated testing and validation',
+      'Cluster orchestration for development and production',
     ],
   },
 ];
