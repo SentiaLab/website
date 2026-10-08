@@ -1,0 +1,57 @@
+---
+const credentials = [
+  '9+ years in embedded systems, 6+ in computer vision and edge AI',
+  'Co-author of research published in IEEE Access (2024)',
+  'Former university lecturer in AI',
+  'Works in English, Portuguese, Spanish, Dutch and French',
+];
+---
+
+<section id="company" class="border-b border-rule" aria-labelledby="company-title">
+  <header class="border-b border-rule px-5 py-8 sm:px-7">
+    <h2 id="company-title" class="section-title">Company</h2>
+  </header>
+
+  <div class="grid md:grid-cols-[3fr_2fr]">
+    <div class="px-5 py-8 sm:px-7 md:border-r md:border-rule">
+      <p class="font-mono text-xs text-muted">
+        Sentia, from the Latin <span lang="la">sentīre</span>: to feel, to perceive.
+      </p>
+      <div class="mt-5 max-w-[60ch] space-y-4 leading-relaxed">
+        <p>
+          SentiaLab is an engineering company based in São Paulo, Brazil, working remotely with clients in Brazil
+          and Europe. We build systems that perceive the world and run where the data is produced: on the device,
+          not in the cloud.
+        </p>
+        <p>
+          We cover the whole path: annotating data, training models, optimizing them for the target hardware and
+          shipping the C++ that runs on the device. We design for the deployment constraints from the first day,
+          rather than adapting a model afterwards.
+        </p>
+      </div>
+    </div>
+
+    <!-- Founder -->
+    <div class="border-t border-rule px-5 py-8 sm:px-7 md:border-t-0">
+      <p class="label">Founder</p>
+      <h3 class="mt-3 font-serif text-xl leading-snug">Caio Piccirillo</h3>
+      <p class="mt-1 font-mono text-xs text-muted">Founder and principal engineer</p>
+      <ul class="mt-5 space-y-2 font-mono text-xs">
+        {credentials.map((credential) => (
+          <li class="flex gap-3">
+            <span class="text-accent" aria-hidden="true">+</span>
+            {credential}
+          </li>
+        ))}
+      </ul>
+      <a
+        href="https://linkedin.com/in/caiopiccirillo"
+        class="mt-5 inline-block font-mono text-xs text-accent underline underline-offset-4"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LinkedIn
+      </a>
+    </div>
+  </div>
+</section>

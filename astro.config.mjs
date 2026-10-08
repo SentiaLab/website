@@ -9,7 +9,7 @@ export default defineConfig({
   integrations: [sitemap()],
   // Old pages now live as sections of the home page.
   redirects: {
-    '/about': '/#about',
+    '/about': '/#company',
     '/expertise': '/#services',
   },
   vite: {
