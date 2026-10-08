@@ -61,8 +61,6 @@ html {
 
 body {
   @apply text-fg font-sans antialiased;
-  background-color: var(--bg);
-  background-image: var(--grain);
 }
 
 ::selection {
@@ -82,7 +80,7 @@ body {
   .frame {
     @apply mx-auto w-full max-w-[1040px] border-x border-rule;
   }
-  /* Opaque paper, for anything that has to cover what is behind it */
+  /* Paper colour and grain: the page itself, and anything that has to cover what is behind it */
   .paper {
     background-color: var(--bg);
     background-image: var(--grain);
@@ -105,23 +103,15 @@ body {
   .btn-primary {
     @apply border-accent bg-accent text-on-accent hover:border-accent hover:opacity-90;
   }
-}
 
-/* Registration marks where a horizontal rule meets the frame.
-   Only when there is a gutter beside the frame to draw them in. */
-@media (min-width: 68rem) {
-  @layer components {
-    .frame > header,
-    main > section,
-    main > section > header {
+  /* Registration marks where a horizontal rule meets the frame.
+     Only when there is a gutter beside the frame to draw them in. */
+  @media (min-width: 68rem) {
+    :is(.frame > header, main > section, main > section > header) {
       position: relative;
     }
-    .frame > header::before,
-    .frame > header::after,
-    main > section::before,
-    main > section::after,
-    main > section > header::before,
-    main > section > header::after {
+    :is(.frame > header, main > section, main > section > header)::before,
+    :is(.frame > header, main > section, main > section > header)::after {
       content: '';
       position: absolute;
       bottom: -5px;
@@ -134,14 +124,10 @@ body {
       opacity: 0.7;
       pointer-events: none;
     }
-    .frame > header::before,
-    main > section::before,
-    main > section > header::before {
+    :is(.frame > header, main > section, main > section > header)::before {
       left: -5px;
     }
-    .frame > header::after,
-    main > section::after,
-    main > section > header::after {
+    :is(.frame > header, main > section, main > section > header)::after {
       right: -5px;
     }
   }
