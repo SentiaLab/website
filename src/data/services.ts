@@ -8,7 +8,7 @@ export const services: Service[] = [
   {
     title: 'Edge AI',
     summary:
-      'I design, train and deploy optimized neural networks on resource-constrained hardware, for real-time inference where the cloud is not an option.',
+      'We design, train and deploy optimized neural networks on resource-constrained hardware, for real-time inference where the cloud is not an option.',
     deliverables: [
       'Custom model training for your use case',
       'Export and optimization with ONNX and TensorRT',
