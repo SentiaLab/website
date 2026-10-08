@@ -1,0 +1,28 @@
+---
+import { services } from '../data/services';
+---
+
+<section id="services" class="border-b border-rule" aria-labelledby="services-title">
+  <header class="border-b border-rule px-5 py-8 sm:px-7">
+    <h2 id="services-title" class="section-title">Services</h2>
+  </header>
+
+  <ul class="divide-y divide-rule">
+    {services.map((service) => (
+      <li class="grid gap-6 px-5 py-8 sm:px-7 md:grid-cols-2 md:gap-12">
+        <div>
+          <h3 class="font-serif text-xl leading-snug">{service.title}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted">{service.summary}</p>
+        </div>
+        <ul class="space-y-2 font-mono text-xs">
+          {service.deliverables.map((item) => (
+            <li class="flex gap-3">
+              <span class="text-accent" aria-hidden="true">+</span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </li>
+    ))}
+  </ul>
+</section>
