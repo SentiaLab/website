@@ -1,4 +1,6 @@
 ---
+import SectionHeader from './SectionHeader.astro';
+
 const credentials = [
   '9+ years in embedded systems, 6+ in computer vision and edge AI',
   'Co-author of research published in IEEE Access (2024)',
@@ -8,9 +10,7 @@ const credentials = [
 ---
 
 <section id="company" class="border-b border-rule" aria-labelledby="company-title">
-  <header class="border-b border-rule px-5 py-8 sm:px-7">
-    <h2 id="company-title" class="section-title">Company</h2>
-  </header>
+  <SectionHeader index="04" id="company-title" title="Company" />
 
   <div class="grid md:grid-cols-[3fr_2fr]">
     <div class="px-5 py-8 sm:px-7 md:border-r md:border-rule">

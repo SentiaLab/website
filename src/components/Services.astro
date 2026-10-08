@@ -1,11 +1,10 @@
 ---
+import SectionHeader from './SectionHeader.astro';
 import { services } from '../data/services';
 ---
 
 <section id="services" class="border-b border-rule" aria-labelledby="services-title">
-  <header class="border-b border-rule px-5 py-8 sm:px-7">
-    <h2 id="services-title" class="section-title">Services</h2>
-  </header>
+  <SectionHeader index="02" id="services-title" title="Services" />
 
   <ul class="divide-y divide-rule">
     {services.map((service) => (
