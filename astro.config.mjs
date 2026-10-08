@@ -7,6 +7,11 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://sentialab.com',
   integrations: [sitemap()],
+  // Old pages now live as sections of the home page.
+  redirects: {
+    '/about': '/#about',
+    '/expertise': '/#services',
+  },
   vite: {
     plugins: [tailwindcss()],
   },
