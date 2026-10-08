@@ -40,7 +40,7 @@ export const engagements: Entry[] = [
 export const clients: Entry[] = [
   {
     title: 'Product companies',
-    text: 'Adding a vision or AI feature to a hardware or software product.',
+    text: 'Adding a vision or AI feature to a robot, a machine or a software product.',
   },
   {
     title: 'Infrastructure and industrial operators',
