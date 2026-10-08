@@ -1,11 +1,20 @@
 ---
-import { work } from '../data/work';
+import { clientWork, earlierWork, type WorkItem } from '../data/work';
+
+const groups: { label: string; note?: string; items: WorkItem[] }[] = [
+  { label: 'Client work', items: clientWork },
+  {
+    label: 'Earlier engineering experience',
+    note: 'Delivered by our founder before SentiaLab.',
+    items: earlierWork,
+  },
+];
 
 const facts = [
-  { value: '9+ years', label: 'embedded systems' },
-  { value: '6+ years', label: 'vision and edge AI' },
-  { value: 'IEEE Access', label: 'published research' },
-  { value: 'São Paulo', label: 'Brazil' },
+  { label: 'Sectors', value: 'Transportation, healthcare, industry' },
+  { label: 'Platforms', value: 'NVIDIA Jetson, embedded Linux' },
+  { label: 'Delivery', value: 'Remote, worldwide' },
+  { label: 'Based in', value: 'São Paulo, Brazil' },
 ];
 ---
 
@@ -14,33 +23,42 @@ const facts = [
     <h2 id="work-title" class="section-title">Selected work</h2>
   </header>
 
-  <ul class="grid grid-cols-1 gap-px bg-rule sm:grid-cols-2 lg:grid-cols-3">
-    {work.map((item, index) => (
-      <li class="flex flex-col bg-bg px-5 py-7 sm:px-7">
-        <p class="label">{String(index + 1).padStart(2, '0')} / {item.industry}</p>
-        <h3 class="mt-3 font-serif text-xl leading-snug">{item.title}</h3>
-        <p class="mt-2 text-sm leading-relaxed text-muted">{item.description}</p>
-        {item.link && (
-          <a
-            href={item.link.href}
-            class="mt-3 self-start font-mono text-xs text-accent underline underline-offset-4"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {item.link.label}
-          </a>
-        )}
-        <p class="mt-auto pt-4 font-mono text-xs text-accent">{item.stack.join(' · ')}</p>
-      </li>
-    ))}
-  </ul>
+  {groups.map((group) => (
+    <div class="border-b border-rule">
+      <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 border-b border-rule px-5 py-3 sm:px-7">
+        <h3 class="label">{group.label}</h3>
+        {group.note && <p class="font-mono text-xs text-muted">{group.note}</p>}
+      </div>
 
-  <!-- Facts row -->
-  <dl class="grid grid-cols-2 gap-px border-t border-rule bg-rule lg:grid-cols-4">
+      <ul class="grid grid-cols-1 gap-px bg-rule sm:grid-cols-2 lg:grid-cols-3">
+        {group.items.map((item) => (
+          <li class="flex flex-col bg-bg px-5 py-7 sm:px-7">
+            <p class="label">{item.sector}</p>
+            <h4 class="mt-3 font-serif text-xl leading-snug">{item.title}</h4>
+            <p class="mt-2 text-sm leading-relaxed text-muted">{item.description}</p>
+            {item.link && (
+              <a
+                href={item.link.href}
+                class="mt-3 self-start font-mono text-xs text-accent underline underline-offset-4"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {item.link.label}
+              </a>
+            )}
+            <p class="mt-auto pt-4 font-mono text-xs text-accent">{item.stack.join(' · ')}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))}
+
+  <!-- Company facts -->
+  <dl class="grid grid-cols-2 gap-px bg-rule lg:grid-cols-4">
     {facts.map((fact) => (
-      <div class="flex flex-col-reverse bg-bg px-5 py-4 font-mono sm:px-7">
+      <div class="bg-bg px-5 py-4 font-mono sm:px-7">
         <dt class="text-xs text-muted">{fact.label}</dt>
-        <dd class="text-sm font-medium">{fact.value}</dd>
+        <dd class="mt-1 text-[13px] font-medium">{fact.value}</dd>
       </div>
     ))}
   </dl>
